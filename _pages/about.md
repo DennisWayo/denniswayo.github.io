@@ -6,7 +6,7 @@ subtitle: <a href='#'>Affiliations</a>. National Laboratory Astana, Nazarbayev U
 
 profile:
   align: right
-  image: del_pic.jpeg
+  image: del_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Can you see your office number</p>
