@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Investingating on the potency of photonic and super conducting qubits.
+Investingating the potency of photonic and superconducting qubits.
