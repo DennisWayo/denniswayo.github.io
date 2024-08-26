@@ -2,9 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. National Laboratory Astana, Nazarbayev University. +77714140389. 
-
-Be You, Be Curious.
+subtitle: <a href='#'>Affiliations</a>. National Laboratory Astana, Nazarbayev University. +77714140389. Be You, Be Curious.
 
 profile:
   align: right
