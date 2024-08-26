@@ -1,18 +1,18 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
+    "name": "Dennis Wayo",
+    "label": "Computational Scientist",
     "image": "",
-    "email": "albert@einstein.de",
-    "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "email": "dennis.wayo@nu.edu.kz",
+    "phone": "+77714140389",
+    "url": "denniswayo.github.io",
+    "summary": "A Ghanaian-born young researcher in computational quantum science for energy sustainability",
     "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
+      "address": "53 Kabanbay Batyr",
+      "postalCode": "010000",
+      "city": "Astana",
+      "countryCode": "KZ",
+      "region": "Aqmola"
     },
     "profiles": [
       {
