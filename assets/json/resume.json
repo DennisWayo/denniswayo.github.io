@@ -1,5 +1,5 @@
 {
-  "basics": {
+  "bio": {
     "name": "Dennis Wayo",
     "label": "Computational Scientist",
     "image": "",
@@ -125,22 +125,22 @@
     {
       "name": "Professor Lei Wang",
       "icon": "fa-solid fa-laptop",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
+      "reference": "PhD Petroleum Engineering, Professor at Chengdu University"
     },
     {
       "name": "Professor Leonardo Goliatt",
       "icon": "fa-solid fa-thumbtack",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
+      "reference": "PhD Computational Modelling, Professor at the Department of Computational and Applied Mechanics, Federal University of Juiz de Fora, Juiz de Fora, 36036-900, Brazil."
     }
   ],
   "projects": [
     {
       "name": "Quantum Computing",
-      "summary": "Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.",
-      "highlights": ["Quantum Teleportation", "Quantum Cryptography"],
-      "startDate": "2018-01-01",
-      "endDate": "2018-01-01",
-      "url": "https://example.com"
+      "summary": "Semiconductor, Photonic and Ion trapped Qubits fabrication through to Algorithms",
+      "highlights": ["Fabricating Qubits to Algorithms"],
+      "startDate": "2024-09-01",
+      "endDate": "2029-08-01",
+      "url": ""
     }
   ]
 }
