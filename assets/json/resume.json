@@ -1,5 +1,5 @@
 {
-  "bio": {
+  "basic": {
     "name": "Dennis Wayo",
     "label": "Computational Scientist",
     "image": "",
@@ -42,28 +42,28 @@
       "startDate": "2023-08-01",
       "endDate": "2015-07-01",
       "summary": "Blind Peer Review",
-      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
+      "highlights": ["Multidisciplinary Engineering"]
     }
   ],
   "education": [
     {
       "institution": "Universiti Malaysia Pahang",
       "location": "Kuantan, Malaysia",
-      "url": "https://www.uzh.ch/",
+      "url": "",
       "area": "Chemical Engineering",
       "studyType": "PhD Candidate",
       "startDate": "2022-01-01",
       "endDate": "2026-01-01",
-      "courses": ["Electrochemical Cell for CO2 Reduction"]
+      "courses": ["Numerical Analysis of Photoelectrochemical Cell for CO2 Reduction"]
     }
   ],
   "awards": [
     {
-      "title": "Nobel Prize in Physics",
+      "title": "Scholarship",
       "date": "1921-11-01",
-      "awarder": "Royal Swedish Academy of Sciences",
-      "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
-      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
+      "awarder": "Abay Kunanbayev Scholarship Award",
+      "url": "",
+      "summary": "For the master study of petroleum engineering in Kazakhstan"
     }
   ],
   "certificates": [
