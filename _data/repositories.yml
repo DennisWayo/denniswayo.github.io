@@ -1,13 +1,12 @@
 github_users:
-  - DeepNerd
+  - DennisWayo
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - PennyLaneAI/pennylane-qiskit
   - Qiskit/qiskit
+  - PennyLaneAI/pennylane-qiskit
+  - mrdbourke/tensorflow-deep-learning
+  - trekhleb/homemade-machine-learning
+  - openmm/openmm-setup
+  - quantumNerd/Quantum-Espresso-Tutorial-2019-Projects
