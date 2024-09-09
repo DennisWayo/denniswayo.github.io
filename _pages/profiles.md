@@ -1,6 +1,6 @@
 ---
 layout: profiles
-permalink: /Researchers/
+permalink: /people/
 title: Dela's Group
 description: members of group
 nav: true
