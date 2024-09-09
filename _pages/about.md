@@ -9,7 +9,7 @@ profile:
   image: del_pic.jpg
   image_circular: true # crops the image to make it circular
   more_info: >
-    <p>Block S4, RE 321</p>
+    <p>Block S4, RE 306</p>
     <p>53 Kabanbay, 010000</p>
     <p>Astana, Kazakhstan</p>
 
