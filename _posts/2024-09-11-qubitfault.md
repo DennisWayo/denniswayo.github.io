@@ -1,7 +1,7 @@
 ---
 layout: post
 title: a post with math
-date: 2024-09-11 11:12:00-0400
+date: 2024-09-10 19:12:00-0400
 description: Qubit fault tolerance
 tags: All_post, Qubits, computing
 categories: sample-posts
