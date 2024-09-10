@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Qubit error correction
-date: 2024-09-10 11:12:00-0400
+date: 2024-09-10 11:12:00-0100
 description: Qubit
 tags: All_post Qubits Computing
 categories: sample-posts
