@@ -1,7 +1,7 @@
 ---
 layout: page
 title: IoT-based Sensing Technology for Real-Time Identification of Unsaturated Soil Properties for Anticipation against Climate Change
-description:  Research Assistant | PI: Dr Alfrendo Satyanaga
+description:  Research Assistant, PI-Dr Alfrendo Satyanaga
 img: assets/img/
 importance: 1
 category: work
