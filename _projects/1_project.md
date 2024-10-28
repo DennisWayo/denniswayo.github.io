@@ -2,7 +2,7 @@
 layout: page
 title: Fundamental study of fluorine-modified silica proppants for impermeable reservoir fracturing
 description: Project Member, PI-Dr Zulklifi Noor
-img: assets/img/13.jpg
+img: assets/img/13.JPG
 importance: 1
 category: work
 related_publications: true
