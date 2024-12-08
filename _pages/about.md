@@ -18,6 +18,13 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-"Dennis currently works as a research assistant at the National Laboratory Astana and is pursuing a PhD at Universiti Malaysia Pahang. His focus is on combining cutting-edge classical and quantum machine learning techniques with fluid dynamics to develop innovative models that enhance fossil fuel, hydrogen production, and storage systems. 
+"Dennis is a polymath and computational scientist with specialized skills in programming. He excels in developing robust classical and quantum machine learning algorithms using advanced numerical methods for scientific research and development. Currently, Dennis is a Researcher at the Laboratory of Renewable Energy, under the leadership of Professor Nuraje at the National Laboratory in Astana. He is also pursuing a PhD at the University of Malaysia Pahang, focusing on engineering intelligent materials. His research aims to enhance photon absorption using rare-earth ions and utilizes numerical doping techniques for designing photonic circuits, with applications in water splitting and carbon capture.
 
-Leveraging his extensive research background in both experimental and computational analysis, he excels at strategic R&D planning to drive optimization and progress in these critical energy sectors. His academic expertise covers areas such as quantum computing, hydraulic fracturing, photoelectrochemical cells for water splitting and CO2 reduction. His numerical approach draws from fluid mechanics, geomechanics, quantum mechanics, and molecular mechanics. Dennis is an exciting research fellow.
+A passionate advocate for open-source software, Dennis is developing a device simulator for drift-diffusion and raytracing using Apple’s Swift programming language. His technical expertise includes:
+	•	Proficient use of MIT’s Electromagnetic Equation Propagation (MEEP) for numerical studies in photonic optical raytracing.
+	•	Designing superconducting qubits with Qiskit-Metal.
+	•	Conducting simulations using Py4Vasp and Quantum Espresso for density functional theory and molecular dynamics, focusing on the electron, optical, and thermodynamic properties of materials.
+	•	Modeling and simulating fluid-structure interactions using OpenFoam, Ansys, and Comsol under finite element analysis (FEA) and discrete element method (DEM) techniques.
+	•	Enhancing accuracy in oil and gas production predictions with CMG, Kappa, and Pipesim.
+
+Dennis has expanded his expertise to include developing quantum software with Qiskit, TensorFlow Quantum, and Classiq, aimed at enhancing machine learning predictions on real datasets. His comprehensive approach integrates fluid mechanics, geomechanics, quantum mechanics, and molecular mechanics, showcasing his extensive expertise across various physical sciences.
