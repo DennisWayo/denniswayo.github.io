@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. National Laboratory Astana, Nazarbayev University. +77714140389. Be You, Be Curious.
+subtitle: <a href='#'>Affiliations</a>. NU-UMPSA. +77714140389. Be You, Be Curious and be Obssessed with Quantum Knowledge 🤩.
 
 profile:
   align: right
