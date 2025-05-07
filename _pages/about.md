@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. NU-UMPSA. +77714140389. Be You, Be Curious and be Obssessed with Quantum Knowledge 🤩.
+subtitle: <a href='#'>Affiliations</a>. NU-UMPSA. +77714140389. Be You, Be Curious and be Obsessed with Quantum Knowledge 🤩.
 
 profile:
   align: right
