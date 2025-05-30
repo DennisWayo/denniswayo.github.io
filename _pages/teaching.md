@@ -41,6 +41,8 @@ Based on my research and software expertise, I offer teaching support and course
 - Symbolic-Numeric Hybrid Modeling with SymPy & SciPy
 
 ##### Engineering Simulations
+- Engineering Mathematics
+- Fluid & Geomechanics (Hydraulic Fracturing)
 - Computational Fluid Dynamics (OpenFOAM, ANSYS, COMSOL)
 - Reservoir Simulation (CMG, KAPPA, PIPESIM)
 - Discrete Element Method (LIGGGHTS, YADE)
