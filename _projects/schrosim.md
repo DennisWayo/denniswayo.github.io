@@ -1,6 +1,6 @@
 ---
 layout: page
-title: SchroSIM: A Scalable Photonic Quantum Circuit Simulator
+title: "SchroSIM: A Scalable Photonic Quantum Circuit Simulator"
 description: Photonic quantum circuit simulator using Strawberry Fields and PennyLane
 img: assets/img/16.PNG
 importance: 1
