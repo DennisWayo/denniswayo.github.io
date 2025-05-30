@@ -7,7 +7,7 @@ nav: true
 nav_order: 9
 ---
 
-### 🧠 Quantum Software & Simulators
+#### 🧠 Quantum Software & Simulators
 
 | Software | Version | Description |
 |---|---|---|
@@ -21,7 +21,9 @@ nav_order: 9
 | Zapata Orquestra | - | Enterprise-grade orchestration for quantum workflows. |
 | SchroSIM | dev | Custom simulator for photonic quantum circuits (Gaussian + Fock modes). |
 
-### 🧪 Computational Physics & Chemistry
+---
+
+#### 🧪 Computational Physics & Chemistry
 
 | Software | Version | Description |
 |---|---|---|
@@ -33,7 +35,9 @@ nav_order: 9
 | VESTA | - | 3D visualization of structural and volumetric data. |
 | Critic2 / Bader | - | Charge density and bonding analysis. |
 
-### ⚙️ FEA, CFD & Reservoir Simulation
+---
+
+#### ⚙️ FEA, CFD & Reservoir Simulation
 
 | Software | Version | Description |
 |---|---|---|
@@ -45,7 +49,9 @@ nav_order: 9
 | PIPESIM | - | Flow assurance and production system modeling. |
 | LIGGGHTS / YADE | - | DEM for particle dynamics (proppants). |
 
-### 🤖 ML, GNNs & Explainability
+---
+
+#### 🤖 ML, GNNs & Explainability
 
 | Software | Version | Description |
 |---|---|---|
@@ -57,7 +63,9 @@ nav_order: 9
 | SymPy / SciPy | - | Symbolic math and scientific computing. |
 | SHAP / Grad-CAM | - | Explainable AI for model interpretation. |
 
-### 🖥 GUI & Visualization Tools
+---
+
+#### 🖥 GUI & Visualization Tools
 
 | Software | Version | Description |
 |---|---|---|
