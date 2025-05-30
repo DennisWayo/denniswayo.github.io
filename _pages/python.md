@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /python/
-title: python
+title: python script
 description: Major project Python scripts that have been peer-reviewed and published or accepted.
 nav_order: 10
 ---
@@ -10,7 +10,7 @@ Below are selected Python scripts used in major projects that have been peer-rev
 
 ---
 
-#### SchroSIM
+#### 1. SchroSIM
 
 ```python
 # schrosim/core/circuit.py
