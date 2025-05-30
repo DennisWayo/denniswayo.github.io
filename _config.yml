@@ -3,16 +3,16 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: blank # the website title (if blank, full name will be used instead)
+title: Dennis Wayo # the website title (if blank, full name will be used instead)
 first_name: Dennis
 middle_name: #R.
 last_name: Wayo
 email: dennis.wayo@nu.edu.kz
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Hey there! Welcome to my quantum world.
+  Researcher in Quantum Software, Photonics, and Computational Materials Science. Creator of SchroSIM and Womanium Scholar 2025. 
 footer_text: >
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-keywords: dennis, academics, Quantum # add your own keywords or leave empty
+keywords: quantum computing, photonics, materials science, computational physics, machine learning, QML, quantum software, SchroSIM
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
