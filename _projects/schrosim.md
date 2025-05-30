@@ -1,20 +1,27 @@
 ---
-title: "SchroSIM: A Scalable Photonic Quantum Circuit Simulator"
-collection: projects
-permalink: /projects/schrosim
-date: 2025-05-30
-tags:
-  - quantum computing
-  - photonics
-  - simulation
-  - software
-  - Strawberry Fields
-  - PennyLane
-excerpt: "A hardware-agnostic simulator for quantum photonic circuits supporting Gaussian and Fock models."
+layout: page
+title: SchroSIM: A Scalable Photonic Quantum Circuit Simulator
+description: Quantum photonic circuit simulator for Gaussian and Fock modes using Python and PennyLane/Strawberry Fields
+img: assets/img/schrosim-banner.png  # ← optional placeholder image
+importance: 1
+category: quantum
+related_publications: true
 ---
 
-**SchroSIM** is a Python-based simulator designed to model and test photonic quantum circuits. Built with support for Strawberry Fields and PennyLane backends, it allows customizable variational gates, quantum photonic workflows, and a visual interface (Streamlit) for quantum hardware prototyping.
+**SchroSIM** is a hardware-agnostic simulator for photonic quantum circuits. It is designed for modeling both Gaussian and Fock-based gates, enabling research and experimentation with photonic quantum algorithms.
 
-> 🔗 [Project Repository](https://github.com/DennisWayo/SchroSIM)
+Built with Python, it supports **Strawberry Fields** and **PennyLane**, making it compatible with hybrid quantum-classical pipelines and variational quantum solvers.
 
-> 🧠 Use Cases: quantum kernel regression, variational quantum solvers, photonic embeddings
+---
+
+### 🔧 Key Features
+- Circuit construction and visualization
+- Gaussian vs. non-Gaussian modes toggle
+- PennyLane-compatible templates
+- Streamlit GUI for no-code testing
+
+---
+
+> 🧪 [GitHub Project](https://github.com/DennisWayo/SchroSIM)  
+> 🧠 Use Cases: quantum regression, kernel methods, hybrid photonic ML  
+> 📢 Upcoming: Streamlit app + arXiv preprint (Summer 2025)
