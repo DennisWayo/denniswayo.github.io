@@ -17,7 +17,7 @@ selected_papers: true
 social: true
 ---
 
-Dennis Wayo is a computational physicist and quantum software researcher with a multidisciplinary background in photonics, quantum computing, and intelligent materials design. He is currently completing his PhD in Chemical Engineering at the University Malaysia Pahang, where his work focuses on photon-activated rare-earth ion systems for sustainable energy applications, including water splitting and CO₂ capture.
+Dennis Wayo is a *computational scientist and quantum software researcher* with a multidisciplinary background in photonics, quantum computing, and intelligent materials design. He is currently completing his PhD in Chemical Engineering at the University Malaysia Pahang, where his work focuses on photon-activated rare-earth ion systems for sustainable energy applications, including water splitting and CO₂ capture.
 
 Dennis specializes in developing quantum and classical machine learning frameworks, integrating advanced numerical methods and scientific computing to model physical phenomena. He is the creator of **SchroSIM**, a scalable simulator for photonic quantum circuits, and co-developer of **PiHOG**, a photon-informed hybrid optical graph neural network. He combines symbolic reasoning, graph theory, and deep learning to tackle complex problems across quantum mechanics, materials science, and energy systems.
 
@@ -43,5 +43,6 @@ Dennis advocates for open-source research, building Swift-based photonic device 
 - 🎖 **IBM Quantum Excellence 2024**
 - 🏛 **NU-UMPSA Graduate Research Collaboration**
 - 📰 Contributor on Medium & Dev.to | GitHub: [DennisWayo](https://github.com/DennisWayo)
+
 ---
 
