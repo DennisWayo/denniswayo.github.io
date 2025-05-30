@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Introducing SchroSIM: A Quantum Photonic Circuit Simulator"
-date: 2025-05-31 13:12:00-0600
+date: 2025-05-30 13:12:00-0600
 description: Qubits
 tags: All_post Qubits Computing
 categories: sample-posts
