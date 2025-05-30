@@ -22,3 +22,13 @@ social: true # includes social icons at the bottom of the page
 A passionate advocate for open-source software, Dennis is developing a device simulator for drift-diffusion and raytracing using Apple’s Swift programming language. His extensive expertise is demonstrated through his proficient use of MIT’s Electromagnetic Equation Propagation (MEEP) for numerical studies in photonic optical raytracing and his design of superconducting qubits with Qiskit-Metal. Dennis conducts simulations using Py4Vasp and Quantum Espresso for density functional theory and molecular dynamics, focusing on the electron, optical, and thermodynamic properties of materials. Additionally, he models and simulates fluid-structure interactions using OpenFoam, Ansys, and Comsol under finite element analysis (FEA) and discrete element method (DEM) techniques, while enhancing accuracy in oil and gas production predictions with CMG, Kappa, and Pipesim.
 
 Further expanding his technical repertoire, Dennis develops quantum software with tools like Qiskit, TensorFlow Quantum, and Classiq, aimed at enhancing machine learning predictions on real datasets. His approach seamlessly integrates principles from fluid mechanics, geomechanics, quantum mechanics, and molecular mechanics, illustrating his broad expertise across multiple domains of physical science.
+
+## 🔬 Focus Areas
+- 🧠 **Quantum Software Development** (Qiskit, PennyLane, photonic solvers)
+- 🔦 **Computational Physics & Materials Modeling** (DFT, QE/GPAW, PINNs)
+- 🧰 **Projects**: SchroSIM, PiHOG, Symbolic-GNN models
+
+## 🎓 Programs & Affiliations
+- 🎖 **Womanium Quantum Scholar 2025**
+- 🧪 XaiGis | Filter Cake TDDFT | Hydrogen Mapping | Rare Earth Ions Spectra
+
