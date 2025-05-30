@@ -31,6 +31,8 @@ Dennis advocates for open-source research, building Swift-based photonic device 
 - 🧪 **Computational Physics & Materials Science** — DFT, TDDFT, PINNs, and raytracing for rare-earth and CO₂ systems
 - 🌐 **Symbolic + Graph-Based ML** — Symbolic-GNNs for fracture modeling, IR spectral learning, and proppant transport
 ---
+
+---
 > 🚀 Current Projects
 - **SchroSIM** – A scalable photonic quantum simulator (PennyLane & Strawberry Fields)
 - **PiHOG** – Photon-informed graph neural network for IR peak classification
@@ -38,11 +40,12 @@ Dennis advocates for open-source research, building Swift-based photonic device 
 - **TDDFT Filter Cake Stability** – Quantum modeling of chelating agents for wellbore cleanup
 - **Rare Earth Ions Spectra** – Atomistic models for optoelectronic applications
 ---
+
+---
 > 🎓 Affiliations & Recognition
 - 🎖 **Womanium Quantum Scholar 2025**
 - 🎖 **IBM Quantum Excellence 2024**
 - 🏛 **NU-UMPSA Graduate Research Collaboration**
 - 📰 Contributor on Medium & Dev.to | GitHub: [DennisWayo](https://github.com/DennisWayo)
-
 ---
 
