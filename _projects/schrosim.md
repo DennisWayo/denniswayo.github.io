@@ -12,15 +12,11 @@ related_publications: true
 
 Built with Python, it supports **Strawberry Fields** and **PennyLane**, making it compatible with hybrid quantum-classical pipelines and variational quantum solvers.
 
----
-
 ### 🔧 Key Features
 - Circuit construction and visualization
 - Gaussian vs. non-Gaussian modes toggle
 - PennyLane-compatible templates
 - Streamlit GUI for no-code testing
-
----
 
 > 🧪 [GitHub Project](https://github.com/DennisWayo/SchroSIM)  
 > 🧠 Use Cases: quantum regression, kernel methods, hybrid photonic ML  
