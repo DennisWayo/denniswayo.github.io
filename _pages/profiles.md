@@ -1,7 +1,7 @@
 ---
 layout: profiles
 permalink: /people/
-title: Dela's Group
+title: Colabs
 description: members of group
 nav: true
 nav_order: 7
