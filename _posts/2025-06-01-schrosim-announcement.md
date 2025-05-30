@@ -12,4 +12,4 @@ I'm excited to share my latest project: **SchroSIM**, a scalable photonic quantu
 
 It supports hybrid Gaussian-Fock circuits and is being actively tested with Strawberry Fields and PennyLane backends.
 
-Check out the project [here](https://github.com/DennisWayo/SchroSIM) and follow future devlogs on [Medium](https://medium.com/@denniswayo).
+Check out the project SchroSIM and follow future devlogs on Medium.
