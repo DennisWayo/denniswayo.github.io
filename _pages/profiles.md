@@ -1,7 +1,7 @@
 ---
 layout: profiles
 permalink: /people/
-title: Colabs
+title: colabs
 description: members of group
 nav: true
 nav_order: 7
