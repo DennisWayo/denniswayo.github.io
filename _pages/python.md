@@ -3,7 +3,7 @@ layout: page
 permalink: /python/
 title: python script
 description: Major project Python scripts that have been peer-reviewed and published or accepted.
-nav_order: 10
+nav_order: 8
 ---
 
 Below are selected Python scripts used in major projects that have been peer-reviewed or accepted in academic venues. Each script is linked to its repository and/or GUI (if available), and includes citation information for scholarly use.
