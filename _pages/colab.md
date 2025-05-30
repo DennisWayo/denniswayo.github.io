@@ -24,7 +24,7 @@ nav_order: 6
 
 | Name | GitHub | Role | Projects |
 |------|--------|------|----------|
-| Prof. Leonardo Goliatt | Uni Fora | Research Collaborator | Ai + Geophysics |
+| Prof. Leonardo Goliatt | Uni Fora | Dev | Ai + Geophysics |
 | [Contributor A] | GitHub | XXX Architectures | XXX, Symbolic-GNN |
 | [Contributor B] | GitHub | XXXX Dev (Streamlit) | XXXX UI |
 
