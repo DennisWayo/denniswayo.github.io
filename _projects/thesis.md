@@ -3,7 +3,7 @@ layout: page
 title: PhD Thesis- Hybrid Quantum Dots & Inspired Solid-State Electrochemical Cell Retrofitted to Turbines for CO2RR 
 description: PhD Thesis @ UMPAS
 img: assets/img/17.PNG
-importance: 2
+importance: 3
 category: work
 related_publications: true
 ---
