@@ -1,12 +1,13 @@
 ---
 layout: page
-title: Optimization of Filter Cake Removal Using Nanoparticles in Synthetic Based Mud Drill-In Fluid (SBMDIF) System
-description: Research Assistant, PI-Dr Sonny Irawan
+title: SchroSIM: A Scalable Photonic Quantum Circuit Simulator
+description: Photonic quantum circuit simulator using Strawberry Fields and PennyLane
 img: assets/img/16.PNG
 importance: 1
 category: work
 related_publications: true
 ---
+
 
 **SchroSIM** is a hardware-agnostic simulator for photonic quantum circuits. It is designed for modeling both Gaussian and Fock-based gates, enabling research and experimentation with photonic quantum algorithms.
 
