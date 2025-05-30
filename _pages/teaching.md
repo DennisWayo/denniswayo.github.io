@@ -4,7 +4,7 @@ permalink: /teaching/
 title: teaching
 description: Educational content and training modules I offer or am currently developing—focused on quantum computing, simulation, and applied AI in physical sciences.
 nav: true
-nav_order: 6
+nav_order: 5
 ---
 
 #### 🎓 Quantum Computing Lessons (Udemy, 2025)
