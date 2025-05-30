@@ -29,7 +29,7 @@ Dennis advocates for open-source research, building Swift-based photonic device 
 > 🔬 Research Focus
 - 🧠 **Quantum Software Development** — Photonic circuit simulation, variational algorithms, hybrid quantum-classical models
 - 🧪 **Computational Physics & Materials Science** — DFT, TDDFT, PINNs, and raytracing for rare-earth and CO₂ systems
-- 🌐 **Symbolic + Graph-Based ML** — Symbolic-GNNs for fracture modeling, IR spectral learning, and proppant transport
+- ##### 🌐 **Symbolic + Graph-Based ML** — Symbolic-GNNs for fracture modeling, IR spectral learning, and proppant transport
 ---
 
 ---
@@ -38,7 +38,7 @@ Dennis advocates for open-source research, building Swift-based photonic device 
 - **PiHOG** – Photon-informed graph neural network for IR peak classification
 - **XaiGis** – Explainable AI framework for hydrogen reservoir mapping
 - **TDDFT Filter Cake Stability** – Quantum modeling of chelating agents for wellbore cleanup
-- ###### **Rare Earth Ions Spectra** – Atomistic models for optoelectronic applications
+- ##### **Rare Earth Ions Spectra** – Atomistic models for optoelectronic applications
 ---
 
 ---
@@ -46,6 +46,6 @@ Dennis advocates for open-source research, building Swift-based photonic device 
 - 🎖 **Womanium Quantum Scholar 2025**
 - 🎖 **IBM Quantum Excellence 2024**
 - 🏛 **NU-UMPSA Graduate Research Collaboration**
-- 📰 Contributor on Medium & Dev.to | GitHub: [DennisWayo](https://github.com/DennisWayo)
+- ##### 📰 Contributor on Medium & Dev.to | GitHub: [DennisWayo](https://github.com/DennisWayo)
 ---
 
