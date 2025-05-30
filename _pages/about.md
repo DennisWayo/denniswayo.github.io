@@ -38,7 +38,7 @@ Dennis advocates for open-source research, building Swift-based photonic device 
 - **PiHOG** – Photon-informed graph neural network for IR peak classification
 - **XaiGis** – Explainable AI framework for hydrogen reservoir mapping
 - **TDDFT Filter Cake Stability** – Quantum modeling of chelating agents for wellbore cleanup
-- **Rare Earth Ions Spectra** – Atomistic models for optoelectronic applications
+- ###### **Rare Earth Ions Spectra** – Atomistic models for optoelectronic applications
 ---
 
 ---
