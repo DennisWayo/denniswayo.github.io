@@ -1,25 +1,18 @@
+
 # -----------------------------------------------------------------------------
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: Dennis Wayo # the website title (if blank, full name will be used instead)
+title: blank # the website title (if blank, full name will be used instead)
 first_name: Dennis
 middle_name: #R.
 last_name: Wayo
 email: dennis.wayo@nu.edu.kz
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Researcher in Quantum Software, Photonics, and Computational Materials Science. Creator of SchroSIM and Womanium Scholar 2025. 
+  Hey there! Welcome to my quantum world.
 footer_text: >
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-keywords:
-  - quantum computing
-  - photonics
-  - materials science
-  - computational physics
-  - machine learning
-  - QML
-  - quantum software
-  - SchroSIM
+keywords: dennis, academics, Quantum # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
@@ -93,8 +86,9 @@ kaggle_id: # your kaggle id
 keybase_username: # your keybase user name
 lastfm_id: # your lastfm id
 lattes_id: # your ID on Lattes (Brazilian Lattes CV)
-linkedin_username: dennis-wayo-765a38b1 # your LinkedIn user name
+linkedin_username: Dennis Wayo # your LinkedIn user name
 mastodon_username: # your mastodon instance+username in the format instance.tld/@username
+medium_username: # your Medium username
 orcid_id: 0000000199806247 # your ORCID ID
 osf_id: # your OSF ID
 pinterest_id: # your pinterest id
@@ -113,11 +107,9 @@ whatsapp_number: +77714140389 # your WhatsApp number (full phone number in inter
 wikidata_id: # your wikidata id
 wikipedia_id: # your wikipedia id (Case sensitive)
 work_url: # work page URL
-x_username: # your X handle
+x_username: DennisWayogh  # your X handle
 youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 zotero_username: # your zotero username
-medium_username: @iwayoden
-devto_username: denniswayo
 
 contact_note: >
   You can get in touch with me easily by calling or sending an email.
@@ -156,14 +148,16 @@ related_blog_posts:
 # Giscus comments (RECOMMENDED)
 # Follow instructions on https://giscus.app/ to setup for your repo to fill out the information below.
 giscus:
-  repo: ""
-  repo_id: ""
-  category: ""
-  category_id: ""
-  mapping: title
-  reactions_enabled: 0
-  input_position: bottom
-  theme: preferred_color_scheme
+  repo: # <your-github-user-name>/<your-github-repo-name>
+  repo_id: # leave empty or specify your repo_id (see https://giscus.app/)
+  category: Comments # name of the category under which discussions will be created
+  category_id: # leave empty or specify your category_id (see https://giscus.app/)
+  mapping: title # identify discussions by post title
+  strict: 1 # use strict identification mode
+  reactions_enabled: 1 # enable (1) or disable (0) emoji reactions
+  input_position: bottom # whether to display input form below (bottom) or above (top) the comments
+  theme: preferred_color_scheme # name of the color scheme (preferred works well with al-folio light/dark mode)
+  emit_metadata: 0
   lang: en
 
 # Disqus comments (DEPRECATED)
@@ -173,11 +167,13 @@ disqus_shortname: Dela # put your disqus shortname
 # External sources.
 # If you have blog posts published on medium.com or other external sources,
 # you can display them in your blog by adding a link to the RSS feed.
-external_sources:
-  - name: medium.com
-    rss_url: https://medium.com/feed/@iwayoden
-  - name: dev.to
-    rss_url: https://dev.to/feed/denniswayo
+#external_sources:
+  #- name: medium.com
+    #rss_url: https://medium.com/@al-folio/feed
+  #- name: Google Blog
+    #posts:
+      #- url: https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/
+        #published_date: 2024-05-14
 
 # -----------------------------------------------------------------------------
 # Newsletter
@@ -308,8 +304,8 @@ jekyll-archives:
     tag: "/blog/tag/:name/"
     category: "/blog/category/:name/"
 
-display_tags: ["All_post", "Quantum", "Photonics", "Spectroscopy", "Fracking", "Computing", "Materials"]
-display_categories: ["projects", "research"]
+display_tags: ["All_post", "Hydrogen", "Cells", "Qubits", "Fracking", "Computing"] # these tags will be displayed on the front page of your blog
+display_categories: ["external-services"] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
