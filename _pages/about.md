@@ -2,33 +2,46 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. NU-UMPSA. +77714140389. Be You, Be Curious and be Obsessed with Quantum Knowledge 🤩.
+subtitle: <a href='#'>Affiliations</a>. NU-UMPSA. Energy & Quantum Software Developer 🤩.
 
 profile:
   align: right
   image: del_pic.jpg
-  image_circular: true # crops the image to make it circular
+  image_circular: true
   more_info: >
-    <p>53 Kabanbay, 010000</p>
-    <p>Astana, Kazakhstan</p>
+    <p>53 Kabanbay Batyr Ave</p>
+    <p>Astana, Kazakhstan, 010000</p>
 
-news: true # includes a list of news items
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+news: true
+selected_papers: true
+social: true
 ---
 
-"Dennis is a polymath and computational scientist with specialized skills in programming. He excels in developing robust classical and quantum machine learning algorithms using advanced numerical methods for scientific research and development. Currently, Dennis is a Chemical Engineering PhD candidate at the University Malaysia Pahang, focused on engineering intelligent materials. His research aims to enhance photon absorption using rare-earth ions and utilizes numerical doping techniques for designing photonic circuits, with applications in water splitting and carbon capture.
+Dennis Wayo is a computational physicist and quantum software researcher with a multidisciplinary background in photonics, quantum computing, and intelligent materials design. He is currently completing his PhD in Chemical Engineering at the University Malaysia Pahang, where his work focuses on photon-activated rare-earth ion systems for sustainable energy applications, including water splitting and CO₂ capture.
 
-A passionate advocate for open-source software, Dennis is developing a device simulator for drift-diffusion and raytracing using Apple’s Swift programming language. His extensive expertise is demonstrated through his proficient use of MIT’s Electromagnetic Equation Propagation (MEEP) for numerical studies in photonic optical raytracing and his design of superconducting qubits with Qiskit-Metal. Dennis conducts simulations using Py4Vasp and Quantum Espresso for density functional theory and molecular dynamics, focusing on the electron, optical, and thermodynamic properties of materials. Additionally, he models and simulates fluid-structure interactions using OpenFoam, Ansys, and Comsol under finite element analysis (FEA) and discrete element method (DEM) techniques, while enhancing accuracy in oil and gas production predictions with CMG, Kappa, and Pipesim.
+Dennis specializes in developing quantum and classical machine learning frameworks, integrating advanced numerical methods and scientific computing to model physical phenomena. He is the creator of **SchroSIM**, a scalable simulator for photonic quantum circuits, and co-developer of **PiHOG**, a photon-informed hybrid optical graph neural network. He combines symbolic reasoning, graph theory, and deep learning to tackle complex problems across quantum mechanics, materials science, and energy systems.
 
-Further expanding his technical repertoire, Dennis develops quantum software with tools like Qiskit, TensorFlow Quantum, and Classiq, aimed at enhancing machine learning predictions on real datasets. His approach seamlessly integrates principles from fluid mechanics, geomechanics, quantum mechanics, and molecular mechanics, illustrating his broad expertise across multiple domains of physical science.
+His practical expertise spans DFT and TDDFT simulations using **Quantum ESPRESSO**, **GPAW**, and **Py4VASP**; finite element and multiphase modeling in **OpenFOAM**, **Ansys**, and **COMSOL**; and photonic simulations using **MEEP**. He has also designed superconducting qubit layouts using **Qiskit-Metal** and built quantum-classical hybrid pipelines with **PennyLane**, **Qiskit**, and **TensorFlow Quantum**.
 
-## 🔬 Focus Areas
-- 🧠 **Quantum Software Development** (Qiskit, PennyLane, photonic solvers)
-- 🔦 **Computational Physics & Materials Modeling** (DFT, QE/GPAW, PINNs)
-- 🧰 **Projects**: SchroSIM, PiHOG, Symbolic-GNN models
+Dennis advocates for open-source research, building Swift-based photonic device simulators and publishing on platforms such as Medium, Dev.to, and GitHub. His projects frequently incorporate **fluid mechanics, geomechanics, and quantum mechanics**, all tied together through his deep commitment to explainability and reproducibility in computational research.
 
-## 🎓 Programs & Affiliations
+> 🔬 Research Focus
+- 🧠 **Quantum Software Development** — Photonic circuit simulation, variational algorithms, hybrid quantum-classical models
+- 🧪 **Computational Physics & Materials Science** — DFT, TDDFT, PINNs, and raytracing for rare-earth and CO₂ systems
+- 🌐 **Symbolic + Graph-Based ML** — Symbolic-GNNs for fracture modeling, IR spectral learning, and proppant transport
+
+## 🚀 Current Projects
+- **SchroSIM** – A scalable photonic quantum simulator (PennyLane & Strawberry Fields)
+- **PiHOG** – Photon-informed graph neural network for IR peak classification
+- **XaiGis** – Explainable AI framework for hydrogen reservoir mapping
+- **TDDFT Filter Cake Stability** – Quantum modeling of chelating agents for wellbore cleanup
+- **Rare Earth Ions Spectra** – Atomistic models for optoelectronic applications
+
+## 🎓 Affiliations & Recognition
 - 🎖 **Womanium Quantum Scholar 2025**
-- 🧪 XaiGis | Filter Cake TDDFT | Hydrogen Mapping | Rare Earth Ions Spectra
+- 🎖 **IBM Quantum Excellence 2024**
+- 🏛 **NU-UMPSA Graduate Research Collaboration**
+- 📰 Contributor on Medium & Dev.to | GitHub: [DennisWayo](https://github.com/DennisWayo)
+
+---
 
