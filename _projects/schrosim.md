@@ -1,4 +1,3 @@
-
 ---
 layout: page
 title: Optimization of Filter Cake Removal Using Nanoparticles in Synthetic Based Mud Drill-In Fluid (SBMDIF) System
