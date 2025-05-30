@@ -13,8 +13,8 @@ nav_order: 6
 |------|-------------|------|----------|
 | Dr. Zulklifi Noor | UMPSA | PhD Supervisor | Rare-Earth Ion Doping, Filter Cake Breaker TDDFT |
 | Assoc. Prof. Sonny Irawan | NU | MSc+PhD Supervisor | Ai + Geophysics |
-| Prof. Leonardo Goliatt | Uni Fora | Research Collaborator | Ai + Geophysics |
 | Prof. Lei Wang | CDUT | Research Collaborator + SV | Ai + Geophysics |
+| Dr. Masoud Davish Ganji | KCET | Research Advisor | ML/DFT/MD |
 | Dr. Michael Lubasch | Quantinuum / Oxford | Research Advisor | Quantum Kernel Regression |
 
 
@@ -24,6 +24,7 @@ nav_order: 6
 
 | Name | GitHub | Role | Projects |
 |------|--------|------|----------|
+| Prof. Leonardo Goliatt | Uni Fora | Research Collaborator | Ai + Geophysics |
 | [Contributor A] | GitHub | XXX Architectures | XXX, Symbolic-GNN |
 | [Contributor B] | GitHub | XXXX Dev (Streamlit) | XXXX UI |
 
