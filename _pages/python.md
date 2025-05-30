@@ -18,5 +18,5 @@ import pennylane as qml
 import strawberryfields as sf
 # Quantum photonic circuit simulator using Gaussian and Fock modes
 ```
-**Cite:** Wayo, D. Sample: Explainable GNNs for Optical Property Prediction, Journal of Neural Engineering (under review, 2025).
+**Cite:** Wayo, XXX. Sample: ExplainableXXXXX, Journal of XXXXXX Engineering (under review, 2025).
 **GUI:** Coming soon
