@@ -3,7 +3,13 @@ title: "SchroSIM: A Scalable Photonic Quantum Circuit Simulator"
 collection: projects
 permalink: /projects/schrosim
 date: 2025-05-30
-tags:- quantum computing, photonics, simulation, software, Strawberry Fields, PennyLane
+tags:
+  - quantum computing
+  - photonics
+  - simulation
+  - software
+  - Strawberry Fields
+  - PennyLane
 excerpt: "Photonic quantum circuit simulator using Strawberry Fields and PennyLane."
 layout: page
 description: "Quantum photonic circuit simulator for Gaussian and Fock modes using Python and PennyLane/Strawberry Fields."
