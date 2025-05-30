@@ -2,7 +2,7 @@
 layout: profiles
 permalink: /people/
 title: colabs
-description: members of group
+description: collaborators and co-developers
 nav: true
 nav_order: 7
 
