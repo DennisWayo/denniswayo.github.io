@@ -22,6 +22,7 @@ nav_order: 6
 
 ### 👨🏽‍💻 Co-Developers & Contributors
 
+| Name | Affiliation | Role | Projects |
 |------|--------|------|----------|
 | Prof. Leonardo Goliatt | Uni Fora | Dev | Ai + Geophysics |
 | [Contributor A] | GitHub | XXX Architectures | XXX, Symbolic-GNN |
