@@ -7,7 +7,7 @@ nav: true
 nav_order: 6
 ---
 
-### Research Collaborators
+#### Research Collaborators
 
 | Name | Affiliation | Role | Projects |
 |------|-------------|------|----------|
@@ -20,7 +20,7 @@ nav_order: 6
 
 ---
 
-### 👨🏽‍💻 Co-Developers & Contributors
+#### 👨🏽‍💻 Co-Developers & Contributors
 
 | Name | Affiliation | Role | Projects |
 |------|--------|------|----------|
@@ -30,7 +30,7 @@ nav_order: 6
 
 ---
 
-### Students & Junior Researchers
+#### Students & Junior Researchers
 
 | Name | Institution | Role | Contributions |
 |------|-------------|------|----------------|
