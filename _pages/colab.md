@@ -7,7 +7,7 @@ nav: true
 nav_order: 6
 ---
 
-## 🧪 Research Collaborators
+### Research Collaborators
 
 | Name | Affiliation | Role | Projects |
 |------|-------------|------|----------|
@@ -20,9 +20,8 @@ nav_order: 6
 
 ---
 
-## 👨🏽‍💻 Co-Developers & Contributors
+### 👨🏽‍💻 Co-Developers & Contributors
 
-| Name | GitHub | Role | Projects |
 |------|--------|------|----------|
 | Prof. Leonardo Goliatt | Uni Fora | Dev | Ai + Geophysics |
 | [Contributor A] | GitHub | XXX Architectures | XXX, Symbolic-GNN |
@@ -30,7 +29,7 @@ nav_order: 6
 
 ---
 
-## 🎓 Students & Junior Researchers
+### Students & Junior Researchers
 
 | Name | Institution | Role | Contributions |
 |------|-------------|------|----------------|
@@ -39,7 +38,7 @@ nav_order: 6
 
 ---
 
-## 🧠 Interested in joining?
+### Interested in joining?
 
 I welcome enthusiastic students, developers, and researchers interested in:
 - Quantum Photonics
