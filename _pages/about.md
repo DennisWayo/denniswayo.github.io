@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. NU-UMPSA. Energy & Quantum Software Developer 🤩.
+subtitle: <a href='#'>Affiliations</a>. Quantum Software & Photonic Architecture Researcher.
 
 profile:
   align: right
@@ -17,35 +17,75 @@ selected_papers: true
 social: true
 ---
 
-Dennis Wayo is a *computational scientist and quantum software researcher* with a multidisciplinary background in photonics, quantum computing, and intelligent materials design. He is currently completing his PhD in Chemical Engineering at the University Malaysia Pahang, where his work focuses on photon-activated rare-earth ion systems for sustainable energy applications, including water splitting and CO₂ capture.
 
-Dennis specializes in developing quantum and classical machine learning frameworks, integrating advanced numerical methods and scientific computing to model physical phenomena. He is the creator of **SchroSIM**, a scalable simulator for photonic quantum circuits, and co-developer of **PiHOG**, a photon-informed hybrid optical graph neural network. He combines symbolic reasoning, graph theory, and deep learning to tackle complex problems across quantum mechanics, materials science, and energy systems.
 
-His practical expertise spans DFT and TDDFT simulations using **Quantum ESPRESSO**, **GPAW**, and **Py4VASP**; finite element and multiphase modeling in **OpenFOAM**, **Ansys**, and **COMSOL**; and photonic simulations using **MEEP**. He has also designed superconducting qubit layouts using **Qiskit-Metal** and built quantum-classical hybrid pipelines with **PennyLane**, **Qiskit**, and **TensorFlow Quantum**.
+> Quantum Software • Photonic Architectures • Fault-Tolerant Systems
 
-Dennis advocates for open-source research, building Swift-based photonic device simulators and publishing on platforms such as Medium, Dev.to, and GitHub. His projects frequently incorporate **fluid mechanics, geomechanics, and quantum mechanics**, all tied together through his deep commitment to explainability and reproducibility in computational research.
+Dennis Wayo is a quantum computational scientist working at the interface of quantum software engineering, photonic architectures, fault tolerance, and large-scale simulation. His research integrates algorithm–hardware co-design with differentiable quantum programming, resource estimation, and error-aware modeling.
 
----
-> 🔬 Research Focus
-- 🧠 **Quantum Software Development** — Photonic circuit simulation, variational algorithms, hybrid quantum-classical models
-- 🧪 **Computational Physics & Materials Science** — DFT, TDDFT, PINNs, and raytracing for rare-earth and CO₂ systems
-- ##### 🌐 **Symbolic + Graph-Based ML** — Symbolic-GNNs for fracture modeling, IR spectral learning, and proppant transport
----
+He is the creator of SchroSIM, a scalable quantum-photonic circuit simulator designed for Gaussian and non-Gaussian architectures, and lead developer of PhoQSim, a learning-augmented photonic compiler that integrates ML-surrogate models with nonlinear Schrödinger propagation and TDDFT-informed device physics. His work connects the physics of photonic hardware with compiler-level abstractions, a direction that aligns with current research in quantum error correction, MBQC-style cluster-state computation, and software frameworks for large-scale fault-tolerant systems.
 
----
-> 🚀 Current Projects
-- **SchroSIM** – A scalable photonic quantum simulator (PennyLane & Strawberry Fields)
-- **PiHOG** – Photon-informed graph neural network for IR peak classification
-- **XaiGis** – Explainable AI framework for hydrogen reservoir mapping
-- **TDDFT Filter Cake Stability** – Quantum modeling of chelating agents for wellbore cleanup
-- ##### **Rare Earth Ions Spectra** – Atomistic models for optoelectronic applications
----
+Dennis is completing his PhD in Chemical Engineering at Universiti Malaysia Pahang, where he investigates photon activation in rare-earth ion systems and quantum optical models for chemical stability. In parallel, he is pursuing the Master of Science in Computer Science (OMSCS) at the Georgia Institute of Technology with a focus on algorithms, systems, and quantum software. He also completed Princeton University’s specialization in Computer Architecture, deepening his understanding of cross-layer compiler/runtime design, a core requirement for emerging quantum architectures.
+
+> His technical expertise includes:
+- Quantum Simulation – TDDFT (GPAW), NLSE/SSFM photonics, MEEP-FDTD, Gaussian/non-Gaussian models 
+- Quantum Software – PennyLane, Qiskit, photonic QNNs, QLS, VQE/ADAPT-VQE 
+- Fault Tolerance – bosonic encodings, coherent-state codes, noise modeling, cluster-state intuition 
+- Scientific ML – PINNs, GNNs, SHAP/XAI, symbolic-graph models 
+- HPC & Systems – GPU pipelines, containerized workflows, distributed scientific computing
+
+He has collaborated across disciplines spanning materials science, photonics, scientific ML, and quantum computing. His current research direction focuses on architecture-aware quantum software — the design of simulation, compilation, and resource estimation tools for scalable quantum systems, particularly in photonic and continuous-variable platforms.
 
 ---
-> 🎓 Affiliations & Recognition
+
+> Research Focus
+
+**Quantum Software & Compilation**
+- Photonic circuit simulation (Gaussian + non-Gaussian)
+- Differentiable programming and variational algorithms 
+- based resource estimation and gate-depth prediction 
+- Algorithm decomposition and hardware mapping
+
+**Quantum Architectures & Fault Tolerance**
+- Cluster-state photonic computation (MBQC intuition)
+- Bosonic codes and coherent-state redundancy schemes 
+- Error propagation modeling and QEC-inspired encodings
+
+**Computational Photonics & Materials Modeling**
+- TDDFT/LR-TDDFT for quantum emitters and rare-earth ions 
+- NLSE propagation, soliton/dispersion modeling, detector physics 
+- MEEP-FDTD validation of chip-scale photonic components
+
+> Current Projects
+
+**SchroSIM:**
+A scalable quantum photonic circuit simulator integrating NLSE propagation, Gaussian/non-Gaussian transformations, and differentiable quantum-classical workflows.
+
+**PhoQSim:**
+A learning-augmented photonic compiler combining ML surrogates with physics-based simulation for rapid resource estimation.
+
+**Q-UCSpec (IBM QAMP):**
+Quantum feature encoding and QML benchmarking for spectroscopic signals (VQE, QSVM, EstimatorQNN, QLS).
+
+**TDDFT–FDTD Photonic Modeling:**
+Atomistic-to-optical pipeline for quantum emitters, defect centers, and upconversion materials.
+
+**PiHOG:**
+Photon-informed graph neural network for IR peak classification
+
+**XaiGis:**
+Explainable AI framework for hydrogen reservoir mapping
+
+**TDDFT Filter Cake Stability**
+Quantum modeling of chelating agents for wellbore cleanup
+
+---
+>  Affiliations & Recognition
+- **IEEE Member** 
+- 🎖 **IBM QAMP (Mentor) 2025**
 - 🎖 **Womanium Quantum Scholar 2025**
 - 🎖 **IBM Quantum Excellence 2024**
 - 🏛 **NU-UMPSA Graduate Research Collaboration**
-- ##### 📰 Contributor on Medium & Dev.to | GitHub: [DennisWayo](https://github.com/DennisWayo)
+- #####  Contributor on Medium & Dev.to | GitHub: [DennisWayo](https://github.com/DennisWayo)
 ---
 
