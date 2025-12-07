@@ -2,22 +2,21 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Quantum Software & Photonic Architecture Researcher.
+subtitle: <a href='#'>Affiliations</a>. Georgia Tech, UMPSA, NU.
 
 profile:
   align: right
   image: del_pic.jpg
-  image_circular: true
+  image_circular: false
   more_info: >
+    <p>Quantum Software & Photonic Architecture Researcher<p>
     <p>53 Kabanbay Batyr Ave</p>
     <p>Astana, Kazakhstan, 010000</p>
 
-news: true
-selected_papers: true
+news: false
+selected_papers: false
 social: true
 ---
-
-
 
 > Quantum Software • Photonic Architectures • Fault-Tolerant Systems
 
@@ -81,11 +80,11 @@ Quantum modeling of chelating agents for wellbore cleanup
 
 ---
 >  Affiliations & Recognition
-- **IEEE Member** 
-- 🎖 **IBM QAMP (Mentor) 2025**
-- 🎖 **Womanium Quantum Scholar 2025**
-- 🎖 **IBM Quantum Excellence 2024**
-- 🏛 **NU-UMPSA Graduate Research Collaboration**
+- IEEE Member
+- IBM QAMP (Mentor) 2025
+- Womanium Quantum Scholar 2025
+- IBM Quantum Excellence 2024
+- Georgia Tech, UMPSA, NU Graduate Research Collaborations
 - #####  Contributor on Medium & Dev.to | GitHub: [DennisWayo](https://github.com/DennisWayo)
 ---
 

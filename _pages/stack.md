@@ -7,7 +7,7 @@ nav: true
 nav_order: 7
 ---
 
-#### 🧠 Quantum Software & Simulators
+####  Quantum Software & Simulators
 
 | Software | Version | Description |
 |---|---|---|
@@ -23,7 +23,7 @@ nav_order: 7
 
 ---
 
-#### 🧪 Computational Physics & Chemistry
+####  Computational Physics & Chemistry
 
 | Software | Version | Description |
 |---|---|---|
@@ -37,7 +37,7 @@ nav_order: 7
 
 ---
 
-#### ⚙️ FEA, CFD & Reservoir Simulation
+####  FEA, CFD & Reservoir Simulation
 
 | Software | Version | Description |
 |---|---|---|
@@ -51,7 +51,7 @@ nav_order: 7
 
 ---
 
-#### 🤖 ML, GNNs & Explainability
+####  ML, GNNs & Explainability
 
 | Software | Version | Description |
 |---|---|---|
@@ -65,7 +65,7 @@ nav_order: 7
 
 ---
 
-#### 🖥 GUI & Visualization Tools
+####  GUI & Visualization Tools
 
 | Software | Version | Description |
 |---|---|---|

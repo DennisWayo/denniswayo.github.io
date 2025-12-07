@@ -20,22 +20,11 @@ nav_order: 6
 
 ---
 
-#### 👨🏽‍💻 Co-Developers & Contributors
+#### Co-Developers & Contributors
 
 | Name | Affiliation | Role | Projects |
 |------|--------|------|----------|
 | Prof. Leonardo Goliatt | Uni Fora | Dev | Ai + Geophysics |
-| [Contributor A] | GitHub | XXX Architectures | XXX, Symbolic-GNN |
-| [Contributor B] | GitHub | XXXX Dev (Streamlit) | XXXX UI |
-
----
-
-#### Students & Junior Researchers
-
-| Name | Institution | Role | Contributions |
-|------|-------------|------|----------------|
-| Student A | XXX | Research Intern | DFT Benchmarking, Filter Cake Modeling |
-| Student B | XXX | Quantum Intern | Qiskit Circuit Testing |
 
 ---
 
@@ -48,4 +37,4 @@ I welcome enthusiastic students, developers, and researchers interested in:
 - Fractuirng (Geophysics)
 - Geospatial ML for Earth Science
 
-> 📩 Contact: iwayoden@gmail.com or DM via [LinkedIn](https://linkedin.com/in/dennis-wayo-765a38b1)
+>  Contact: iwayoden@gmail.com or DM via [LinkedIn](https://linkedin.com/in/dennis-wayo-765a38b1)
