@@ -28,8 +28,6 @@ Dennis is completing his PhD in Chemical Engineering at Universiti Malaysia Paha
 ---
 **Quantum Software • Photonic Architectures • Fault-Tolerant Systems**
 
-
-
 > His technical expertise includes:
 
 - Quantum Simulation – TDDFT (GPAW), NLSE/SSFM photonics, MEEP-FDTD, Gaussian/non-Gaussian models 
