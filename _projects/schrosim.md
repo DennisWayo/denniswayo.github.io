@@ -15,11 +15,11 @@ Built with Python, it supports **Strawberry Fields** and **PennyLane**, making i
 
 ---
 
-### 🔧 Key Features
+###  Key Features
 - Circuit construction and visualization
 - Gaussian vs. non-Gaussian modes toggle
 - PennyLane-compatible templates
 - Streamlit GUI for no-code testing
 
-> 🧠 Use Cases: quantum regression, kernel methods, hybrid photonic ML  
-> 📢 Upcoming: Streamlit app + arXiv preprint (Summer 2025)
+>  Use Cases: quantum regression, kernel methods, hybrid photonic ML  
+>  Upcoming: Streamlit app + arXiv preprint (Summer 2025)

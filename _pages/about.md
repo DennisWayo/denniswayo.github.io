@@ -7,9 +7,10 @@ subtitle: <a href='#'>Affiliations</a>. Georgia Tech, UMPSA, NU.
 profile:
   align: right
   image: del_pic.jpg
-  image_circular: false
+  image_circular: true
   more_info: >
     <p>Quantum Software & Photonic Architecture Researcher<p>
+    
     <p>53 Kabanbay Batyr Ave</p>
     <p>Astana, Kazakhstan, 010000</p>
 
@@ -17,6 +18,7 @@ news: false
 selected_papers: false
 social: true
 ---
+
 
 > Quantum Software • Photonic Architectures • Fault-Tolerant Systems
 
