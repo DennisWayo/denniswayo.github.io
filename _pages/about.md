@@ -18,17 +18,20 @@ news: false
 selected_papers: false
 social: true
 ---
----
 
-> **Quantum Software • Photonic Architectures • Fault-Tolerant Systems**
----
 Dennis Wayo is a quantum computational scientist working at the interface of quantum software engineering, photonic architectures, fault tolerance, and large-scale simulation. His research integrates algorithm–hardware co-design with differentiable quantum programming, resource estimation, and error-aware modeling.
 
 He is the creator of SchroSIM, a scalable quantum-photonic circuit simulator designed for Gaussian and non-Gaussian architectures, and lead developer of PhoQSim, a learning-augmented photonic compiler that integrates ML-surrogate models with nonlinear Schrödinger propagation and TDDFT-informed device physics. His work connects the physics of photonic hardware with compiler-level abstractions, a direction that aligns with current research in quantum error correction, MBQC-style cluster-state computation, and software frameworks for large-scale fault-tolerant systems.
 
 Dennis is completing his PhD in Chemical Engineering at Universiti Malaysia Pahang, where he investigates photon activation in rare-earth ion systems and quantum optical models for hydrogen and CO$_2$. In parallel, he is pursuing the Master of Science in Computer Science (OMSCS) at the Georgia Institute of Technology with a focus on algorithms, systems, and quantum software. He also completed Princeton University’s specialization in Computer Architecture, deepening his understanding of cross-layer compiler/runtime design, a core requirement for emerging quantum architectures.
 
+---
+**Quantum Software • Photonic Architectures • Fault-Tolerant Systems**
+
+
+
 > His technical expertise includes:
+
 - Quantum Simulation – TDDFT (GPAW), NLSE/SSFM photonics, MEEP-FDTD, Gaussian/non-Gaussian models 
 - Quantum Software – PennyLane, Qiskit, photonic QNNs, QLS, VQE/ADAPT-VQE 
 - Fault Tolerance – bosonic encodings, coherent-state codes, noise modeling, cluster-state intuition 
@@ -56,6 +59,9 @@ He has collaborated across disciplines spanning materials science, photonics, sc
 - TDDFT/LR-TDDFT for quantum emitters and rare-earth ions 
 - NLSE propagation, soliton/dispersion modeling, detector physics 
 - MEEP-FDTD validation of chip-scale photonic components
+
+
+---
 
 > Current Projects
 
