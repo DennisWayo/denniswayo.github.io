@@ -86,6 +86,7 @@ Quantum modeling of chelating agents for wellbore cleanup
 
 ---
 >  Affiliations & Recognition
+
 - IEEE Member
 - IBM QAMP (Mentor) 2025
 - Womanium Quantum Scholar 2025
