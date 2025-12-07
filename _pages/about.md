@@ -20,8 +20,8 @@ social: true
 ---
 ---
 
-> Quantum Software • Photonic Architectures • Fault-Tolerant Systems
-
+> **Quantum Software • Photonic Architectures • Fault-Tolerant Systems**
+---
 Dennis Wayo is a quantum computational scientist working at the interface of quantum software engineering, photonic architectures, fault tolerance, and large-scale simulation. His research integrates algorithm–hardware co-design with differentiable quantum programming, resource estimation, and error-aware modeling.
 
 He is the creator of SchroSIM, a scalable quantum-photonic circuit simulator designed for Gaussian and non-Gaussian architectures, and lead developer of PhoQSim, a learning-augmented photonic compiler that integrates ML-surrogate models with nonlinear Schrödinger propagation and TDDFT-informed device physics. His work connects the physics of photonic hardware with compiler-level abstractions, a direction that aligns with current research in quantum error correction, MBQC-style cluster-state computation, and software frameworks for large-scale fault-tolerant systems.
