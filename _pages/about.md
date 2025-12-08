@@ -26,7 +26,7 @@ He is the creator of SchroSIM, a scalable quantum-photonic circuit simulator des
 Dennis is completing his PhD in Chemical Engineering at Universiti Malaysia Pahang, where he investigates photon activation in rare-earth ion systems and quantum optical models for hydrogen and CO$_2$ splitting. In parallel, he is pursuing the Master of Science in Computer Science (OMSCS) at the Georgia Institute of Technology with a focus on algorithms, systems, and quantum software. He also completed Princeton University’s specialization in Computer Architecture, deepening his understanding of cross-layer compiler/runtime design, a core requirement for emerging quantum architectures.
 
 ---
-**Quantum Software • Photonic Architectures • Fault-Tolerant Systems**
+### **Quantum Software • Photonic Architectures • Fault-Tolerant Systems**
 
 > His technical expertise includes:
 
@@ -91,7 +91,7 @@ Quantum modeling of chelating agents for wellbore cleanup
 - IBM QAMP (Mentor) 2025
 - Womanium Quantum Scholar 2025
 - IBM Quantum Excellence 2024
-- Georgia Tech, UMPSA, NU Graduate Research Collaborations
-- #####  Contributor on Medium & Dev.to | GitHub: [DennisWayo](https://github.com/DennisWayo)
+- Georgia Tech, UMPSA, NU Graduate Research Collaborations 
+- Contributor on Medium & Dev.to | GitHub: [DennisWayo](https://github.com/DennisWayo)
 ---
 
