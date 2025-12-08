@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. PhD ChemE @UMPSA | MS CS @Georgia Tech | RA @NU.
+subtitle: <a href='#'>Affiliations</a>. PhD ChemE @UMPSA | MS CS @Georgia Tech | @NU.
 
 profile:
   align: right
