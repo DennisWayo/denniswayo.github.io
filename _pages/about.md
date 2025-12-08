@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Georgia Tech, UMPSA, NU.
+subtitle: <a href='#'>Affiliations</a>. PhD ChemE @UMPSA | MS CS @Georgia Tech | <ML|Ops> | <Dev|Ops>.
 
 profile:
   align: right
@@ -23,7 +23,7 @@ Dennis Wayo is a quantum computational scientist working at the interface of qua
 
 He is the creator of SchroSIM, a scalable quantum-photonic circuit simulator designed for Gaussian and non-Gaussian architectures, and lead developer of PhoQSim, a learning-augmented photonic compiler that integrates ML-surrogate models with nonlinear Schrödinger propagation and TDDFT-informed device physics. His work connects the physics of photonic hardware with compiler-level abstractions, a direction that aligns with current research in quantum error correction, MBQC-style cluster-state computation, and software frameworks for large-scale fault-tolerant systems.
 
-Dennis is completing his PhD in Chemical Engineering at Universiti Malaysia Pahang, where he investigates photon activation in rare-earth ion systems and quantum optical models for hydrogen and CO$_2$. In parallel, he is pursuing the Master of Science in Computer Science (OMSCS) at the Georgia Institute of Technology with a focus on algorithms, systems, and quantum software. He also completed Princeton University’s specialization in Computer Architecture, deepening his understanding of cross-layer compiler/runtime design, a core requirement for emerging quantum architectures.
+Dennis is completing his PhD in Chemical Engineering at Universiti Malaysia Pahang, where he investigates photon activation in rare-earth ion systems and quantum optical models for hydrogen and CO$_2$ splitting. In parallel, he is pursuing the Master of Science in Computer Science (OMSCS) at the Georgia Institute of Technology with a focus on algorithms, systems, and quantum software. He also completed Princeton University’s specialization in Computer Architecture, deepening his understanding of cross-layer compiler/runtime design, a core requirement for emerging quantum architectures.
 
 ---
 **Quantum Software • Photonic Architectures • Fault-Tolerant Systems**
