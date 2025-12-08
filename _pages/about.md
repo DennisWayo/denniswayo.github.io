@@ -9,7 +9,7 @@ profile:
   image: del_pic.jpg
   image_circular: true
   more_info: >
-    <p>Quantum Software & Photonic Architecture Researcher<p>
+    <p>Quantum Software & Photonic Architecture Researcher |<p>
     
     <p>53 Kabanbay Batyr Ave</p>
     <p>Astana, Kazakhstan, 010000</p>
