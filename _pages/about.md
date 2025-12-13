@@ -91,7 +91,8 @@ Quantum modeling of chelating agents for wellbore cleanup
 - IBM QAMP (Mentor) 2025
 - Womanium Quantum Scholar 2025
 - IBM Quantum Excellence 2024
-- Georgia Tech, UMPSA, NU Graduate Research Collaborations Contributor on Medium & Dev.to | GitHub: [DennisWayo](https://github.com/DennisWayo)
+- Georgia Tech, UMPSA, NU Graduate Research Collaborations 
+- Contributor on Medium & Dev.to | GitHub: [DennisWayo](https://github.com/DennisWayo)
 
 ---
 
