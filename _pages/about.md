@@ -58,7 +58,6 @@ He has collaborated across disciplines spanning materials science, photonics, sc
 - NLSE propagation, soliton/dispersion modeling, detector physics 
 - MEEP-FDTD validation of chip-scale photonic components
 
-
 ---
 
 > Current Projects
@@ -68,6 +67,12 @@ A scalable quantum photonic circuit simulator integrating NLSE propagation, Gaus
 
 **PhoQSim:**
 A learning-augmented photonic compiler combining ML surrogates with physics-based simulation for rapid resource estimation.
+
+**DifGa–photonics:**
+Differentiable Error Mitigation for Multi-Mode Gaussian and Non-Gaussian Noise in Quantum Photonic Circuits.
+
+**SBUP³:**
+A coupled Semiconductor Bloch–UPPE platform for multiscale ultrafast laser–matter simulations.
 
 **Q-UCSpec (IBM QAMP):**
 Quantum feature encoding and QML benchmarking for spectroscopic signals (VQE, QSVM, EstimatorQNN, QLS).
@@ -79,10 +84,11 @@ Atomistic-to-optical pipeline for quantum emitters, defect centers, and upconver
 Photon-informed graph neural network for IR peak classification
 
 **XaiGis:**
-Explainable AI framework for hydrogen reservoir mapping
+Explainable AI framework for hydrogen reservoir mapping.
 
 **TDDFT Filter Cake Stability**
 Quantum modeling of chelating agents for wellbore cleanup
+
 
 ---
 >  Affiliations & Recognition
@@ -94,5 +100,4 @@ Quantum modeling of chelating agents for wellbore cleanup
 - Georgia Tech, UMPSA, NU Graduate Research Collaborations 
 - Contributor on Medium & Dev.to | GitHub: [DennisWayo](https://github.com/DennisWayo)
 
----
 
