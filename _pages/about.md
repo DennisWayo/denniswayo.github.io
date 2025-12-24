@@ -71,7 +71,7 @@ A learning-augmented photonic compiler combining ML surrogates with physics-base
 **DifGa–photonics:**
 Differentiable Error Mitigation for Multi-Mode Gaussian and Non-Gaussian Noise in Quantum Photonic Circuits.
 
-**SBUP³:**
+**SBUP³–ultrafast:**
 A coupled Semiconductor Bloch–UPPE platform for multiscale ultrafast laser–matter simulations.
 
 **Q-UCSpec (IBM QAMP):**
