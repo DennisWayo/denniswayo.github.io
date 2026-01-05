@@ -21,3 +21,18 @@ import strawberryfields as sf
 ```
 **Cite:** Wayo, XXX. Sample: ExplainableXXXXX, Journal of XXXXXX Engineering (under review, 2025).
 **GUI:** Coming soon
+
+
+
+---
+
+#### 1. DifGa–photonics
+
+```python
+# schrosim/core/circuit.py
+import pennylane as qml
+import strawberryfields as sf
+# Quantum photonic circuit simulator using Gaussian and Fock modes
+```
+**Cite:** Wayo, XXX. Sample: ExplainableXXXXX, Journal of XXXXXX Engineering (under review, 2025).
+**GUI:** Coming soon

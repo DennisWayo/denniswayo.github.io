@@ -74,10 +74,10 @@ Differentiable Error Mitigation for Multi-Mode Gaussian and Non-Gaussian Noise i
 **SBUP³–ultrafast:**
 A coupled Semiconductor Bloch–UPPE platform for multiscale ultrafast laser–matter simulations.
 
-**Q-UCSpec (IBM QAMP):**
+**Q-UCSpec (IBM QAMP'25/26):**
 Quantum feature encoding and QML benchmarking for spectroscopic signals (VQE, QSVM, EstimatorQNN, QLS).
 
-**TDDFT–FDTD Photonic Modeling:**
+**LrEmitmeep:**
 Atomistic-to-optical pipeline for quantum emitters, defect centers, and upconversion materials.
 
 **PiHOG:**
@@ -87,7 +87,7 @@ Photon-informed graph neural network for IR peak classification
 Explainable AI framework for hydrogen reservoir mapping.
 
 **TDDFT Filter Cake Stability:**
-Quantum modeling of chelating agents for wellbore cleanup
+Quantum modeling of chelating agents for wellbore cleanup.
 
 
 ---
