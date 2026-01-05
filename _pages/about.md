@@ -62,19 +62,19 @@ He has collaborated across disciplines spanning materials science, photonics, sc
 
 > Current Projects
 
-**SchroSIM:**
+[**SchroSIM:**](https://github.com/DennisWayo/SchroSIM)
 A scalable quantum photonic circuit simulator integrating NLSE propagation, Gaussian/non-Gaussian transformations, and differentiable quantum-classical workflows.
 
-**PhoQSim:**
+[**PhoQSim:**](https://github.com/DennisWayo/PhoQSim)
 A learning-augmented photonic compiler combining ML surrogates with physics-based simulation for rapid resource estimation.
 
-**DifGa–photonics:**
+[**DifGa–Photonics:**](https://github.com/DennisWayo/difga-photonics)
 Differentiable Error Mitigation for Multi-Mode Gaussian and Non-Gaussian Noise in Quantum Photonic Circuits.
 
-**SBUP³–ultrafast:**
+[**SBUP³–ultrafast:**](https://github.com/DennisWayo/sbup3-ultrafast)
 A coupled Semiconductor Bloch–UPPE platform for multiscale ultrafast laser–matter simulations.
 
-**Q-UCSpec (IBM QAMP'25/26):**
+[**Q-UCSpec (IBM QAMP'25/26):**](https://github.com/DennisWayo/Q-UCSpec)
 Quantum feature encoding and QML benchmarking for spectroscopic signals (VQE, QSVM, EstimatorQNN, QLS).
 
 **LrEmitmeep:**
@@ -83,7 +83,7 @@ Atomistic-to-optical pipeline for quantum emitters, defect centers, and upconver
 **PiHOG:**
 Photon-informed graph neural network for IR peak classification
 
-**XaiGis:**
+[**XaiGis:**](https://github.com/DennisWayo/XaiGis)
 Explainable AI framework for hydrogen reservoir mapping.
 
 **TDDFT Filter Cake Stability:**
