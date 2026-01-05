@@ -7,7 +7,7 @@ nav: true
 nav_order: 5
 ---
 
-####  Quantum Computing Lessons (Udemy, 2025)
+####  Quantum Computing Lessons (Udemy, 2026)
 
 I am currently developing a **Quantum Computing Foundations** course on Udemy, tailored for students and professionals transitioning into the quantum technology space. The course includes both theoretical foundations and hands-on implementation using **Qiskit**, **PennyLane**, and **Strawberry Fields**.
 
@@ -19,7 +19,7 @@ I am currently developing a **Quantum Computing Foundations** course on Udemy, t
 - Hands-on: Qiskit, PennyLane, and Strawberry Fields
 - Quantum Machine Learning for Spectral Analysis
 
->  Release planned for Summer 2025  
+>  Release planned for Summer 2026  
 >  Sign up at: My Udemy Instructor Profile
 
 ---
