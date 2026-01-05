@@ -27,8 +27,6 @@ import strawberryfields as sf
 }
 ```
 
-
-
 ---
 
 #### 2. DifGa–photonics
