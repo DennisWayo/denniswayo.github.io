@@ -86,7 +86,7 @@ Photon-informed graph neural network for IR peak classification
 **XaiGis:**
 Explainable AI framework for hydrogen reservoir mapping.
 
-**TDDFT Filter Cake Stability**
+**TDDFT Filter Cake Stability:**
 Quantum modeling of chelating agents for wellbore cleanup
 
 

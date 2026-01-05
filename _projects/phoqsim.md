@@ -2,7 +2,7 @@
 layout: page
 title: "PhoQSIM: Learning-augmented photonic compiler"
 description: Photonic quantum circuit simulator
-img: assets/img/16.PNG
+img: assets/img/photon-chip2.jpg
 importance: 1
 category: work
 related_publications: true
