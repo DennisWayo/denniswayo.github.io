@@ -77,7 +77,7 @@ A coupled Semiconductor Bloch–UPPE platform for multiscale ultrafast laser–m
 [**Q-UCSpec (IBM QAMP'25/26):**](https://github.com/DennisWayo/Q-UCSpec)
 Quantum feature encoding and QML benchmarking for spectroscopic signals (VQE, QSVM, EstimatorQNN, QLS).
 
-**LrEmitmeep:**
+[**LrEmitmeep:**](https://github.com/DennisWayo/LrEmit2meep)
 Atomistic-to-optical pipeline for quantum emitters, defect centers, and upconversion materials.
 
 **PiHOG:**
@@ -88,7 +88,6 @@ Explainable AI framework for hydrogen reservoir mapping.
 
 **TDDFT Filter Cake Stability:**
 Quantum modeling of chelating agents for wellbore cleanup.
-
 
 ---
 >  Affiliations & Recognition
