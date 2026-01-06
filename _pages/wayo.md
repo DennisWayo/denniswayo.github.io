@@ -11,7 +11,8 @@ Below are selected Python frameworks used in major projects that have been peer-
 
 ---
 
-#### 1. SchroSIM
+#### 1. SchroSIM 
+[![GitHub](https://img.shields.io/badge/GitHub-SchroSIM-blue?logo=github)](https://github.com/DennisWayo/SchroSIM)
 
 ```python
 # schrosim/core/circuit.py
@@ -30,6 +31,7 @@ import strawberryfields as sf
 ---
 
 #### 2. DifGa–photonics
+[![GitHub](https://img.shields.io/badge/GitHub-difga--photonics-blue?logo=github)](https://github.com/DennisWayo/difga-photonics)
 
 ```python
 # difga-photonics/difga/training.py
@@ -88,6 +90,8 @@ def train_mm_ng(ip, pp, eta, delta_sig, delta_anc, steps=60, lr=0.06, K=32):
 ---
 
 #### 3. SBUP³–ultrafast
+[![GitHub](https://img.shields.io/badge/GitHub-SBUP³–ultrafast-blue?logo=github)](https://github.com/DennisWayo/sbup3-ultrafast)
+
 
 ```python
 # schrosim/core/circuit.py
