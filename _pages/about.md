@@ -63,19 +63,19 @@ He has collaborated across disciplines spanning materials science, photonics, sc
 
 > Current Projects
 
-[![GitHub](https://img.shields.io/badge/GitHub-SchroSIM-0d47a1?logo=github&logoColor=white)](https://github.com/DennisWayo/SchroSIM)
-[![GitHub](https://img.shields.io/badge/GitHub-PhoQSim-1565c0?logo=github&logoColor=white)](https://github.com/DennisWayo/PhoQSim)
-[![GitHub](https://img.shields.io/badge/GitHub-difga--photonics-1976d2?logo=github&logoColor=white)](https://github.com/DennisWayo/difga-photonics)
-[![GitHub](https://img.shields.io/badge/GitHub-sbup3--ultrafast-1e88e5?logo=github&logoColor=white)](https://github.com/DennisWayo/sbup3-ultrafast)
-[![GitHub](https://img.shields.io/badge/GitHub-Q--UCSpec-2196f3?logo=github&logoColor=white)](https://github.com/DennisWayo/Q-UCSpec)
-[![GitHub](https://img.shields.io/badge/GitHub-LrEmit2meep-42a5f5?logo=github&logoColor=white)](https://github.com/DennisWayo/LrEmit2meep)
-[![GitHub](https://img.shields.io/badge/GitHub-XaiGis-64b5f6?logo=github&logoColor=white)](https://github.com/DennisWayo/XaiGis)
-[![GitHub](https://img.shields.io/badge/GitHub-lidmas--gkp-90caf9?logo=github&logoColor=white)](https://github.com/DennisWayo/lidmas-gkp)
+[![GitHub](https://img.shields.io/badge/GitHub-SchroSIM-673ab7?logo=github&logoColor=white)](https://github.com/DennisWayo/SchroSIM)
+[![GitHub](https://img.shields.io/badge/GitHub-PhoQSim-e91e63?logo=github&logoColor=white)](https://github.com/DennisWayo/PhoQSim)
+[![GitHub](https://img.shields.io/badge/GitHub-difga--photonics-3f51b5?logo=github&logoColor=white)](https://github.com/DennisWayo/difga-photonics)
+[![GitHub](https://img.shields.io/badge/GitHub-sbup3--ultrafast-00bcd4?logo=github&logoColor=white)](https://github.com/DennisWayo/sbup3-ultrafast)
+[![GitHub](https://img.shields.io/badge/GitHub-Q--UCSpec-ff9800?logo=github&logoColor=white)](https://github.com/DennisWayo/Q-UCSpec)
+[![GitHub](https://img.shields.io/badge/GitHub-LrEmit2meep-4caf50?logo=github&logoColor=white)](https://github.com/DennisWayo/LrEmit2meep)
+[![GitHub](https://img.shields.io/badge/GitHub-XaiGis-009688?logo=github&logoColor=white)](https://github.com/DennisWayo/XaiGis)
+[![GitHub](https://img.shields.io/badge/GitHub-lidmas--gkp-795548?logo=github&logoColor=white)](https://github.com/DennisWayo/lidmas-gkp)
 
-[![Research Software](https://img.shields.io/badge/Research-Software-f57c00?logo=book&logoColor=white)]()
-[![Research Code](https://img.shields.io/badge/Research-Code-f9a825?logo=code&logoColor=white)]()
-
-
+[![Research Software](https://img.shields.io/badge/Research-Software-f44336?logo=book&logoColor=white)](https://github.com/DennisWayo/SchroSIM)
+[![Research Code](https://img.shields.io/badge/Research-Code-c2185b?logo=code&logoColor=white)]()
+[![Ope](https://img.shields.io/badge/Open-Source-4caf50?logo=book&logoColor=white)]()
+[![Ope](https://img.shields.io/badge/License-MIT-009688?logo=book&logoColor=white)]()
 
 
 [**SchroSIM:**](https://github.com/DennisWayo/SchroSIM)
