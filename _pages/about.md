@@ -42,6 +42,7 @@ He has collaborated across disciplines spanning materials science, photonics, sc
 
 > Research Focus
 
+
 **Quantum Software & Compilation**
 - Photonic circuit simulation (Gaussian + non-Gaussian)
 - Differentiable programming and variational algorithms 
@@ -61,6 +62,16 @@ He has collaborated across disciplines spanning materials science, photonics, sc
 ---
 
 > Current Projects
+
+[![GitHub](https://img.shields.io/badge/GitHub-SchroSIM-blue?logo=github)](https://github.com/DennisWayo/SchroSIM)
+[![GitHub](https://img.shields.io/badge/GitHub-PhoQSim-blue?logo=github)](https://github.com/DennisWayo/PhoQSim) 
+[![GitHub](https://img.shields.io/badge/GitHub-difga-photonics-blue?logo=github)](https://github.com/DennisWayo/difga-photonics)
+[![GitHub](https://img.shields.io/badge/GitHub-sbup3-ultrafast-blue?logo=github)](https://github.com/DennisWayo/sbup3-ultrafast)
+[![GitHub](https://img.shields.io/badge/GitHub-Q-UCSpec-blue?logo=github)](https://github.com/DennisWayo/Q-UCSpec)
+[![GitHub](https://img.shields.io/badge/GitHub-LrEmit2meep-blue?logo=github)](https://github.com/DennisWayo/LrEmit2meep)
+[![GitHub](https://img.shields.io/badge/GitHub-XaiGis-blue?logo=github)](https://github.com/DennisWayo/XaiGis)
+[![GitHub](https://img.shields.io/badge/GitHub-lidmas-blue?logo=github)](https://github.com/DennisWayo/lidmas)
+
 
 [**SchroSIM:**](https://github.com/DennisWayo/SchroSIM)
 A scalable quantum photonic circuit simulator integrating NLSE propagation, Gaussian/non-Gaussian transformations, and differentiable quantum-classical workflows.
