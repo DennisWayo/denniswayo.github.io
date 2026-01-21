@@ -63,15 +63,6 @@ He has collaborated across disciplines spanning materials science, photonics, sc
 
 > Current Projects
 
-[![GitHub](https://img.shields.io/badge/GitHub-SchroSIM-673ab7?logo=github&logoColor=white)](https://github.com/DennisWayo/SchroSIM)
-[![GitHub](https://img.shields.io/badge/GitHub-PhoQSim-e91e63?logo=github&logoColor=white)](https://github.com/DennisWayo/PhoQSim)
-[![GitHub](https://img.shields.io/badge/GitHub-difga--photonics-3f51b5?logo=github&logoColor=white)](https://github.com/DennisWayo/difga-photonics)
-[![GitHub](https://img.shields.io/badge/GitHub-sbup3--ultrafast-00bcd4?logo=github&logoColor=white)](https://github.com/DennisWayo/sbup3-ultrafast)
-[![GitHub](https://img.shields.io/badge/GitHub-Q--UCSpec-ff9800?logo=github&logoColor=white)](https://github.com/DennisWayo/Q-UCSpec)
-[![GitHub](https://img.shields.io/badge/GitHub-LrEmit2meep-4caf50?logo=github&logoColor=white)](https://github.com/DennisWayo/LrEmit2meep)
-[![GitHub](https://img.shields.io/badge/GitHub-XaiGis-009688?logo=github&logoColor=white)](https://github.com/DennisWayo/XaiGis)
-[![GitHub](https://img.shields.io/badge/GitHub-lidmas--gkp-795548?logo=github&logoColor=white)](https://github.com/DennisWayo/lidmas-gkp)
-
 [![Research Software](https://img.shields.io/badge/Research-Software-f44336?logo=book&logoColor=white)](https://github.com/DennisWayo/SchroSIM)
 [![Research Code](https://img.shields.io/badge/Research-Code-c2185b?logo=code&logoColor=white)]()
 [![Ope](https://img.shields.io/badge/Open-Source-4caf50?logo=book&logoColor=white)]()
@@ -79,28 +70,32 @@ He has collaborated across disciplines spanning materials science, photonics, sc
 
 
 [**SchroSIM:**](https://github.com/DennisWayo/SchroSIM)
-A scalable quantum photonic circuit simulator integrating NLSE propagation, Gaussian/non-Gaussian transformations, and differentiable quantum-classical workflows.
+A scalable quantum photonic circuit simulator integrating NLSE propagation, Gaussian/non-Gaussian transformations, and differentiable quantum-classical workflows. [![GitHub](https://img.shields.io/badge/GitHub-SchroSIM-673ab7?logo=github&logoColor=white)](https://github.com/DennisWayo/SchroSIM)
 
 [**PhoQSim:**](https://github.com/DennisWayo/PhoQSim)
-A learning-augmented photonic compiler combining ML surrogates with physics-based simulation for rapid resource estimation.
+A learning-augmented photonic compiler combining ML surrogates with physics-based simulation for rapid resource estimation. [![GitHub](https://img.shields.io/badge/GitHub-PhoQSim-e91e63?logo=github&logoColor=white)](https://github.com/DennisWayo/PhoQSim)
 
 [**DifGa–Photonics:**](https://github.com/DennisWayo/difga-photonics)
-Differentiable Error Mitigation for Multi-Mode Gaussian and Non-Gaussian Noise in Quantum Photonic Circuits.
+Differentiable Error Mitigation for Multi-Mode Gaussian and Non-Gaussian Noise in Quantum Photonic Circuits. [![GitHub](https://img.shields.io/badge/GitHub-difga--photonics-3f51b5?logo=github&logoColor=white)](https://github.com/DennisWayo/difga-photonics)
+
+**LiDMaS:**
+Lightweight Density-Matrix Simulator for Fault-Tolerant GKP Magic-State Preparation. [![GitHub](https://img.shields.io/badge/GitHub-lidmas--gkp-795548?logo=github&logoColor=white)](https://github.com/DennisWayo/lidmas-gkp)
 
 [**SBUP³–ultrafast:**](https://github.com/DennisWayo/sbup3-ultrafast)
-A coupled Semiconductor Bloch–UPPE platform for multiscale ultrafast laser–matter simulations.
+A coupled Semiconductor Bloch–UPPE platform for multiscale ultrafast laser–matter simulations. [![GitHub](https://img.shields.io/badge/GitHub-sbup3--ultrafast-00bcd4?logo=github&logoColor=white)](https://github.com/DennisWayo/sbup3-ultrafast)
 
 [**Q-UCSpec (IBM QAMP'25/26):**](https://github.com/DennisWayo/Q-UCSpec)
-Quantum feature encoding and QML benchmarking for spectroscopic signals (VQE, QSVM, EstimatorQNN, QLS).
+Quantum feature encoding and QML benchmarking for spectroscopic signals (VQE, QSVM, EstimatorQNN, QLS). [![GitHub](https://img.shields.io/badge/GitHub-Q--UCSpec-ff9800?logo=github&logoColor=white)](https://github.com/DennisWayo/Q-UCSpec)
 
 [**LrEmitmeep:**](https://github.com/DennisWayo/LrEmit2meep)
-Atomistic-to-optical pipeline for quantum emitters, defect centers, and upconversion materials.
+Atomistic-to-optical pipeline for quantum emitters, defect centers, and upconversion materials. [![GitHub](https://img.shields.io/badge/GitHub-LrEmit2meep-4caf50?logo=github&logoColor=white)](https://github.com/DennisWayo/LrEmit2meep)
 
 **PiHOG:**
 Photon-informed graph neural network for IR peak classification
 
 [**XaiGis:**](https://github.com/DennisWayo/XaiGis)
-Explainable AI framework for hydrogen reservoir mapping.
+Explainable AI framework for hydrogen reservoir mapping. [![GitHub](https://img.shields.io/badge/GitHub-XaiGis-009688?logo=github&logoColor=white)](https://github.com/DennisWayo/XaiGis)
+
 
 **TDDFT Filter Cake Stability:**
 Quantum modeling of chelating agents for wellbore cleanup.
