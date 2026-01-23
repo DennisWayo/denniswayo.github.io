@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /pub/
-title: publications
+title: pub
 description: Recent publications emerging from energy and quantum computing.
 nav: true
 nav_order: 10
