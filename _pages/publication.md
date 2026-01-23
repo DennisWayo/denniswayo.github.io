@@ -1,6 +1,5 @@
 ---
 layout: page
-permalink: /publication/
 title: publications
 description: Recent publications emerging from energy and quantum computing.
 nav: true
