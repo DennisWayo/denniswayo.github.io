@@ -1,7 +1,6 @@
 ---
 layout: page
 permalink: /publications/
-title: publications
 description: Recent publications emerging from energy and quantum computing.
 nav: true
 nav_order: 2
