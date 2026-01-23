@@ -1,10 +1,12 @@
 ---
 layout: page
-permalink: /publications/
+title: publications
 description: Recent publications emerging from energy and quantum computing.
 nav: true
 nav_order: 2
 ---
+
+![pycharm_difga_project.png](../assets/img/pycharm_difga_project.png)
 
 <style>
   body {
