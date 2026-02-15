@@ -77,10 +77,12 @@ A learning-augmented photonic compiler combining ML surrogates with physics-base
 [**DifGa–Photonics:**](https://github.com/DennisWayo/difga-photonics)
 Differentiable Error Mitigation for Multi-Mode Gaussian and Non-Gaussian Noise in Quantum Photonic Circuits. [![GitHub](https://img.shields.io/badge/GitHub-difga--photonics-3f51b5?logo=github&logoColor=white)](https://github.com/DennisWayo/difga-photonics)
 
-**DifGa–Plus:** Coming soon..
+**DifGa+:** Coming soon..
 
 **LiDMaS:**
-Lightweight Density-Matrix Simulator for Fault-Tolerant GKP Magic-State Preparation. [![GitHub](https://img.shields.io/badge/GitHub-lidmas--gkp-795548?logo=github&logoColor=white)](https://github.com/DennisWayo/lidmas-gkp)
+Lightweight Density-Matrix Simulator for Fault-Tolerant GKP Magic-State Preparation. [![GitHub](https://img.shields.io/badge/GitHub-lidmas--gkp-f44336?logo=github&logoColor=white)](https://github.com/DennisWayo/lidmas-gkp)
+
+**LiDMaS+:** Coming soon..
 
 [**SBUP³–ultrafast:**](https://github.com/DennisWayo/sbup3-ultrafast)
 A coupled Semiconductor Bloch–UPPE platform for multiscale ultrafast laser–matter simulations. [![GitHub](https://img.shields.io/badge/GitHub-sbup3--ultrafast-00bcd4?logo=github&logoColor=white)](https://github.com/DennisWayo/sbup3-ultrafast)
