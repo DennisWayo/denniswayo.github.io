@@ -89,14 +89,9 @@ def train_mm_ng(ip, pp, eta, delta_sig, delta_anc, steps=60, lr=0.06, K=32):
 ```
 ---
 
-#### 3. SBUP³–ultrafast
-[![GitHub](https://img.shields.io/badge/GitHub-SBUP³–ultrafast-blue?logo=github)](https://github.com/DennisWayo/sbup3-ultrafast)
+#### 3. SBUP3-ultrafast
+[![GitHub](https://img.shields.io/badge/GitHub-SBUP3--ultrafast-blue?logo=github)](https://github.com/DennisWayo/sbup3-ultrafast)
 
+Coupled Semiconductor Bloch-UPPE platform for multiscale ultrafast laser-matter simulations.
 
-```python
-# schrosim/core/circuit.py
-import pennylane as qml
-import strawberryfields as sf
-# Quantum photonic circuit simulator using Gaussian and Fock modes
-```
-**Cite:** Wayo, XXX.
+**Cite:** Citation metadata will be added once the final archival record is available.

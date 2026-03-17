@@ -6,9 +6,7 @@ nav: true
 nav_order: 2
 ---
 
-![pycharm_difga_project.png](../assets/img/pycharm_difga_project.png)
-
-<h1>Publications</h1>
+![Preview of publication workspace and project outputs](../assets/img/pycharm_difga_project.png)
 
 <div class="filters">
   <button class="filter-button active" data-filter="all">All</button>
@@ -48,23 +46,25 @@ nav_order: 2
 </div>
 
 <script>
-  const buttons = document.querySelectorAll('.filter-button');
-  const cards = document.querySelectorAll('.card');
+  const buttons = document.querySelectorAll('.filters .filter-button');
+  const cards = document.querySelectorAll('#publications-grid .card');
 
-  buttons.forEach(button => {
-    button.addEventListener('click', () => {
-      buttons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
+  if (buttons.length && cards.length) {
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
 
-      const filter = button.getAttribute('data-filter');
+        const filter = button.getAttribute('data-filter');
 
-      cards.forEach(card => {
-        if (filter === 'all' || card.classList.contains(filter)) {
-          card.classList.remove('hidden');
-        } else {
-          card.classList.add('hidden');
-        }
+        cards.forEach(card => {
+          if (filter === 'all' || card.classList.contains(filter)) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
       });
     });
-  });
+  }
 </script>

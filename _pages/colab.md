@@ -12,8 +12,8 @@ nav_order: 6
 | Name | Affiliation | Role | Projects |
 |------|-------------|------|----------|
 | Dr. Zulklifi Noor | UMPSA | PhD Supervisor | Rare-Earth Ion Doping, Filter Cake Breaker TDDFT |
-| Assoc. Prof. Sonny Irawan | NU | MSc+PhD Supervisor | Ai + Geophysics |
-| Prof. Lei Wang | CDUT | Research Collaborator + SV | Ai + Geophysics |
+| Assoc. Prof. Sonny Irawan | NU | MSc+PhD Supervisor | AI + Geophysics |
+| Prof. Lei Wang | CDUT | Research Collaborator + SV | AI + Geophysics |
 | Dr. Masoud Davish Ganji | KCET | Research Advisor | ML/DFT/MD |
 | Dr. Michael Lubasch | Quantinuum / Oxford | Research Advisor | Quantum Kernel Regression |
 
@@ -24,7 +24,7 @@ nav_order: 6
 
 | Name | Affiliation | Role | Projects |
 |------|--------|------|----------|
-| Prof. Leonardo Goliatt | Uni Fora | Dev | Ai + Geophysics |
+| Prof. Leonardo Goliatt | Uni Fora | Dev | AI + Geophysics |
 
 ---
 
@@ -34,7 +34,7 @@ I welcome enthusiastic students, developers, and researchers interested in:
 - Quantum Photonics
 - Hydrogen modelling/ DFT + ML
 - Physics-Informed AI
-- Fractuirng (Geophysics)
+- Fracturing (Geophysics)
 - Geospatial ML for Earth Science
 
 >  Contact: iwayoden@gmail.com or DM via [LinkedIn](https://linkedin.com/in/dennis-wayo-765a38b1)

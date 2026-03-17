@@ -20,7 +20,7 @@ I am currently developing a **Quantum Computing Foundations** course on Udemy, t
 - Quantum Machine Learning for Spectral Analysis
 
 >  Release planned for Summer 2026  
->  Sign up at: My Udemy Instructor Profile
+>  Udemy profile link will be added here at launch.
 
 ---
 
@@ -32,7 +32,7 @@ Based on my research and software expertise, I offer teaching support and course
 - Quantum Computing (Intro + Advanced)
 - Photonic Quantum Circuits and Simulators
 - Quantum Machine Learning (QML)
-- Density Functional Theory (DFT)/ Ab Initio Molecular Dynamcs (AIMD)
+- Density Functional Theory (DFT) / Ab Initio Molecular Dynamics (AIMD)
 
 ##### AI & Scientific Computing
 - Deep Learning with TensorFlow / PyTorch
