@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Affiliations: PhD ChemE @UMPSA | MS CS @Georgia Tech | @NU.
+subtitle: "Affiliations: PhD ChemE @UMPSA | MS CS @Georgia Tech | @NU."
 
 profile:
   align: right
@@ -113,4 +113,3 @@ Quantum modeling of chelating agents for wellbore cleanup.
 - IBM Quantum Excellence 2024
 - Georgia Tech, UMPSA, NU Graduate Research Collaborations 
 - Contributor on Medium & Dev.to | GitHub: [DennisWayo](https://github.com/DennisWayo)
-
