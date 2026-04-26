@@ -1,0 +1,42 @@
+name: Dennisweb CI
+
+on:
+  pull_request:
+    branches:
+      - master
+      - main
+    paths:
+      - "dennisweb/**"
+      - ".github/workflows/dennisweb-ci.yml"
+  push:
+    paths:
+      - "dennisweb/**"
+      - ".github/workflows/dennisweb-ci.yml"
+  workflow_dispatch:
+
+jobs:
+  lint-and-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: dennisweb
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: dennisweb/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
