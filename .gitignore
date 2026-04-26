@@ -1,7 +1,9 @@
 /*
 !/.gitignore
 !/.github/
+/.github/*
 !/.github/workflows/
-!/.github/workflows/**
+/.github/workflows/*
+!/.github/workflows/ci.yml
 !/dennisweb/
 !/dennisweb/**
