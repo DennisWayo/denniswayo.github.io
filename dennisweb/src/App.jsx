@@ -260,7 +260,7 @@ const githubMetrics = [
       },
       {
         name: 'CUDA',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nvidia/nvidia-original.svg',
+        logo: 'https://cdn.simpleicons.org/nvidia/76B900',
       },
       {
         name: 'Bash',
@@ -470,7 +470,7 @@ const software = [
       },
       {
         name: 'CUDA',
-        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nvidia/nvidia-original.svg',
+        logo: 'https://cdn.simpleicons.org/nvidia/76B900',
       },
       {
         name: 'Bash',
@@ -1132,8 +1132,9 @@ function MentoringPage() {
         <h1>Mentoring</h1>
         <p className="lead">
           I mentored in the IBM Quantum Qiskit Advocate Mentorship Programme during
-          2025/2026. The mentorship focused on hands-on quantum engineering where
-          participants connected theory, reproducible code, and publication-ready results.
+          2025/2026. The mentorship focused on hands-on quantum machine learning, where
+          participants connected first-principles optical descriptors, hybrid
+          classical-quantum modeling, reproducible code, and publication-ready results.
         </p>
         <div className="grid two mentoring-grid">
           <article className="panel">
@@ -1212,7 +1213,7 @@ function ColabXPage() {
         <section className="colab-story" aria-label="Research story highlights">
           <h2>Story Highlights</h2>
           <p>
-            Four domains that define how I connect scientific theory, software engineering,
+            Six domains that define how I connect scientific theory, software engineering,
             and reproducible computational practice.
           </p>
           <div className="story-grid">
