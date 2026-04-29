@@ -86,14 +86,92 @@ const headerMedia = {
 }
 
 const publications = [
-  'Wayo, D.D.K., & Groppe, S. (2026). RaCS: Near-Zero-Error Classical Data Encoding on Photonic Quantum Processors via Redundancy-Assisted Coherent-State Codes. Fortschritte der Physik.',
-  'Wayo, D.D.K., Onah, C., Goliatt, L., & Groppe, S. (2026). Decoder Dependence in Surface-Code Threshold Estimation with Native Gottesman-Kitaev-Preskill Digitization and Parallelized Sampling. arXiv:2603.25757.',
-  'Wayo, D.D.K., Onah, C., Goliatt, L., & Groppe, S. (2026). Decoder Performance in Hybrid CV-Discrete Surface-Code Threshold Estimation Using LiDMaS+. arXiv:2603.06730.',
-  'Wayo, D.D.K. (2025). Simulation of Ultrafast Photonic Circuits via Nonlinear Schrodinger Dynamics and Quantum Detector Modeling. Optical and Quantum Electronics.',
-  'Wayo, D.D.K., et al. (2025). Atomistic Modeling of Rare Earth Ions in Photonic Materials. Luminescence.',
-  'Wayo, D.D.K. (2025). Ensembles of Graph and Physics-Informed Machine Learning for Scientific Modeling. Archives of Computational Methods in Engineering.',
-  'Wayo, D.D.K., et al. (2025). Q-DFTNet: Chemistry-Informed Neural Network for Molecular Dipole Prediction. Journal of Computational Chemistry.',
-  'Wayo, D.D.K. (2025). SchroSIM: Scalable Quantum Photonic Circuit Simulator. TechRxiv.',
+  {
+    key: 'racs-2026',
+    year: 2026,
+    title:
+      'RaCS: Near-Zero-Error Classical Data Encoding on Photonic Quantum Processors via Redundancy-Assisted Coherent-State Codes',
+    citation: 'Wayo, D.D.K., & Groppe, S. (2026). Fortschritte der Physik.',
+    paperUrl:
+      'https://scholar.google.com/scholar?q=RaCS%3A+Near-Zero-Error+Classical+Data+Encoding+on+Photonic+Quantum+Processors+via+Redundancy-Assisted+Coherent-State+Codes',
+    paperLabel: 'Open Paper',
+    abstract:
+      'Presents a redundancy-assisted coherent-state coding strategy for reliable classical data encoding on photonic quantum hardware with near-zero observed error under defined noise assumptions.',
+  },
+  {
+    key: 'decoder-dependence-2026',
+    year: 2026,
+    title:
+      'Decoder Dependence in Surface-Code Threshold Estimation with Native Gottesman-Kitaev-Preskill Digitization and Parallelized Sampling',
+    citation: 'Wayo, D.D.K., Onah, C., Goliatt, L., & Groppe, S. (2026). arXiv:2603.25757.',
+    paperUrl: 'https://arxiv.org/abs/2603.25757',
+    paperLabel: 'Open arXiv',
+    abstract:
+      'Analyzes how decoder choice changes threshold claims under native GKP digitization, using parallelized sampling pipelines to isolate algorithmic effects from simulation artifacts.',
+  },
+  {
+    key: 'decoder-performance-2026',
+    year: 2026,
+    title: 'Decoder Performance in Hybrid CV-Discrete Surface-Code Threshold Estimation Using LiDMaS+',
+    citation: 'Wayo, D.D.K., Onah, C., Goliatt, L., & Groppe, S. (2026). arXiv:2603.06730.',
+    paperUrl: 'https://arxiv.org/abs/2603.06730',
+    paperLabel: 'Open arXiv',
+    abstract:
+      'Benchmarks decoder behavior in hybrid continuous-variable and discrete surface-code regimes using LiDMaS+, with controlled replay and cross-decoder comparability metrics.',
+  },
+  {
+    key: 'ultrafast-photonic-2025',
+    year: 2025,
+    title:
+      'Simulation of Ultrafast Photonic Circuits via Nonlinear Schrodinger Dynamics and Quantum Detector Modeling',
+    citation: 'Wayo, D.D.K. (2025). Optical and Quantum Electronics.',
+    paperUrl: 'https://doi.org/10.1007/s11082-026-08700-y',
+    paperLabel: 'Open Journal',
+    abstract:
+      'Builds a simulation framework coupling nonlinear propagation and detector-level modeling to study ultrafast photonic-circuit behavior across realistic operating conditions.',
+  },
+  {
+    key: 'rare-earth-2025',
+    year: 2025,
+    title: 'Atomistic Modeling of Rare Earth Ions in Photonic Materials',
+    citation: 'Wayo, D.D.K., et al. (2025). Luminescence.',
+    paperUrl:
+      'https://scholar.google.com/scholar?q=Atomistic+Modeling+of+Rare+Earth+Ions+in+Photonic+Materials',
+    paperLabel: 'Open Paper',
+    abstract:
+      'Investigates atomistic structure-property relationships of rare-earth ions in photonic host materials to improve emitter design and optical response prediction.',
+  },
+  {
+    key: 'graph-pinn-2025',
+    year: 2025,
+    title: 'Ensembles of Graph and Physics-Informed Machine Learning for Scientific Modeling',
+    citation: 'Wayo, D.D.K. (2025). Archives of Computational Methods in Engineering.',
+    paperUrl:
+      'https://scholar.google.com/scholar?q=Ensembles+of+Graph+and+Physics-Informed+Machine+Learning+for+Scientific+Modeling',
+    paperLabel: 'Open Paper',
+    abstract:
+      'Combines graph-based models and physics-informed learning into ensemble workflows that improve robustness and predictive consistency in scientific computation tasks.',
+  },
+  {
+    key: 'qdftnet-2025',
+    year: 2025,
+    title: 'Q-DFTNet: Chemistry-Informed Neural Network for Molecular Dipole Prediction',
+    citation: 'Wayo, D.D.K., et al. (2025). Journal of Computational Chemistry.',
+    paperUrl: 'https://doi.org/10.1002/jcc.70206',
+    paperLabel: 'Open Journal',
+    abstract:
+      'Introduces a chemistry-informed neural architecture for molecular dipole estimation that encodes domain constraints to stabilize training and improve generalization.',
+  },
+  {
+    key: 'schrosim-2025',
+    year: 2025,
+    title: 'SchroSIM: Scalable Quantum Photonic Circuit Simulator',
+    citation: 'Wayo, D.D.K. (2025). TechRxiv.',
+    paperUrl: 'https://scholar.google.com/scholar?q=SchroSIM%3A+Scalable+Quantum+Photonic+Circuit+Simulator',
+    paperLabel: 'Open Paper',
+    abstract:
+      'Describes a scalable simulator architecture for quantum photonic circuits with modular execution paths that separate compilation, numerical backends, and hardware mapping.',
+  },
 ]
 
 const softwareShowcase = [
@@ -159,7 +237,36 @@ const githubMetrics = [
   {
     title: 'Core Languages',
     type: 'core-languages',
-    languages: ['Rust', 'C++', 'Python', 'CUDA', 'Bash'],
+    languages: [
+      {
+        name: 'Rust',
+        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg',
+      },
+      {
+        name: 'C++',
+        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg',
+      },
+      {
+        name: 'Python',
+        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+      },
+      {
+        name: 'Julia',
+        logo: 'https://cdn.simpleicons.org/julia/9558B2',
+      },
+      {
+        name: 'Swift',
+        logo: 'https://cdn.simpleicons.org/swift/F05138',
+      },
+      {
+        name: 'CUDA',
+        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nvidia/nvidia-original.svg',
+      },
+      {
+        name: 'Bash',
+        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg',
+      },
+    ],
     note: 'Core stack for simulation, benchmarking, and systems workflows.',
   },
 ]
@@ -184,14 +291,16 @@ const talks = [
 
 const blogTopics = [
   'Building robust replay streams for decoder evaluation.',
-  'Design patterns for scientific software in Python and Rust.',
+  'Design patterns for scientific software in Python, Rust, Julia, and Swift.',
   'Practical lessons from photonic simulator implementation.',
   'From numerical modeling to publishable reproducible artifacts.',
 ]
 
 const linkedInEmbedUrl =
   'https://www.linkedin.com/embed/feed/update/urn:li:share:7452702797759901697?collapsed=1'
-const linkedInProfileUrl = 'https://www.linkedin.com/in/dennis-wayo-765a38b1/'
+const linkedInFeedUrl = 'https://www.linkedin.com/feed/'
+const googleScholarProfileUrl =
+  'https://scholar.google.com/citations?hl=en&user=YCXIi1wAAAAJ&view_op=list_works&sortby=pubdate'
 const mediumProfileUrl = 'https://medium.com/@iwayoden'
 const mediumFeedApiUrl =
   'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40iwayoden'
@@ -232,6 +341,21 @@ const newsFeedPapers = [
     scholarUrl:
       'https://scholar.google.com/scholar?q=Decoder+Performance+in+Hybrid+CV-Discrete+Surface-Code+Threshold+Estimation+Using+LiDMaS%2B',
   },
+]
+
+const credlyBadgeIds = [
+  'a79c80ab-b5e7-409d-b79a-5d32b5e908c1',
+  '0178932e-0bcc-4309-90da-58d1c677a9bf',
+  'a8a08345-f5f9-429d-9cc9-38c8aa835929',
+  'af811789-c3be-4c06-a6b2-147d01d17897',
+  '83a63d4e-af36-41e6-bfcf-afc945f465d4',
+  'a1eea4ed-02db-4bad-be5d-32ba7fd26edf',
+  '4038b42c-2a1a-412f-a787-8255ea28d3a7',
+  'e5e3412d-f7b2-42cb-8a31-6cbf44dbc516',
+  'e1fd3b4b-ba18-454d-88c9-5cc5435741ed',
+  '45b79d81-26fc-4665-9262-5159b99bb241',
+  '17f9188d-ddad-4191-a8ec-f77fce78a375',
+  '4f994b1b-9cf3-4b85-a49a-b0d1f1dc10e4',
 ]
 
 const colabStoryFrames = [
@@ -352,6 +476,14 @@ const software = [
         name: 'Bash',
         logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg',
       },
+      {
+        name: 'Julia',
+        logo: 'https://cdn.simpleicons.org/julia/9558B2',
+      },
+      {
+        name: 'Swift',
+        logo: 'https://cdn.simpleicons.org/swift/F05138',
+      },
     ],
   },
   {
@@ -466,6 +598,20 @@ function Layout({ children }) {
 }
 
 function AboutPage() {
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.type = 'text/javascript'
+    script.async = true
+    script.src = 'https://cdn.credly.com/assets/utilities/embed.js'
+    document.body.appendChild(script)
+
+    return () => {
+      if (script.parentNode) {
+        script.parentNode.removeChild(script)
+      }
+    }
+  }, [])
+
   return (
     <Layout>
       <section className="page about-page">
@@ -599,8 +745,9 @@ function AboutPage() {
             <p className="feature-tag">Core System</p>
             <h2>SchroSIM</h2>
             <p>
-              Modular photonic simulation stack for NLSE evolution, hybrid operations, and
-              detector-aware modeling under reproducible execution patterns.
+              Layered photonic-circuit simulation platform that separates circuit authoring,
+              compilation, numerical execution, and hardware mapping for modular and
+              scalable workflows.
             </p>
           </article>
         </div>
@@ -633,6 +780,27 @@ function AboutPage() {
                 <li>MEEP-FDTD validation of chip-scale photonic components</li>
               </ul>
             </article>
+          </div>
+        </section>
+        <section className="credly-strip" aria-label="Credly badge highlights">
+          <h2>Badges</h2>
+          <div className="credly-marquee">
+            <div className="credly-track">
+              {[0, 1].map((duplicateIndex) => (
+                <div className="credly-badge-row" key={`credly-row-${duplicateIndex}`}>
+                  {credlyBadgeIds.map((badgeId) => (
+                    <div
+                      key={`${badgeId}-${duplicateIndex}`}
+                      className="credly-badge-embed"
+                      data-iframe-width="150"
+                      data-iframe-height="270"
+                      data-share-badge-id={badgeId}
+                      data-share-badge-host="https://www.credly.com"
+                    ></div>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       </section>
@@ -726,11 +894,11 @@ function BlogPage() {
             <div className="blog-feed-actions">
               <a
                 className="btn btn-secondary"
-                href={linkedInProfileUrl}
+                href={linkedInFeedUrl}
                 target="_blank"
                 rel="noreferrer"
               >
-                Open LinkedIn
+                Open LinkedIn Feed
               </a>
             </div>
           </article>
@@ -782,15 +950,66 @@ function BlogPage() {
 }
 
 function PublicationsPage() {
+  const publicationsByYear = publications.reduce((acc, item) => {
+    if (!acc[item.year]) {
+      acc[item.year] = []
+    }
+
+    acc[item.year].push(item)
+    return acc
+  }, {})
+
+  const publicationYears = Object.keys(publicationsByYear)
+    .map((year) => Number(year))
+    .sort((a, b) => b - a)
+
   return (
     <Layout>
       <section className="page">
         <h1>Publications</h1>
-        <ul className="publication-list">
-          {publications.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
+        <p className="lead">
+          Papers grouped by publication year, with direct journal or preprint links on
+          each entry.
+        </p>
+        <div className="publication-toolbar">
+          <a
+            className="scholar-profile-link"
+            href={googleScholarProfileUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src="https://cdn.simpleicons.org/googlescholar/111111"
+              alt=""
+              aria-hidden="true"
+            />
+            <span>Google Scholar</span>
+          </a>
+        </div>
+        {publicationYears.map((year) => (
+          <section className="publication-year-group" key={year}>
+            <h2 className="publication-year-title">{year}</h2>
+            <ul className="publication-list">
+              {publicationsByYear[year].map((item) => (
+                <li className="publication-item" key={item.key}>
+                  <div className="publication-copy">
+                    <h3>{item.title}</h3>
+                    <p className="publication-citation">{item.citation}</p>
+                    <p className="publication-abstract">{item.abstract}</p>
+                    <a
+                      className="publication-link"
+                      href={item.paperUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {item.paperLabel}
+                    </a>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
       </section>
     </Layout>
   )
@@ -864,7 +1083,10 @@ function ProjectsPage() {
                     <h3>{item.title}</h3>
                     <ul className="metric-language-list">
                       {item.languages.map((language) => (
-                        <li key={language}>{language}</li>
+                        <li key={language.name}>
+                          <img src={language.logo} alt={`${language.name} logo`} title={language.name} />
+                          <span className="metric-language-name">{language.name}</span>
+                        </li>
                       ))}
                     </ul>
                     <p>{item.note}</p>
@@ -1013,7 +1235,9 @@ function ColabXPage() {
             <ul className="clean-list">
               <li>Photonic quantum simulation and hybrid CV-discrete workflows.</li>
               <li>Hardware-aware decoder benchmarking and replay-driven validation.</li>
-              <li>Scientific software architecture in Python, Rust, and C++.</li>
+              <li>
+                Scientific software architecture in Python, Rust, C++, Julia, and Swift.
+              </li>
               <li>Large-scale reproducible HPC research pipelines.</li>
             </ul>
           </article>
@@ -1070,8 +1294,8 @@ function WayoAiPage() {
           wayo.ai is the execution layer where quantum modeling, error-correction logic,
           and application-facing computation are converted into one deterministic workflow.
         </p>
-        <section className="panel wayo-flow" aria-label="Vertical workflow pseudocode">
-          <h2>Workflow Pseudocode</h2>
+        <section className="panel wayo-flow" aria-label="Vertical workflow steps">
+          <h2>Workflow Steps</h2>
           <ol className="wayo-code-stream">
             {wayoWorkflowSteps.map((step) => (
               <li
