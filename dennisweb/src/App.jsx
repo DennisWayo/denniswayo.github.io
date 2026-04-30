@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { NavLink, Navigate, Route, Routes } from 'react-router-dom'
+import { useEffect, useRef, useState } from 'react'
+import { NavLink, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import './App.css'
 
 const tabs = [
@@ -278,6 +278,36 @@ const talks = [
       'A systems view of how decoder choice and replay methodology change threshold claims and practical interpretation.',
   },
   {
+    title: 'Unified Hardware-to-Decoder Pipelines for QEC Evaluation',
+    summary:
+      'How hardware syndrome streams are normalized and replayed across decoder backends to produce auditable, cross-platform threshold comparisons.',
+  },
+  {
+    title: 'Hybrid CV-Discrete Threshold Studies with LiDMaS+',
+    summary:
+      'Design and interpretation of hybrid continuous-variable and discrete surface-code experiments, with focus on decoder sensitivity under realistic noise.',
+  },
+  {
+    title: 'Native GKP Digitization and Decoder Performance Tradeoffs',
+    summary:
+      'An analysis of how digitization strategy and decoder pairing shift logical-error behavior, crossing points, and practical fault-tolerance conclusions.',
+  },
+  {
+    title: 'Decoder Reliability Metrics Beyond Logical Error Rate',
+    summary:
+      'A practical framework for syndrome satisfaction, residual-nonzero diagnostics, and replay consistency as complementary QEC decoder quality indicators.',
+  },
+  {
+    title: 'Rare-Earth Photonic Materials from DFT to Optical Signatures',
+    summary:
+      'From atomistic modeling to excited-state descriptors: how DFT and LR-TDDFT workflows expose material-level optical fingerprints for photonic design.',
+  },
+  {
+    title: 'Physics-Informed Quantum ML for Photonic Material Classification',
+    summary:
+      'Using first-principles optical descriptors with hybrid classical-quantum models to classify Er-doped photonic systems under NISQ-era constraints.',
+  },
+  {
     title: 'Photonic Simulation Infrastructure for Research Teams',
     summary:
       'An engineering-focused walkthrough of simulation kernels, noise models, and compiler-level abstractions for photonic workflows.',
@@ -405,50 +435,53 @@ const colabStoryFrames = [
 
 const wayoWorkflowSteps = [
   {
-    code: 'develop_quantum_circuit()',
-    detail: 'Design the quantum circuit and select the computational objective.',
+    code: 'define_objective()',
+    detail: 'Define target application, success metrics, and acceptable logical error thresholds.',
+  },
+  {
+    code: 'choose_encoding_and_code_family()',
+    detail: 'Select photonic encoding and QEC code family based on hardware and noise assumptions.',
+  },
+  {
+    code: 'realize_physical_qubits_or_backend()',
+    detail: 'Instantiate hardware backend constraints, connectivity, and measurement model.',
   },
   {
     code: 'measure_noise()',
-    detail: 'Characterize device-level noise and map dominant error channels.',
+    detail: 'Characterize dominant physical error channels from device or simulator telemetry.',
   },
   {
-    code: 'encode_gkp_to_continuous_noise()',
-    detail: 'Embed GKP structure into the continuous-noise model for resilience.',
+    code: 'fit_noise_model_with_GKP_digitization()',
+    detail: 'Fit calibrated noise parameters and integrate GKP/continuous-variable digitization behavior.',
   },
   {
-    code: 'realize_physical_qubits()',
-    detail: 'Instantiate physical qubits and hardware-relevant constraints.',
+    code: 'compile_logical_circuit()',
+    detail: 'Compile the logical workload into backend-compatible operations and schedules.',
   },
   {
-    code: 'encode_surface_code()',
-    detail: 'Apply surface-code structure to organize fault-tolerant operations.',
+    code: 'generate_syndromes()',
+    detail: 'Run fault-injected trials and collect syndrome streams under calibrated noise.',
   },
   {
-    code: 'realize_error_syndromes()',
-    detail: 'Extract and track syndrome signatures for correction logic.',
+    code: 'run_decoders()',
+    detail: 'Evaluate candidate decoders over identical syndrome sets using replayable interfaces.',
   },
   {
-    code: 'evaluate_overheads()',
-    detail: 'Compute overhead metrics and compare logical vs physical error behavior.',
+    code: 'estimate_LER_vs_PER_across_distances()',
+    detail: 'Estimate scaling of logical vs physical error rates across code distances and noise sweeps.',
   },
   {
-    code: 'if (LER > PER) apply_decoding_policies()',
-    detail: 'Trigger decoder-policy updates when logical errors exceed physical rates.',
+    code: 'if (LER >= target) tune_decoder_and_code_distance()',
+    detail: 'Adjust decoder policies, distances, and noise-mitigation settings when reliability targets are not met.',
     branch: true,
   },
   {
-    code: 'check_stable_logical_qubit()',
-    detail: 'Validate stability criteria for a usable logical qubit.',
+    code: 'validate_logical_stability()',
+    detail: 'Confirm stable logical-qubit behavior under repeated trials and confidence bounds.',
   },
   {
-    code: 'if (stable) build_logical_circuit()',
-    detail: 'Construct the logical-level circuit only after stability is confirmed.',
-    branch: true,
-  },
-  {
-    code: 'solve_real_life_problems([hydrogen, hydraulic_fracturing, remote_sensing])',
-    detail: 'Deploy validated logical workflows to scientific and engineering applications.',
+    code: 'deploy_to_applications([hydrogen, hydraulic_fracturing, remote_sensing])',
+    detail: 'Apply validated logical workflows to domain pipelines and decision-oriented simulations.',
   },
 ]
 
@@ -535,6 +568,29 @@ const software = [
 ]
 
 function Layout({ children }) {
+  const location = useLocation()
+  const tabsRef = useRef(null)
+
+  useEffect(() => {
+    const tabsElement = tabsRef.current
+
+    if (!tabsElement) {
+      return
+    }
+
+    const activeTab = tabsElement.querySelector('.tab.is-active')
+
+    if (!(activeTab instanceof HTMLElement)) {
+      return
+    }
+
+    activeTab.scrollIntoView({
+      behavior: 'auto',
+      block: 'nearest',
+      inline: 'nearest',
+    })
+  }, [location.pathname])
+
   return (
     <div className="page-grid">
       <div className="shell">
@@ -550,7 +606,7 @@ function Layout({ children }) {
           />
           <div className="site-gif-overlay" aria-hidden="true"></div>
           <header className="topbar">
-            <nav className="tabs" aria-label="Primary">
+            <nav ref={tabsRef} className="tabs" aria-label="Primary">
               {tabs.map((tab) => (
                 <NavLink
                   key={tab.path}
@@ -775,7 +831,7 @@ function AboutPage() {
             <article className="panel">
               <h3>Computational Photonics and Materials Modeling</h3>
               <ul className="focus-list">
-                <li>TDDFT/LR-TDDFT for quantum emitters and rare-earth ions</li>
+                <li>DFT/LR-TDDFT for quantum emitters and rare-earth ions</li>
                 <li>NLSE propagation, soliton/dispersion modeling, detector physics</li>
                 <li>MEEP-FDTD validation of chip-scale photonic components</li>
               </ul>
