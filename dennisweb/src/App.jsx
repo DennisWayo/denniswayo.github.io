@@ -688,7 +688,7 @@ function AboutPage() {
               the software architecture around reproducibility, and then optimize for scale.
             </p>
             <p>
-              I hold a PhD in Chemical Engineering from UMPSA and I am currently pursuing
+              I hold a PhD in Chemical Engineering, and I am currently pursuing
               the Master of Science in Computer Science (OMSCS) at the Georgia Institute of
               Technology.
             </p>
