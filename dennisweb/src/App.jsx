@@ -1126,7 +1126,7 @@ function ProjectsPage() {
             ))}
           </div>
         </section>
-        <section className="metrics-section" aria-label="GitHub metrics">
+        <section className="metrics-section" aria-label="GitHub card">
           <h2 className="projects-subtitle">GitHub Metrics</h2>
           <div className="metrics-grid">
             {githubMetrics.map((item) => (
