@@ -87,6 +87,17 @@ const headerMedia = {
 
 const publications = [
   {
+    key: 'unified-hardware-decoder-2026',
+    year: 2026,
+    title:
+      'A Unified Hardware-to-Decoder Architecture for Hybrid Continuous-Variable and Discrete-Variable Quantum Error Correction in LiDMaS+',
+    citation: 'Wayo, D.D.K., Onah, C., Goliatt, L., & Groppe, S. (2026). arXiv:2604.15389.',
+    paperUrl: 'https://arxiv.org/abs/2604.15389',
+    paperLabel: 'Open arXiv',
+    abstract:
+      'Introduces a unified hardware-to-decoder workflow for hybrid continuous-variable and discrete-variable quantum error correction in LiDMaS+, enabling reproducible cross-decoder evaluation from syndrome generation through logical-error analysis.',
+  },
+  {
     key: 'racs-2026',
     year: 2026,
     title:
@@ -228,8 +239,7 @@ const softwareShowcase = [
 const githubMetrics = [
   {
     title: 'GitHub Profile Card',
-    image:
-      'https://github-readme-stats.vercel.app/api?username=DennisWayo&show_icons=true&rank_icon=github&include_all_commits=true&hide_border=true&title_color=111111&text_color=2f2f2f&icon_color=111111&bg_color=ffffff',
+    image: '/github-metrics-1.png',
     alt: 'GitHub profile statistics card for Dennis Wayo',
     href: 'https://github.com/DennisWayo',
     fit: 'contain',
