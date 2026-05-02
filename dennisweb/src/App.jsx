@@ -239,7 +239,8 @@ const softwareShowcase = [
 const githubMetrics = [
   {
     title: 'GitHub Profile Card',
-    image: '/github-metrics-1.png',
+    image:
+      'https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=DennisWayo&theme=github',
     alt: 'GitHub profile statistics card for Dennis Wayo',
     href: 'https://github.com/DennisWayo',
     fit: 'contain',
