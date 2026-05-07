@@ -847,6 +847,14 @@ function AboutPage() {
                 <li>MEEP-FDTD validation of chip-scale photonic components</li>
               </ul>
             </article>
+            <article className="panel">
+              <h3>Real World Applications</h3>
+              <ul className="focus-list">
+                <li>Remote sensing (LiDAR and Sentinel)</li>
+                <li>Hydrogen production and carbon reduction</li>
+                <li>Hydraulic fracturing</li>
+              </ul>
+            </article>
           </div>
         </section>
         <section className="credly-strip" aria-label="Credly badge highlights">

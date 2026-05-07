@@ -1133,10 +1133,6 @@
   display: block;
 }
 
-.about-focus-grid .panel:last-child {
-  grid-column: 1 / -1;
-}
-
 .footer {
   margin-top: 38px;
   border-top: 1px solid var(--line);
@@ -1321,10 +1317,6 @@
   .publication-citation,
   .publication-abstract {
     font-size: 0.9rem;
-  }
-
-  .about-focus-grid .panel:last-child {
-    grid-column: auto;
   }
 
   .footer-icon {
