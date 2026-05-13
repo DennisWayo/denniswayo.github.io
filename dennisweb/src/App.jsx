@@ -744,7 +744,8 @@ function AboutPage() {
             <figure className="portrait-card">
               <img src="/dennis_image.jpeg" alt="Dennis Wayo" />
               <figcaption className="portrait-meta">
-                <p className="portrait-title">Quantum Architecture</p>
+                <p className="portrait-name">Dennis Wayo</p>
+                <p className="portrait-title">Quantum Systems Architect</p>
                 <p>53 Kabanbay Batyr Ave Astana, Kazakhstan, 010000</p>
               </figcaption>
             </figure>

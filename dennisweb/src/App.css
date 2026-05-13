@@ -238,9 +238,25 @@
   line-height: 1.5;
 }
 
+.portrait-meta .portrait-name {
+  color: var(--primary);
+  font-size: clamp(1.7rem, 5.8vw, 2.45rem);
+  font-weight: 800;
+  line-height: 1.08;
+  margin-bottom: 4px;
+}
+
 .portrait-meta .portrait-title {
   color: var(--primary);
   font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+
+@media (min-width: 1025px) {
+  .portrait-meta .portrait-name {
+    display: none;
+  }
 }
 
 .cta-row {
@@ -1290,6 +1306,11 @@
   .about-page .news-feed-panel {
     order: 3;
     margin-top: 14px;
+  }
+
+  .about-page .hero-grid > article > .eyebrow,
+  .about-page .hero-grid > article > h1 {
+    display: none;
   }
 
   .linkedin-feed iframe {
