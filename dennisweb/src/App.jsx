@@ -384,20 +384,113 @@ const newsFeedPapers = [
   },
 ]
 
-const credlyBadgeIds = [
-  'a79c80ab-b5e7-409d-b79a-5d32b5e908c1',
-  '0178932e-0bcc-4309-90da-58d1c677a9bf',
-  'a8a08345-f5f9-429d-9cc9-38c8aa835929',
-  'af811789-c3be-4c06-a6b2-147d01d17897',
-  '83a63d4e-af36-41e6-bfcf-afc945f465d4',
-  'a1eea4ed-02db-4bad-be5d-32ba7fd26edf',
-  '4038b42c-2a1a-412f-a787-8255ea28d3a7',
-  'e5e3412d-f7b2-42cb-8a31-6cbf44dbc516',
-  'e1fd3b4b-ba18-454d-88c9-5cc5435741ed',
-  '45b79d81-26fc-4665-9262-5159b99bb241',
-  '17f9188d-ddad-4191-a8ec-f77fce78a375',
-  '4f994b1b-9cf3-4b85-a49a-b0d1f1dc10e4',
+const badgeGroups = [
+  {
+    key: 'pennylane-wiser',
+    label: 'Pennylane & WISER',
+    type: 'links',
+    items: [
+      {
+        title: 'WISER/Womanium 2025 Certificate',
+        subtitle: 'Module 2: Quantum Algorithms (Trotterization)',
+        href: 'https://pennylane.ai/profile/Dela/certificate/pennylane-certificate-womanium-wiser-trotterization-2025',
+        image: '/badges/wiser-module-2-certificate.png',
+        imageAlt: 'WISER and Womanium 2025 Module 2 certificate',
+      },
+      {
+        title: 'WISER/Womanium 2025 Certificate',
+        subtitle: 'Module 5: Quantum Algorithms for Nonlinear Differential Equations',
+        href: 'https://pennylane.ai/profile/Dela/certificate/pennylane-certificate-womanium-wiser-trotterization-2025',
+        image: '/badges/wiser-module-5-certificate.png',
+        imageAlt: 'WISER and Womanium 2025 Module 5 certificate',
+      },
+      {
+        title: 'PennyLane Certificate',
+        subtitle: 'PennyLane Profile',
+        href: 'https://pennylane.ai/profile/Dela/certificate/pennylane-certificate-womanium-wiser-trotterization-2025',
+        image: '/badges/pennylane-certificate.svg',
+        imageAlt: 'PennyLane certificate artwork',
+      },
+      {
+        title: 'PennyLane Badge: A Beginning',
+        subtitle: 'PennyLane Profile',
+        href: 'https://pennylane.ai/profile/Dela/badge/a-beginning',
+        image: '/badges/pennylane-a-beginning.png',
+        imageAlt: 'PennyLane A Beginning badge',
+      },
+      {
+        title: 'PennyLane Badge: Long Winding',
+        subtitle: 'PennyLane Profile',
+        href: 'https://pennylane.ai/profile/Dela/badge/long-winding',
+        image: '/badges/pennylane-long-winding.png',
+        imageAlt: 'PennyLane Long Winding badge',
+      },
+      {
+        title: 'PennyLane Badge: Getting Better',
+        subtitle: 'PennyLane Profile',
+        href: 'https://pennylane.ai/profile/Dela/badge/getting-better',
+        image: '/badges/pennylane-getting-better.png',
+        imageAlt: 'PennyLane Getting Better badge',
+      },
+      {
+        title: 'PennyLane Badge: Intro to Resource Estimation',
+        subtitle: 'PennyLane Profile',
+        href: 'https://pennylane.ai/profile/Dela/badge/intro-to-resource-estimation',
+        image: '/badges/pennylane-intro-resource-estimation.png',
+        imageAlt: 'PennyLane Intro to Resource Estimation badge',
+      },
+      {
+        title: 'PennyLane Badge: Seen a Phase',
+        subtitle: 'PennyLane Profile',
+        href: 'https://pennylane.ai/profile/Dela/badge/seen-a-phase',
+        image: '/badges/pennylane-seen-a-phase.png',
+        imageAlt: 'PennyLane Seen a Phase badge',
+      },
+    ],
+  },
+  {
+    key: 'ibm',
+    label: 'IBM',
+    type: 'credly',
+    items: [
+      'a79c80ab-b5e7-409d-b79a-5d32b5e908c1',
+      '0178932e-0bcc-4309-90da-58d1c677a9bf',
+      'a8a08345-f5f9-429d-9cc9-38c8aa835929',
+      'af811789-c3be-4c06-a6b2-147d01d17897',
+      '83a63d4e-af36-41e6-bfcf-afc945f465d4',
+      'a1eea4ed-02db-4bad-be5d-32ba7fd26edf',
+      '4038b42c-2a1a-412f-a787-8255ea28d3a7',
+      'e5e3412d-f7b2-42cb-8a31-6cbf44dbc516',
+      'e1fd3b4b-ba18-454d-88c9-5cc5435741ed',
+    ],
+  },
+  {
+    key: 'google',
+    label: 'Google',
+    type: 'credly',
+    items: [
+      '45b79d81-26fc-4665-9262-5159b99bb241',
+      '17f9188d-ddad-4191-a8ec-f77fce78a375',
+      '4f994b1b-9cf3-4b85-a49a-b0d1f1dc10e4',
+    ],
+  },
 ]
+
+function buildTickerItems(items, minItems) {
+  if (!Array.isArray(items) || items.length === 0) {
+    return []
+  }
+
+  const expanded = [...items]
+  let cursor = 0
+
+  while (expanded.length < minItems) {
+    expanded.push(items[cursor % items.length])
+    cursor += 1
+  }
+
+  return expanded
+}
 
 const colabStoryFrames = [
   {
@@ -684,7 +777,6 @@ function AboutPage() {
       <section className="page about-page">
         <div className="hero-grid">
           <article>
-            <p className="eyebrow">Quantum Architect</p>
             <h1>Dennis Wayo</h1>
             <p className="lead">
               I build scientific software where quantum theory, numerical modeling, and
@@ -699,9 +791,12 @@ function AboutPage() {
               the software architecture around reproducibility, and then optimize for scale.
             </p>
             <p>
-              I hold a PhD in Chemical Engineering, and I am currently pursuing
-              the Master of Science in Computer Science (OMSCS) at the Georgia Institute of
-              Technology.
+              I hold a PhD in Chemical Engineering and am currently pursuing an MS in
+              Computer Science (Computing Systems) at the Georgia Institute of Technology.
+              My focus areas are directly aligned with quantum systems architecture:
+              graduate algorithms, software architecture, compilers, GPU hardware/software,
+              advanced operating systems, and high-performance computer architecture, with
+              parallel emphasis on quantum computing and hardware workflows.
             </p>
             <p>
               I am the creator of <strong>LiDMaS+</strong> and <strong>SchroSIM</strong>,
@@ -860,23 +955,74 @@ function AboutPage() {
         </section>
         <section className="credly-strip" aria-label="Credly badge highlights">
           <h2>Badges</h2>
-          <div className="credly-marquee">
-            <div className="credly-track">
-              {[0, 1].map((duplicateIndex) => (
-                <div className="credly-badge-row" key={`credly-row-${duplicateIndex}`}>
-                  {credlyBadgeIds.map((badgeId) => (
-                    <div
-                      key={`${badgeId}-${duplicateIndex}`}
-                      className="credly-badge-embed"
-                      data-iframe-width="150"
-                      data-iframe-height="270"
-                      data-share-badge-id={badgeId}
-                      data-share-badge-host="https://www.credly.com"
-                    ></div>
-                  ))}
-                </div>
-              ))}
-            </div>
+          <div className="badge-group-stack">
+            {badgeGroups.map((group) => {
+              const tickerItems = buildTickerItems(
+                group.items,
+                group.type === 'credly' ? 8 : 6,
+              )
+
+              return (
+                <article className="badge-group" key={group.key}>
+                  <h3>{group.label}</h3>
+                  <div className="credly-marquee">
+                    <div className="credly-track">
+                      {[0, 1].map((duplicateIndex) =>
+                        group.type === 'credly' ? (
+                          <div
+                            className="credly-badge-row"
+                            key={`${group.key}-credly-row-${duplicateIndex}`}
+                          >
+                            {tickerItems.map((badgeId, itemIndex) => (
+                              <div
+                                key={`${badgeId}-${itemIndex}-${duplicateIndex}`}
+                                className="credly-badge-embed"
+                                data-iframe-width="150"
+                                data-iframe-height="270"
+                                data-share-badge-id={badgeId}
+                                data-share-badge-host="https://www.credly.com"
+                              ></div>
+                            ))}
+                          </div>
+                        ) : (
+                          <div
+                            className="pennylane-badge-row"
+                            key={`${group.key}-link-row-${duplicateIndex}`}
+                          >
+                            {tickerItems.map((item, itemIndex) => (
+                              <a
+                                key={`${item.href}-${item.title}-${itemIndex}-${duplicateIndex}`}
+                                className="pennylane-badge-card"
+                                href={item.href}
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                {item.image ? (
+                                  <figure className="pennylane-badge-media">
+                                    <img
+                                      src={item.image}
+                                      alt={item.imageAlt || item.title}
+                                      loading="lazy"
+                                    />
+                                  </figure>
+                                ) : null}
+                                <div className="pennylane-badge-copy">
+                                  <span className="pennylane-badge-label">PennyLane</span>
+                                  <span className="pennylane-badge-title">{item.title}</span>
+                                  <span className="pennylane-badge-subtitle">
+                                    {item.subtitle}
+                                  </span>
+                                </div>
+                              </a>
+                            ))}
+                          </div>
+                        ),
+                      )}
+                    </div>
+                  </div>
+                </article>
+              )
+            })}
           </div>
         </section>
       </section>
