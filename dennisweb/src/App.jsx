@@ -2,6 +2,22 @@ import { useEffect, useRef, useState } from 'react'
 import { NavLink, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import './App.css'
 
+const githubUsername = 'DennisWayo'
+const githubProfileUrl = `https://github.com/${githubUsername}`
+const githubContributionChartUrl = `https://ghchart.rshah.org/${githubUsername}`
+const visitCounterApiBaseUrl = 'https://countapi.mileshilliard.com/api/v1'
+const visitCounterKey = 'denniswayo_github_io_visits'
+const visitCounterSessionKey = 'denniswayo_github_io_visit_counted_v1'
+let visitCountedInMemory = false
+const parsedBuildDate = new Date(import.meta.env.VITE_BUILD_DATE || '')
+const resolvedBuildDate = Number.isNaN(parsedBuildDate.getTime()) ? new Date() : parsedBuildDate
+const lastUpdatedDateLabel = new Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  timeZone: 'UTC',
+}).format(resolvedBuildDate)
+
 const tabs = [
   { label: 'about', path: '/about' },
   { label: 'projects', path: '/projects' },
@@ -54,7 +70,7 @@ const footerContacts = [
   },
   {
     label: 'GitHub',
-    href: 'https://github.com/DennisWayo',
+    href: githubProfileUrl,
     icon: 'https://cdn.simpleicons.org/github/FFFFFF',
     external: true,
   },
@@ -238,14 +254,6 @@ const softwareShowcase = [
 
 const githubMetrics = [
   {
-    title: 'GitHub Profile Card',
-    image:
-      'https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=DennisWayo&theme=github',
-    alt: 'GitHub profile statistics card for Dennis Wayo',
-    href: 'https://github.com/DennisWayo',
-    fit: 'contain',
-  },
-  {
     title: 'Core Languages',
     type: 'core-languages',
     languages: [
@@ -387,7 +395,7 @@ const newsFeedPapers = [
 const badgeGroups = [
   {
     key: 'pennylane-wiser',
-    label: 'Pennylane & WISER',
+    label: 'PennyLane & WISER',
     type: 'links',
     items: [
       {
@@ -446,11 +454,18 @@ const badgeGroups = [
         image: '/badges/pennylane-seen-a-phase.png',
         imageAlt: 'PennyLane Seen a Phase badge',
       },
+      {
+        title: 'PennyLane Badge: In My Eyes',
+        subtitle: 'PennyLane Profile',
+        href: 'https://pennylane.ai/profile/Dela/badge/in-my-eyes',
+        image: '/badges/pennylane-in-my-eyes.png',
+        imageAlt: 'PennyLane In My Eyes badge',
+      },
     ],
   },
   {
     key: 'ibm',
-    label: 'IBM',
+    label: 'IBM Quantum',
     type: 'credly',
     items: [
       'a79c80ab-b5e7-409d-b79a-5d32b5e908c1',
@@ -674,6 +689,7 @@ const software = [
 function Layout({ children }) {
   const location = useLocation()
   const tabsRef = useRef(null)
+  const [visitCount, setVisitCount] = useState(null)
 
   useEffect(() => {
     const tabsElement = tabsRef.current
@@ -694,6 +710,63 @@ function Layout({ children }) {
       inline: 'nearest',
     })
   }, [location.pathname])
+
+  useEffect(() => {
+    let cancelled = false
+
+    async function loadVisitCount() {
+      let hasCountedInSession = visitCountedInMemory
+
+      try {
+        hasCountedInSession =
+          hasCountedInSession || sessionStorage.getItem(visitCounterSessionKey) === '1'
+      } catch {
+        // Ignore sessionStorage read errors in restricted browsers.
+      }
+
+      const endpoint = hasCountedInSession ? 'get' : 'hit'
+      const counterUrl = `${visitCounterApiBaseUrl}/${endpoint}/${visitCounterKey}`
+
+      try {
+        const response = await fetch(counterUrl)
+
+        if (!response.ok) {
+          throw new Error(`Visit counter request failed: ${response.status}`)
+        }
+
+        const payload = await response.json()
+        const parsedValue = Number(payload?.value)
+
+        if (cancelled || Number.isNaN(parsedValue)) {
+          return
+        }
+
+        setVisitCount(parsedValue)
+
+        if (!hasCountedInSession) {
+          visitCountedInMemory = true
+
+          try {
+            sessionStorage.setItem(visitCounterSessionKey, '1')
+          } catch {
+            // Ignore sessionStorage write errors in restricted browsers.
+          }
+        }
+      } catch {
+        if (!cancelled) {
+          setVisitCount(null)
+        }
+      }
+    }
+
+    loadVisitCount()
+
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
+  const visitCountDisplay = typeof visitCount === 'number' ? visitCount.toLocaleString('en-US') : '--'
 
   return (
     <div className="page-grid">
@@ -747,8 +820,15 @@ function Layout({ children }) {
           </p>
           <div className="footer-bar">
             <p>
-              (c) Copyright 2026 Dennis Wayo. Hosted by GitHub Pages. Last updated:
-              April 26, 2026.
+              (c) Copyright {new Date().getFullYear()} Dennis Wayo. Hosted by GitHub
+              Pages. Last updated: {lastUpdatedDateLabel}.{' '}
+              <span className="footer-visit-counter" aria-label={`Visit count ${visitCountDisplay}`}>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+                <span>{visitCountDisplay}</span>
+              </span>
             </p>
           </div>
         </footer>
@@ -785,18 +865,19 @@ function AboutPage() {
               enough for repeatable experimentation.
             </p>
             <p>
-              My technical trajectory runs from mechanical engineering to petroleum
-              engineering and now into advanced computer science and quantum simulation.
-              That path shaped my engineering style: start from physical constraints, design
-              the software architecture around reproducibility, and then optimize for scale.
+              My technical trajectory spans mechanical, petroleum, and chemical engineering,
+              and now extends into advanced computer science and quantum simulation. That
+              path shaped my engineering style: begin from physical constraints, design
+              software architectures for reproducibility, and then optimize for scale.
             </p>
             <p>
-              I hold a PhD in Chemical Engineering and am currently pursuing an MS in
+              I hold a PhD in Chemical Engineering and am currently pursuing an extended PhD
+              in Computer Science at TU Bergakademie Freiberg (TUBAF), alongside an MS in
               Computer Science (Computing Systems) at the Georgia Institute of Technology.
-              My focus areas are directly aligned with quantum systems architecture:
-              graduate algorithms, software architecture, compilers, GPU hardware/software,
-              advanced operating systems, and high-performance computer architecture, with
-              parallel emphasis on quantum computing and hardware workflows.
+              My specialization includes graduate algorithms, quantum computing and hardware,
+              machine learning, natural language processing, high-performance computing,
+              high-performance computing architecture, software architecture and design,
+              embedded-systems optimization, and advanced operating systems.
             </p>
             <p>
               I am the creator of <strong>LiDMaS+</strong> and <strong>SchroSIM</strong>,
@@ -1295,6 +1376,27 @@ function ProjectsPage() {
         <section className="metrics-section" aria-label="GitHub card">
           <h2 className="projects-subtitle">GitHub Metrics</h2>
           <div className="metrics-grid">
+            <article className="metric-card is-featured">
+              <a
+                className="metric-link metric-profile-link"
+                href={githubProfileUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open Dennis Wayo GitHub contributions"
+              >
+                <div className="metric-core metric-contrib-head">
+                  <h3>Contribution Activity</h3>
+                </div>
+                <figure className="metric-media metric-contrib-media">
+                  <img
+                    className="github-contrib-image"
+                    src={githubContributionChartUrl}
+                    alt={`${githubUsername} contribution activity chart`}
+                    loading="lazy"
+                  />
+                </figure>
+              </a>
+            </article>
             {githubMetrics.map((item) => (
               <article
                 className={`metric-card ${item.featured ? 'is-featured' : ''}`}
@@ -1306,29 +1408,17 @@ function ProjectsPage() {
                     <ul className="metric-language-list">
                       {item.languages.map((language) => (
                         <li key={language.name}>
-                          <img src={language.logo} alt={`${language.name} logo`} title={language.name} />
+                          <img
+                            src={language.logo}
+                            alt={`${language.name} logo`}
+                            title={language.name}
+                          />
                           <span className="metric-language-name">{language.name}</span>
                         </li>
                       ))}
                     </ul>
                     <p>{item.note}</p>
                   </div>
-                ) : item.href ? (
-                  <a
-                    className="metric-link"
-                    href={item.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={item.title}
-                  >
-                    <figure className="metric-media">
-                      <img
-                        className={`metric-image ${item.fit === 'contain' ? 'is-contain' : ''}`}
-                        src={item.image}
-                        alt={item.alt}
-                      />
-                    </figure>
-                  </a>
                 ) : (
                   <figure className="metric-media">
                     <img
