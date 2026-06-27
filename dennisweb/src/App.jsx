@@ -18,6 +18,24 @@ const lastUpdatedDateLabel = new Intl.DateTimeFormat('en-US', {
   timeZone: 'UTC',
 }).format(resolvedBuildDate)
 
+function getInitialTheme() {
+  if (typeof window === 'undefined') {
+    return 'light'
+  }
+
+  try {
+    const savedTheme = window.localStorage.getItem('site-theme')
+
+    if (savedTheme === 'dark' || savedTheme === 'light') {
+      return savedTheme
+    }
+  } catch {
+    // Fall back to the browser preference when localStorage is unavailable.
+  }
+
+  return window.matchMedia?.('(prefers-color-scheme: dark)')?.matches ? 'dark' : 'light'
+}
+
 const tabs = [
   { label: 'about', path: '/about' },
   { label: 'projects', path: '/projects' },
@@ -96,12 +114,19 @@ const footerContacts = [
   },
 ]
 
-const headerMedia = {
-  video: '/pinterest-header.mp4',
-  poster: '/pinterest-header.jpg',
-}
-
 const publications = [
+  {
+    key: 'optical-descriptors-2026',
+    year: 2026,
+    title:
+      'First-Principles Optical Descriptors and Hybrid Classical-Quantum Classification of Er-Doped CaF2',
+    citation:
+      'Alba Bonilla, D. A., Yurtseven, K., Sharma, K., Chandrasekharan, R., Khizar, M., Alipour, A., & Wayo, D. D. K. (2026). Advanced Theory and Simulations. Accepted 15 May 2026.',
+    paperUrl: 'https://www.advtheorysimul.com',
+    paperLabel: 'Open Journal',
+    abstract:
+      'Presents a first-principles optical-descriptor workflow for classifying pristine and Er-doped CaF2, combining DFT/LR-TDDFT features with classical, quantum, and hybrid learning models.',
+  },
   {
     key: 'unified-hardware-decoder-2026',
     year: 2026,
@@ -252,6 +277,99 @@ const softwareShowcase = [
   },
 ]
 
+const openSourceContributions = [
+  {
+    project: 'Qibolab',
+    icon: 'https://github.com/qiboteam.png?size=96',
+    iconText: 'Qi',
+    iconTone: 'qibo',
+    scope: 'Dynamiqs simulation engine',
+    summary:
+      'Added a Dynamiqs simulation engine for emulator and hardware-control development workflows, including dependency integration and focused emulator tests.',
+    status: 'Merged',
+    links: [{ label: 'PR #1479', href: 'https://github.com/qiboteam/qibolab/pull/1479' }],
+  },
+  {
+    project: 'Qibolab',
+    icon: 'https://github.com/qiboteam.png?size=96',
+    iconText: 'Qi',
+    iconTone: 'qibo',
+    scope: 'Emulator evolution and result handling',
+    summary:
+      'Fixed emulator evolution and result-handling paths after storage/GPU changes, including QuTiP/Dynamiqs compatibility and cyclic probability marginalization validated with Qibocal Rabi smoke runs.',
+    status: 'Merged',
+    links: [
+      { label: 'PR #1497', href: 'https://github.com/qiboteam/qibolab/pull/1497' },
+      { label: 'PR #1505', href: 'https://github.com/qiboteam/qibolab/pull/1505' },
+    ],
+  },
+  {
+    project: 'Qibocal',
+    icon: 'https://github.com/qiboteam.png?size=96',
+    iconText: 'Qc',
+    iconTone: 'qibo',
+    scope: 'Example-platform drive configuration',
+    summary:
+      'Updated emulator example-platform drive configuration for current Qibolab schemas and validated Qibocal Rabi smoke runs on qubit and qutrit platforms.',
+    status: 'Merged',
+    links: [{ label: 'PR #1551', href: 'https://github.com/qiboteam/qibocal/pull/1551' }],
+  },
+  {
+    project: 'Mitiq/Qibo',
+    icon: 'https://github.com/unitaryfoundation.png?size=96',
+    iconText: 'MQ',
+    iconTone: 'mitiq',
+    scope: 'Error-mitigation tutorial',
+    summary:
+      'Developed a Qibo tutorial combining repetition-code syndrome checks, post-selection/correction, noise sweeps, and zero-noise extrapolation for reproducible benchmarking workflows.',
+    status: 'Open',
+    links: [{ label: 'PR #3023', href: 'https://github.com/unitaryfoundation/mitiq/pull/3023' }],
+  },
+  {
+    project: 'Qiskit',
+    icon: 'https://cdn.simpleicons.org/qiskit/6929C4',
+    iconText: 'Qk',
+    scope: 'Circuit labels and QPY test structure',
+    summary:
+      'Extended QuantumCircuit standard and controlled-gate helpers to propagate gate labels, added regression tests, and refactored QPY roundtrip load-test setup.',
+    status: 'Submitted',
+    links: [
+      { label: 'PR #16373', href: 'https://github.com/Qiskit/qiskit/pull/16373' },
+      { label: 'PR #16372', href: 'https://github.com/Qiskit/qiskit/pull/16372' },
+    ],
+  },
+  {
+    project: 'PennyLane',
+    icon: '/pennylane-logo.png',
+    iconText: 'PennyLane',
+    iconTone: 'pennylane-logo',
+    hideProjectLabel: true,
+    scope: 'Documentation testing and diagnostics',
+    summary:
+      'Enabled documentation testing for pennylane.shadows, corrected executable classical-shadow examples, and improved qml.assert_equal diagnostics for measurement-process mismatches.',
+    status: 'Merged / Open',
+    links: [
+      { label: 'PR #9566', href: 'https://github.com/PennyLaneAI/pennylane/pull/9566' },
+      { label: 'PR #9605', href: 'https://github.com/PennyLaneAI/pennylane/pull/9605' },
+    ],
+  },
+  {
+    project: 'PennyLane',
+    icon: '/pennylane-logo.png',
+    iconText: 'PennyLane',
+    iconTone: 'pennylane-logo',
+    hideProjectLabel: true,
+    scope: 'Developer ergonomics',
+    summary:
+      'Added text-drawer multiplexer rendering for SelectPauliRot and improved ExecutionConfig print readability for clearer debugging output.',
+    status: 'Submitted',
+    links: [
+      { label: 'PR #9604', href: 'https://github.com/PennyLaneAI/pennylane/pull/9604' },
+      { label: 'PR #9603', href: 'https://github.com/PennyLaneAI/pennylane/pull/9603' },
+    ],
+  },
+]
+
 const githubMetrics = [
   {
     title: 'Core Languages',
@@ -353,8 +471,16 @@ const googleScholarProfileUrl =
 const mediumProfileUrl = 'https://medium.com/@iwayoden'
 const mediumFeedApiUrl =
   'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40iwayoden'
+const unitaryHackProfileUrl = 'https://unitaryhack.dev/hackers/denniswayo/'
 
 const newsFeedPapers = [
+  {
+    title: 'Dennis Wayo UnitaryHack 2026 Hacker Profile',
+    authors: 'Unitary Foundation',
+    source: 'UnitaryHack 2026',
+    year: '2026',
+    href: unitaryHackProfileUrl,
+  },
   {
     title:
       'A Unified Hardware-to-Decoder Architecture for Hybrid Continuous-Variable and Discrete-Variable Quantum Error Correction in LiDMaS+',
@@ -461,6 +587,13 @@ const badgeGroups = [
         image: '/badges/pennylane-in-my-eyes.png',
         imageAlt: 'PennyLane In My Eyes badge',
       },
+      {
+        title: 'PennyLane Badge: UnitaryHack 2026',
+        subtitle: 'PennyLane Profile',
+        href: 'https://pennylane.ai/profile/Dela/badge/unitaryhack-2026',
+        image: '/badges/pennylane-unitaryhack-2026.png',
+        imageAlt: 'PennyLane UnitaryHack 2026 badge',
+      },
     ],
   },
   {
@@ -552,135 +685,365 @@ const colabStoryFrames = [
   },
 ]
 
+const qecHeaderLatticeConfig = {
+  x: 58,
+  y: 72,
+  columns: 13,
+  rows: 5,
+  columnGap: 88,
+  rowGap: 48,
+}
+
+const qecHeaderSyndromeBars = [
+  { x: 36, y: 92, height: 58, delay: '0s' },
+  { x: 54, y: 108, height: 42, delay: '0.18s' },
+  { x: 72, y: 82, height: 68, delay: '0.36s' },
+  { x: 90, y: 118, height: 32, delay: '0.54s' },
+]
+
+const qecHeaderDefects = [
+  { column: 1, row: 0, tone: 'cyan', delay: '0s' },
+  { column: 3, row: 1, tone: 'magenta', delay: '0.25s' },
+  { column: 5, row: 1, tone: 'cyan', delay: '0.5s' },
+  { column: 8, row: 3, tone: 'magenta', delay: '0.75s' },
+  { column: 2, row: 3, tone: 'amber', delay: '1s' },
+  { column: 10, row: 2, tone: 'cyan', delay: '1.2s' },
+  { column: 12, row: 4, tone: 'magenta', delay: '1.4s' },
+]
+
+const qecHeaderResidualChecks = [
+  { x: 156, tone: 'cyan', delay: '0s' },
+  { x: 278, tone: 'violet', delay: '0.22s' },
+  { x: 400, tone: 'cyan', delay: '0.44s' },
+  { x: 522, tone: 'magenta', delay: '0.66s' },
+  { x: 644, tone: 'amber', delay: '0.88s' },
+  { x: 766, tone: 'violet', delay: '1.1s' },
+  { x: 888, tone: 'cyan', delay: '1.32s' },
+  { x: 1010, tone: 'magenta', delay: '1.54s' },
+]
+
 const wayoWorkflowSteps = [
   {
+    label: 'Objective',
     code: 'define_objective()',
+    shortCode: 'define_objective()',
     detail: 'Define target application, success metrics, and acceptable logical error thresholds.',
   },
   {
+    label: 'Encoding',
     code: 'choose_encoding_and_code_family()',
+    shortCode: 'choose_encoding()',
     detail: 'Select photonic encoding and QEC code family based on hardware and noise assumptions.',
   },
   {
+    label: 'Backend',
     code: 'realize_physical_qubits_or_backend()',
+    shortCode: 'realize_backend()',
     detail: 'Instantiate hardware backend constraints, connectivity, and measurement model.',
   },
   {
+    label: 'Noise',
     code: 'measure_noise()',
+    shortCode: 'measure_noise()',
     detail: 'Characterize dominant physical error channels from device or simulator telemetry.',
   },
   {
+    label: 'GKP Digitization',
     code: 'fit_noise_model_with_GKP_digitization()',
+    shortCode: 'fit_GKP_noise()',
     detail: 'Fit calibrated noise parameters and integrate GKP/continuous-variable digitization behavior.',
   },
   {
+    label: 'Compile',
     code: 'compile_logical_circuit()',
+    shortCode: 'compile_circuit()',
     detail: 'Compile the logical workload into backend-compatible operations and schedules.',
   },
   {
+    label: 'Syndromes',
     code: 'generate_syndromes()',
+    shortCode: 'generate_syndromes()',
     detail: 'Run fault-injected trials and collect syndrome streams under calibrated noise.',
   },
   {
+    label: 'Decoders',
     code: 'run_decoders()',
+    shortCode: 'run_decoders()',
     detail: 'Evaluate candidate decoders over identical syndrome sets using replayable interfaces.',
   },
   {
+    label: 'Threshold',
     code: 'estimate_LER_vs_PER_across_distances()',
+    shortCode: 'estimate_LER_vs_PER()',
     detail: 'Estimate scaling of logical vs physical error rates across code distances and noise sweeps.',
   },
   {
+    label: 'Tune',
     code: 'if (LER >= target) tune_decoder_and_code_distance()',
+    shortCode: 'tune_decoder()',
     detail: 'Adjust decoder policies, distances, and noise-mitigation settings when reliability targets are not met.',
     branch: true,
   },
   {
+    label: 'Validate',
     code: 'validate_logical_stability()',
+    shortCode: 'validate_stability()',
     detail: 'Confirm stable logical-qubit behavior under repeated trials and confidence bounds.',
   },
   {
+    label: 'Applications',
     code: 'deploy_to_applications([hydrogen, hydraulic_fracturing, remote_sensing])',
+    shortCode: 'deploy_applications()',
     detail: 'Apply validated logical workflows to domain pipelines and decision-oriented simulations.',
   },
 ]
 
+const wayoDiagramPositions = [
+  { x: 80, y: 80 },
+  { x: 435, y: 80 },
+  { x: 790, y: 80 },
+  { x: 790, y: 240 },
+  { x: 435, y: 240 },
+  { x: 80, y: 240 },
+  { x: 80, y: 400 },
+  { x: 435, y: 400 },
+  { x: 790, y: 400 },
+  { x: 790, y: 560 },
+  { x: 435, y: 560 },
+  { x: 80, y: 560 },
+]
+
+const wayoNodeSize = {
+  width: 250,
+  height: 92,
+}
+
 const software = [
   {
     key: 'Programming',
-    tools: [
+    description: 'Core implementation languages and systems tooling used across simulation, benchmarking, and automation work.',
+    items: [
       {
         name: 'Python',
         logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+        description: 'Primary orchestration language for scientific workflows, quantum software, and automation.',
+        version: 'Core language',
+        href: 'https://www.python.org/',
       },
       {
         name: 'C++',
         logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg',
+        description: 'Performance-oriented implementation language for simulation kernels and systems code.',
+        version: 'Core language',
+        href: 'https://isocpp.org/',
       },
       {
         name: 'Rust',
         logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg',
+        description: 'Memory-safe systems language for reliable tooling and high-performance research software.',
+        version: 'Core language',
+        href: 'https://www.rust-lang.org/',
       },
       {
         name: 'CUDA',
         logo: 'https://cdn.simpleicons.org/nvidia/76B900',
+        description: 'GPU programming stack for accelerated numerical kernels and parallel workloads.',
+        version: 'GPU stack',
+        href: 'https://developer.nvidia.com/cuda-toolkit',
       },
       {
         name: 'Bash',
         logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg',
+        description: 'Shell automation for reproducible experiments, builds, and environment setup.',
+        version: 'Workflow',
+        href: 'https://www.gnu.org/software/bash/',
       },
       {
         name: 'Julia',
         logo: 'https://cdn.simpleicons.org/julia/9558B2',
+        description: 'High-level technical computing language for numerical prototyping and analysis.',
+        version: 'Core language',
+        href: 'https://julialang.org/',
       },
       {
         name: 'Swift',
         logo: 'https://cdn.simpleicons.org/swift/F05138',
+        description: 'Systems and application language for strongly typed software experiments.',
+        version: 'Core language',
+        href: 'https://www.swift.org/',
       },
     ],
   },
   {
-    key: 'Quantum Frameworks',
-    tools: [
-      { name: 'PennyLane' },
-      { name: 'Qiskit', logo: 'https://cdn.simpleicons.org/qiskit/000000' },
-      { name: 'Cirq' },
-      { name: 'QuTiP' },
+    key: 'Quantum Stack',
+    description: 'Frameworks used for quantum simulation, hardware workflows, calibration, error mitigation, and decoder benchmarking.',
+    items: [
+      {
+        name: 'PennyLane',
+        logo: '/pennylane-logo.png',
+        description: 'Differentiable quantum programming and hybrid quantum machine-learning workflows.',
+        version: '0.45.1',
+        href: 'https://pypi.org/project/pennylane/',
+      },
+      {
+        name: 'Qiskit',
+        logo: 'https://cdn.simpleicons.org/qiskit/6929C4',
+        description: 'Circuit construction, transpilation, IBM Quantum workflows, and QPY/circuit testing.',
+        version: '2.4.2',
+        href: 'https://pypi.org/project/qiskit/',
+      },
+      {
+        name: 'Cirq',
+        logo: 'https://github.com/quantumlib.png?size=96',
+        description: 'Python framework for circuit-level research, noisy simulation, and quantum algorithm prototyping.',
+        version: '1.6.1',
+        href: 'https://pypi.org/project/cirq/',
+      },
+      {
+        name: 'QuTiP',
+        description: 'Open quantum systems simulation for dynamics, Hamiltonians, and density-matrix workflows.',
+        version: '5.3.0',
+        href: 'https://pypi.org/project/qutip/',
+      },
+      {
+        name: 'Qibo',
+        logo: 'https://github.com/qiboteam.png?size=96',
+        description: 'Backend-oriented quantum simulation framework with CPU, GPU, and accelerator workflows.',
+        version: '0.3.4',
+        href: 'https://pypi.org/project/qibo/',
+      },
+      {
+        name: 'Qibolab',
+        logo: 'https://github.com/qiboteam.png?size=96',
+        description: 'Hardware-control layer for executing pulse and circuit workflows on self-hosted quantum devices.',
+        version: '0.2.15',
+        href: 'https://pypi.org/project/qibolab/',
+      },
+      {
+        name: 'Qibocal',
+        logo: 'https://github.com/qiboteam.png?size=96',
+        description: 'Calibration and characterization protocols for Qibo/Qibolab hardware platforms.',
+        version: '0.2.5',
+        href: 'https://pypi.org/project/qibocal/',
+      },
+      {
+        name: 'Mitiq',
+        logo: 'https://github.com/unitaryfoundation.png?size=96',
+        description: 'Quantum error-mitigation toolkit for noise studies, post-processing, and benchmarking tutorials.',
+        version: '1.0.0',
+        href: 'https://pypi.org/project/mitiq/',
+      },
+      {
+        name: 'Dynamiqs',
+        description: 'JAX-based differentiable quantum dynamics package for Schrödinger and Lindblad simulations.',
+        version: '0.3.4',
+        href: 'https://pypi.org/project/dynamiqs/',
+      },
+      {
+        name: 'Stim',
+        logo: 'https://github.com/quantumlib.png?size=96',
+        description: 'Fast stabilizer-circuit simulator used for QEC sampling and detector-error-model workflows.',
+        version: '1.16.0',
+        href: 'https://github.com/quantumlib/stim',
+      },
     ],
   },
   {
     key: 'Scientific Simulation',
-    tools: [
-      { name: 'GPAW (TDDFT)' },
-      { name: 'MEEP (FDTD)' },
-      { name: 'NLSE/SSFM' },
-      { name: 'ASE' },
+    description: 'Physics simulation tools used for optical materials, photonics, and nonlinear propagation studies.',
+    items: [
+      {
+        name: 'GPAW (TDDFT)',
+        description: 'DFT and time-dependent DFT workflows for optical descriptors and excited-state response.',
+        version: 'Workflow',
+        href: 'https://gpaw.readthedocs.io/',
+      },
+      {
+        name: 'MEEP (FDTD)',
+        description: 'Finite-difference time-domain electromagnetic simulation for photonic structures.',
+        version: 'Workflow',
+        href: 'https://meep.readthedocs.io/',
+      },
+      {
+        name: 'NLSE/SSFM',
+        description: 'Split-step Fourier modeling for nonlinear optical propagation and pulse evolution.',
+        version: 'Method',
+        href: 'https://en.wikipedia.org/wiki/Split-step_method',
+      },
+      {
+        name: 'ASE',
+        description: 'Atomic Simulation Environment for structure handling and atomistic simulation pipelines.',
+        version: 'Workflow',
+        href: 'https://wiki.fysik.dtu.dk/ase/',
+      },
     ],
   },
   {
     key: 'Machine Learning',
-    tools: [
+    description: 'Machine-learning tools used for hybrid classical-quantum models and scientific data pipelines.',
+    items: [
       {
         name: 'PyTorch',
         logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg',
+        description: 'Deep-learning framework for model development, training loops, and research prototypes.',
+        version: 'ML stack',
+        href: 'https://pytorch.org/',
       },
       {
         name: 'TensorFlow',
         logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg',
+        description: 'Machine-learning framework for production-oriented models and tensor workflows.',
+        version: 'ML stack',
+        href: 'https://www.tensorflow.org/',
       },
-      { name: 'JAX' },
-      { name: 'GNNs' },
-      { name: 'PINNs' },
+      {
+        name: 'JAX',
+        description: 'Composable autodiff and accelerator-backed numerical computing for differentiable simulation.',
+        version: 'ML stack',
+        href: 'https://jax.readthedocs.io/',
+      },
+      {
+        name: 'GNNs',
+        description: 'Graph neural-network workflows for structured scientific data and relational modeling.',
+        version: 'Model family',
+        href: 'https://pytorch-geometric.readthedocs.io/',
+      },
+      {
+        name: 'PINNs',
+        description: 'Physics-informed neural-network methods for constraint-aware scientific learning.',
+        version: 'Model family',
+        href: 'https://www.nature.com/articles/s42254-021-00314-5',
+      },
     ],
   },
   {
     key: 'Scientific Computing',
-    tools: [
-      { name: 'Numerical Linear Algebra' },
-      { name: 'Automatic Differentiation' },
-      { name: 'Parallel Workflows' },
+    description: 'Reusable computational patterns behind reproducible HPC and simulation workflows.',
+    items: [
+      {
+        name: 'Numerical Linear Algebra',
+        description: 'Matrix, eigensolver, sparse, and decomposition workflows used throughout simulation code.',
+        version: 'Method',
+        href: 'https://netlib.org/lapack/',
+      },
+      {
+        name: 'Automatic Differentiation',
+        description: 'Gradient-based modeling and differentiable programming for optimization and learning.',
+        version: 'Method',
+        href: 'https://jax.readthedocs.io/',
+      },
+      {
+        name: 'Parallel Workflows',
+        description: 'Batch, multiprocessing, GPU, and cluster execution patterns for large experiment sweeps.',
+        version: 'HPC pattern',
+        href: 'https://docs.python.org/3/library/concurrent.futures.html',
+      },
       {
         name: 'Linux Environments',
         logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg',
+        description: 'Reproducible local, remote, and cluster environments for scientific software execution.',
+        version: 'Runtime',
+        href: 'https://www.kernel.org/',
       },
     ],
   },
@@ -690,6 +1053,7 @@ function Layout({ children }) {
   const location = useLocation()
   const tabsRef = useRef(null)
   const [visitCount, setVisitCount] = useState(null)
+  const [theme, setTheme] = useState(getInitialTheme)
 
   useEffect(() => {
     const tabsElement = tabsRef.current
@@ -710,6 +1074,16 @@ function Layout({ children }) {
       inline: 'nearest',
     })
   }, [location.pathname])
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme
+
+    try {
+      window.localStorage.setItem('site-theme', theme)
+    } catch {
+      // Ignore persistence errors in restricted browsers.
+    }
+  }, [theme])
 
   useEffect(() => {
     let cancelled = false
@@ -767,20 +1141,13 @@ function Layout({ children }) {
   }, [])
 
   const visitCountDisplay = typeof visitCount === 'number' ? visitCount.toLocaleString('en-US') : '--'
+  const nextTheme = theme === 'dark' ? 'light' : 'dark'
 
   return (
     <div className="page-grid">
       <div className="shell">
         <div className="site-gif-header" aria-label="Animated quantum header">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            poster={headerMedia.poster}
-            src={headerMedia.video}
-          />
+          <QecHeaderTrace />
           <div className="site-gif-overlay" aria-hidden="true"></div>
           <header className="topbar">
             <nav ref={tabsRef} className="tabs" aria-label="Primary">
@@ -796,6 +1163,17 @@ function Layout({ children }) {
               <a className="tab utility" href="mailto:dwayo3@gatech.edu">
                 contact
               </a>
+              <button
+                className="theme-toggle"
+                type="button"
+                aria-label={`Switch to ${nextTheme} theme`}
+                title={`Switch to ${nextTheme} theme`}
+                onClick={() => setTheme(nextTheme)}
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20.4 14.4A7.7 7.7 0 0 1 9.6 3.6 8.5 8.5 0 1 0 20.4 14.4Z" />
+                </svg>
+              </button>
             </nav>
           </header>
         </div>
@@ -820,8 +1198,8 @@ function Layout({ children }) {
           </p>
           <div className="footer-bar">
             <p>
-              (c) Copyright {new Date().getFullYear()} Dennis Wayo. Hosted by GitHub
-              Pages. Last updated: {lastUpdatedDateLabel}.{' '}
+              (c) Copyright {new Date().getFullYear()} Dennis Wayo. Last updated:{' '}
+              {lastUpdatedDateLabel}.{' '}
               <span className="footer-visit-counter" aria-label={`Visit count ${visitCountDisplay}`}>
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z" />
@@ -857,7 +1235,7 @@ function AboutPage() {
       <section className="page about-page">
         <div className="hero-grid">
           <article>
-            <h1>Dennis Wayo</h1>
+            <h1>Dennis Wayo, PhD</h1>
             <p className="lead">
               I build scientific software where quantum theory, numerical modeling, and
               systems engineering meet. My work centers on creating simulation and
@@ -920,7 +1298,7 @@ function AboutPage() {
             <figure className="portrait-card">
               <img src="/dennis_image.jpeg" alt="Dennis Wayo" />
               <figcaption className="portrait-meta">
-                <p className="portrait-name">Dennis Wayo</p>
+                <p className="portrait-name">Dennis Wayo, PhD</p>
                 <p className="portrait-title">Quantum Systems Architect</p>
                 <p>53 Kabanbay Batyr Ave Astana, Kazakhstan, 010000</p>
               </figcaption>
@@ -938,13 +1316,13 @@ function AboutPage() {
                 ></iframe>
               </div>
               <div className="news-publications">
-                <h3>Recent Publications</h3>
+                <h3>Recent News & Publications</h3>
                 <div className="news-paper-marquee" aria-label="Continuous publication feed">
                   <div className="news-paper-track">
                     <ul className="news-paper-list">
                       {newsFeedPapers.map((item) => (
                         <li className="news-paper-item" key={item.title}>
-                          <a href={item.scholarUrl} target="_blank" rel="noreferrer">
+                          <a href={item.href || item.scholarUrl} target="_blank" rel="noreferrer">
                             {item.title}
                           </a>
                           <p>{item.authors}</p>
@@ -958,7 +1336,12 @@ function AboutPage() {
                     <ul className="news-paper-list" aria-hidden="true">
                       {newsFeedPapers.map((item) => (
                         <li className="news-paper-item" key={`${item.title}-dup`}>
-                          <a href={item.scholarUrl} target="_blank" rel="noreferrer" tabIndex={-1}>
+                          <a
+                            href={item.href || item.scholarUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            tabIndex={-1}
+                          >
                             {item.title}
                           </a>
                           <p>{item.authors}</p>
@@ -1181,6 +1564,57 @@ function BlogPage() {
           Live feed from LinkedIn and Medium, plus technical writing tracks that document
           simulation systems, benchmarking methodology, and reproducibility practices.
         </p>
+        <article className="panel blog-feature-card">
+          <div className="blog-feature-copy">
+            <p className="eyebrow">Featured OSS update</p>
+            <h2>UnitaryHack 2026 open-source contributions</h2>
+            <p>
+              My UnitaryHack profile records two completed bounty contributions across
+              PennyLane and Qiskit, with $125 claimed through the Unitary Foundation
+              open-source hackathon.
+            </p>
+            <ul className="blog-feature-list">
+              <li>
+                <span>PennyLane</span>
+                Documentation tests for the shadows module.
+              </li>
+              <li>
+                <span>Qiskit</span>
+                Label support for single-gate helpers.
+              </li>
+            </ul>
+            <div className="blog-feature-actions">
+              <a
+                className="btn btn-primary"
+                href={unitaryHackProfileUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open UnitaryHack Profile
+              </a>
+              <a
+                className="btn btn-secondary"
+                href="https://github.com/DennisWayo"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View GitHub
+              </a>
+            </div>
+          </div>
+          <a
+            className="blog-feature-preview"
+            href={unitaryHackProfileUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open Dennis Wayo UnitaryHack 2026 hacker profile"
+          >
+            <img
+              src="/unitaryhack-profile-card.svg"
+              alt="UnitaryHack 2026 profile summary for DennisWayo"
+            />
+          </a>
+        </article>
         <div className="grid two blog-live-grid">
           <article className="panel blog-feed-panel">
             <h2>LinkedIn Live Feed</h2>
@@ -1373,6 +1807,42 @@ function ProjectsPage() {
             ))}
           </div>
         </section>
+        <section className="oss-section" aria-label="Open-source quantum software contributions">
+          <h2 className="projects-subtitle">Open-Source Contributions</h2>
+          <div className="oss-grid">
+            {openSourceContributions.map((item) => (
+              <article
+                className="oss-card"
+                key={`${item.project}-${item.scope}`}
+                aria-label={`${item.project}: ${item.scope}`}
+              >
+                <div className="oss-card-header">
+                  <div className="oss-title-wrap">
+                    <span
+                      className={`oss-icon ${item.iconTone ? `is-${item.iconTone}` : ''}`}
+                      aria-hidden="true"
+                    >
+                      {item.icon ? <img src={item.icon} alt="" /> : item.iconText}
+                    </span>
+                    <div>
+                      {item.hideProjectLabel ? null : <p className="meta">{item.project}</p>}
+                      <h3>{item.scope}</h3>
+                    </div>
+                  </div>
+                  <span className="oss-status">{item.status}</span>
+                </div>
+                <p>{item.summary}</p>
+                <div className="oss-link-row">
+                  {item.links.map((link) => (
+                    <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
         <section className="metrics-section" aria-label="GitHub card">
           <h2 className="projects-subtitle">GitHub Metrics</h2>
           <div className="metrics-grid">
@@ -1399,7 +1869,9 @@ function ProjectsPage() {
             </article>
             {githubMetrics.map((item) => (
               <article
-                className={`metric-card ${item.featured ? 'is-featured' : ''}`}
+                className={`metric-card ${item.featured ? 'is-featured' : ''} ${
+                  item.type === 'core-languages' ? 'is-language-card' : ''
+                }`}
                 key={item.title}
               >
                 {item.type === 'core-languages' ? (
@@ -1476,24 +1948,25 @@ function MentoringPage() {
           </article>
         </div>
         <section className="panel mentoring-paper">
-          <h2>Featured arXiv Paper</h2>
+          <h2>Featured Published Paper</h2>
           <p>
-            Featured paper from the 2025/2026 mentorship cycle: arXiv:2602.00525.
+            Featured paper from the 2025/2026 mentorship cycle, now published in
+            Advanced Theory and Simulations.
           </p>
           <div className="mentoring-links">
             <a
               className="btn btn-secondary"
-              href="https://arxiv.org/abs/2602.00525"
+              href="https://www.advtheorysimul.com"
               target="_blank"
               rel="noreferrer"
             >
-              View on arXiv
+              Open Journal
             </a>
           </div>
           <figure className="mentoring-paper-media">
             <img
-              src="/arxiv-2602-00525.png"
-              alt="arXiv page screenshot for paper 2602.00525"
+              src="/advanced-theory-simulations-2026.png"
+              alt="Advanced Theory and Simulations published paper screenshot"
               loading="lazy"
             />
           </figure>
@@ -1572,23 +2045,56 @@ function SoftwarePage() {
     <Layout>
       <section className="page">
         <h1>Software</h1>
-        <div className="grid two">
+        <div className="software-stack-grid">
           {software.map((item) => (
-            <article className="panel" key={item.key}>
-              <h2>{item.key}</h2>
-              <div className="tool-grid">
-                {item.tools.map((tool) => (
-                  <div className="tool-chip" key={tool.name}>
-                    {tool.logo ? (
-                      <img src={tool.logo} alt={`${tool.name} logo`} />
-                    ) : (
-                      <span className="tool-fallback" aria-hidden="true">
-                        {tool.name.slice(0, 2).toUpperCase()}
-                      </span>
-                    )}
-                    <span>{tool.name}</span>
-                  </div>
-                ))}
+            <article
+              className={`panel software-stack-panel ${
+                item.key === 'Quantum Stack' ? 'is-quantum-stack' : ''
+              }`}
+              key={item.key}
+            >
+              <div className="software-stack-head">
+                <h2>{item.key}</h2>
+                <p>{item.description}</p>
+              </div>
+              <div className="software-stack-table-wrap">
+                <table className="software-stack-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Software</th>
+                      <th scope="col">Description</th>
+                      <th scope="col">Version / Status</th>
+                      <th scope="col">Access</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {item.items.map((tool) => (
+                      <tr key={tool.name}>
+                        <th scope="row">
+                          <span className="software-tool">
+                            {tool.logo ? (
+                              <img src={tool.logo} alt="" aria-hidden="true" />
+                            ) : (
+                              <span className="tool-fallback" aria-hidden="true">
+                                {tool.name.slice(0, 2).toUpperCase()}
+                              </span>
+                            )}
+                            <span>{tool.name}</span>
+                          </span>
+                        </th>
+                        <td>{tool.description}</td>
+                        <td>
+                          <span className="software-version">{tool.version}</span>
+                        </td>
+                        <td>
+                          <a href={tool.href} target="_blank" rel="noreferrer">
+                            Open
+                          </a>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             </article>
           ))}
@@ -1598,44 +2104,370 @@ function SoftwarePage() {
   )
 }
 
+function QecHeaderTrace() {
+  const { x, y, columns, rows, columnGap, rowGap } = qecHeaderLatticeConfig
+  const node = (column, row) => ({
+    x: x + column * columnGap,
+    y: y + row * rowGap,
+  })
+  const point = ({ column, row, dx = 0, dy = 0 }) => {
+    const position = node(column, row)
+
+    return `${position.x + dx} ${position.y + dy}`
+  }
+  const rowIndexes = Array.from({ length: rows }, (_, index) => index)
+  const columnIndexes = Array.from({ length: columns }, (_, index) => index)
+  const latticeNodes = rowIndexes.flatMap((row) =>
+    columnIndexes.map((column) => ({ ...node(column, row), key: `${column}-${row}` })),
+  )
+  const horizontalGrid = rowIndexes
+    .map((row) => `M ${point({ column: 0, row })} H ${node(columns - 1, row).x}`)
+    .join(' ')
+  const verticalGrid = columnIndexes
+    .map((column) => `M ${point({ column, row: 0 })} V ${node(column, rows - 1).y}`)
+    .join(' ')
+  const diagonalGrid = rowIndexes
+    .slice(0, -1)
+    .flatMap((row) =>
+      columnIndexes.slice(0, -1).flatMap((column) => [
+        `M ${point({ column, row })} L ${point({ column: column + 1, row: row + 1 })}`,
+        `M ${point({ column: column + 1, row })} L ${point({ column, row: row + 1 })}`,
+      ]),
+    )
+    .join(' ')
+  const decoderPaths = [
+    {
+      key: 'top-match',
+      className: 'qec-header-decode-path is-hot',
+      delay: '0s',
+      d: `M ${point({ column: 1, row: 0 })} C ${point({ column: 2, row: 0, dy: 22 })} ${point({
+        column: 3,
+        row: 1,
+        dy: -20,
+      })} ${point({ column: 3, row: 1 })} C ${point({ column: 4, row: 1, dy: 18 })} ${point({
+        column: 5,
+        row: 1,
+        dy: -18,
+      })} ${point({ column: 5, row: 1 })}`,
+    },
+    {
+      key: 'right-match',
+      className: 'qec-header-decode-path is-cool',
+      delay: '0.35s',
+      d: `M ${point({ column: 5, row: 1 })} C ${point({ column: 6, row: 1, dy: 28 })} ${point({
+        column: 7,
+        row: 2,
+        dy: -20,
+      })} ${point({ column: 7, row: 3 })}`,
+    },
+    {
+      key: 'wide-match',
+      className: 'qec-header-decode-path is-hot',
+      delay: '0.72s',
+      d: `M ${point({ column: 8, row: 3 })} C ${point({ column: 9, row: 2, dy: 20 })} ${point({
+        column: 10,
+        row: 2,
+        dy: -16,
+      })} ${point({ column: 10, row: 2 })} C ${point({ column: 11, row: 3, dy: 18 })} ${point({
+        column: 12,
+        row: 4,
+        dy: -18,
+      })} ${point({ column: 12, row: 4 })}`,
+    },
+    {
+      key: 'lower-match',
+      className: 'qec-header-decode-path is-soft',
+      delay: '0.6s',
+      d: `M ${point({ column: 2, row: 3 })} C ${point({ column: 3, row: 3, dy: -24 })} ${point({
+        column: 4,
+        row: 2,
+        dy: 22,
+      })} ${point({ column: 5, row: 2 })} C ${point({ column: 6, row: 2, dy: 24 })} ${point({
+        column: 7,
+        row: 3,
+        dy: -18,
+      })} ${point({ column: 7, row: 3 })}`,
+    },
+    {
+      key: 'edge-match',
+      className: 'qec-header-decode-path is-soft',
+      delay: '1.05s',
+      d: `M ${point({ column: 10, row: 2 })} C ${point({ column: 11, row: 1, dy: 22 })} ${point({
+        column: 12,
+        row: 3,
+        dy: -18,
+      })} ${point({ column: 12, row: 4 })}`,
+    },
+  ]
+  const correctionPaths = [
+    {
+      key: 'top-correction',
+      delay: '0.2s',
+      d: `M ${point({ column: 1, row: 0 })} L ${point({ column: 2, row: 0 })} L ${point({
+        column: 3,
+        row: 1,
+      })} L ${point({ column: 4, row: 1 })} L ${point({ column: 5, row: 1 })} L ${point({
+        column: 6,
+        row: 2,
+      })} L ${point({ column: 7, row: 3 })}`,
+    },
+    {
+      key: 'lower-correction',
+      delay: '0.72s',
+      d: `M ${point({ column: 2, row: 3 })} L ${point({ column: 3, row: 3 })} L ${point({
+        column: 4,
+        row: 2,
+      })} L ${point({ column: 5, row: 2 })} L ${point({ column: 6, row: 3 })} L ${point({
+        column: 7,
+        row: 3,
+      })}`,
+    },
+    {
+      key: 'wide-correction',
+      delay: '1.05s',
+      d: `M ${point({ column: 8, row: 3 })} L ${point({ column: 9, row: 3 })} L ${point({
+        column: 10,
+        row: 2,
+      })} L ${point({ column: 11, row: 3 })} L ${point({ column: 12, row: 4 })}`,
+    },
+  ]
+
+  return (
+    <svg
+      className="qec-header-trace"
+      viewBox="0 0 1180 360"
+      preserveAspectRatio="xMidYMid slice"
+      role="img"
+      aria-labelledby="qec-header-title qec-header-desc"
+    >
+      <title id="qec-header-title">Animated quantum error-correction trace</title>
+      <desc id="qec-header-desc">
+        Animated surface-code style lattice showing syndrome defects, decoder matching paths,
+        correction traces, and residual checks.
+      </desc>
+      <defs>
+        <linearGradient id="qec-header-panel" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#101010" />
+          <stop offset="48%" stopColor="#07090c" />
+          <stop offset="100%" stopColor="#12151b" />
+        </linearGradient>
+        <linearGradient id="qec-header-decode-gradient" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stopColor="#21d3cf" />
+          <stop offset="45%" stopColor="#7c8cff" />
+          <stop offset="100%" stopColor="#f06aa8" />
+        </linearGradient>
+        <filter id="qec-header-glow" x="-45%" y="-45%" width="190%" height="190%">
+          <feGaussianBlur stdDeviation="3.5" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+      <rect className="qec-header-panel" x="0" y="0" width="1180" height="360" />
+      <text className="qec-header-label" x="44" y="44">
+        syndrome acquisition
+      </text>
+      <text className="qec-header-label" x="940" y="44">
+        decoder replay
+      </text>
+      <g className="qec-header-stream-bars" aria-hidden="true">
+        {qecHeaderSyndromeBars.map((bar) => (
+          <rect
+            className="qec-header-stream-bar"
+            key={`${bar.x}-${bar.height}`}
+            x={bar.x}
+            y={bar.y}
+            width="10"
+            height={bar.height}
+            rx="4"
+            style={{ '--pulse-delay': bar.delay }}
+          />
+        ))}
+      </g>
+      <g className="qec-header-replay-dots" aria-hidden="true">
+        {['cyan', 'violet', 'magenta'].map((tone, index) => (
+          <circle
+            className={`qec-header-replay-dot is-${tone}`}
+            key={tone}
+            cx={980 + index * 34}
+            cy="92"
+            r="8"
+            style={{ '--pulse-delay': `${index * 0.24}s` }}
+          />
+        ))}
+        <path className="qec-header-replay-link" d="M 1088 92 H 1144" />
+      </g>
+      <g className="qec-header-lattice" aria-hidden="true">
+        <path className="qec-header-lattice-grid" d={horizontalGrid} />
+        <path className="qec-header-lattice-grid" d={verticalGrid} />
+        <path className="qec-header-lattice-grid is-diagonal" d={diagonalGrid} />
+        {latticeNodes.map((latticeNode) => (
+          <circle
+            className="qec-header-lattice-node"
+            key={latticeNode.key}
+            cx={latticeNode.x}
+            cy={latticeNode.y}
+            r="5"
+          />
+        ))}
+        {decoderPaths.map((path) => (
+          <path
+            className={path.className}
+            d={path.d}
+            key={path.key}
+            style={{ '--dash-delay': path.delay }}
+          />
+        ))}
+        {correctionPaths.map((path) => (
+          <path
+            className="qec-header-correction-path"
+            d={path.d}
+            key={path.key}
+            style={{ '--dash-delay': path.delay }}
+          />
+        ))}
+        <path className="qec-header-residual-rail" d="M 118 286 H 1060" />
+        {qecHeaderResidualChecks.map((check) => (
+          <circle
+            className={`qec-header-residual-dot is-${check.tone}`}
+            key={check.x}
+            cx={check.x}
+            cy="286"
+            r="7"
+            style={{ '--pulse-delay': check.delay }}
+          />
+        ))}
+        {qecHeaderDefects.map((defect) => {
+          const position = node(defect.column, defect.row)
+
+          return (
+            <circle
+              className={`qec-header-defect is-${defect.tone}`}
+              key={`${defect.column}-${defect.row}`}
+              cx={position.x}
+              cy={position.y}
+              r="8"
+              style={{ '--pulse-delay': defect.delay }}
+            />
+          )
+        })}
+      </g>
+    </svg>
+  )
+}
+
+function WayoFlowDiagram() {
+  const pathPoints = wayoDiagramPositions.map((position) => ({
+    x: position.x + wayoNodeSize.width / 2,
+    y: position.y + wayoNodeSize.height / 2,
+  }))
+  const connectorPath = pathPoints
+    .map((point, index) => `${index === 0 ? 'M' : 'L'} ${point.x} ${point.y}`)
+    .join(' ')
+
+  return (
+    <figure className="wayo-diagram-wrap">
+      <svg
+        className="wayo-diagram"
+        viewBox="0 0 1120 720"
+        role="img"
+        aria-labelledby="wayo-diagram-title wayo-diagram-desc"
+      >
+        <title id="wayo-diagram-title">wayo.ai deterministic quantum workflow</title>
+        <desc id="wayo-diagram-desc">
+          Animated flowchart showing objective definition, encoding, backend realization, noise
+          modeling, compilation, syndrome generation, decoding, threshold estimation, tuning,
+          validation, and application deployment.
+        </desc>
+        <defs>
+          <marker
+            id="wayo-flow-arrow"
+            viewBox="0 0 10 10"
+            refX="8"
+            refY="5"
+            markerWidth="7"
+            markerHeight="7"
+            orient="auto-start-reverse"
+          >
+            <path className="wayo-arrow-head" d="M 0 0 L 10 5 L 0 10 z" />
+          </marker>
+          <filter id="wayo-node-shadow" x="-12%" y="-18%" width="124%" height="140%">
+            <feDropShadow dx="0" dy="12" stdDeviation="10" floodOpacity="0.18" />
+          </filter>
+        </defs>
+        <path className="wayo-flow-path-base" d={connectorPath} />
+        <path
+          className="wayo-flow-path-active"
+          d={connectorPath}
+          markerEnd="url(#wayo-flow-arrow)"
+        />
+        {wayoWorkflowSteps.map((step, index) => {
+          const position = wayoDiagramPositions[index]
+          const nodeClassName = `wayo-svg-node ${step.branch ? 'is-branch' : ''}`
+
+          return (
+            <g
+              className={nodeClassName}
+              key={step.code}
+              style={{ '--step-index': index }}
+              transform={`translate(${position.x} ${position.y})`}
+            >
+              <title>{`${step.label}: ${step.detail}`}</title>
+              <rect
+                className="wayo-svg-node-box"
+                width={wayoNodeSize.width}
+                height={wayoNodeSize.height}
+                rx="14"
+              />
+              <text className="wayo-svg-node-count" x="18" y="26">
+                {String(index + 1).padStart(2, '0')}
+              </text>
+              <text className="wayo-svg-node-title" x="18" y="52">
+                {step.label}
+              </text>
+              <text className="wayo-svg-node-code" x="18" y="74">
+                {step.shortCode}
+              </text>
+            </g>
+          )
+        })}
+      </svg>
+    </figure>
+  )
+}
+
 function WayoAiPage() {
   return (
     <Layout>
       <section className="page wayo-page">
         <h1>wayo.ai</h1>
         <p className="lead">
-          wayo.ai is the execution layer where quantum modeling, error-correction logic,
-          and application-facing computation are converted into one deterministic workflow.
+          wayo.ai is my personal research workflow for turning rough scientific questions
+          into testable quantum-software systems. It is the operating pattern I use to move
+          from physical assumptions and algorithm choices into reproducible simulations,
+          decoder studies, and application-facing results.
         </p>
-        <section className="panel wayo-flow" aria-label="Vertical workflow steps">
-          <h2>Workflow Steps</h2>
-          <ol className="wayo-code-stream">
-            {wayoWorkflowSteps.map((step) => (
-              <li
-                className={`wayo-code-step ${step.branch ? 'is-branch' : ''}`}
-                key={step.code}
-              >
-                <code>{step.code}</code>
-                <p>{step.detail}</p>
-              </li>
-            ))}
-          </ol>
+        <section className="panel wayo-flow" aria-label="Animated personal workflow map">
+          <h2>Personal Workflow Map</h2>
+          <WayoFlowDiagram />
         </section>
         <div className="grid two wayo-support-grid">
           <article className="panel">
-            <h2>Pipeline Intent</h2>
+            <h2>How I Use It</h2>
             <p>
-              The flow is engineered as a strict progression from circuit design to
-              logical-qubit stability so each transition is testable, measurable, and
-              reproducible under the same policy constraints.
+              The workflow keeps research decisions explicit: define the objective, choose
+              the encoding, realize the backend, model noise, compile the circuit, generate
+              syndromes, evaluate decoders, tune when thresholds miss the target, and
+              validate the result before moving to applications.
             </p>
           </article>
           <article className="panel">
-            <h2>Application Targets</h2>
+            <h2>Where It Lands</h2>
             <ul className="clean-list">
-              <li>Hydrogen modeling and quantum-assisted chemistry workflows.</li>
-              <li>Hydraulic fracturing simulation and decision-support modeling.</li>
-              <li>Remote sensing interpretation pipelines for geospatial analytics.</li>
+              <li>Fault-tolerant quantum simulation and decoder benchmarking.</li>
+              <li>Photonic, GKP, and hybrid continuous-variable/discrete workflows.</li>
+              <li>Application studies in hydrogen, hydraulic fracturing, and remote sensing.</li>
             </ul>
           </article>
         </div>
