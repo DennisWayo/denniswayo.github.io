@@ -18,6 +18,11 @@ const lastUpdatedDateLabel = new Intl.DateTimeFormat('en-US', {
   timeZone: 'UTC',
 }).format(resolvedBuildDate)
 
+function getMaxScrollY() {
+  const documentElement = document.documentElement
+  return Math.max(0, documentElement.scrollHeight - window.innerHeight)
+}
+
 function getInitialTheme() {
   if (typeof window === 'undefined') {
     return 'light'
@@ -45,7 +50,6 @@ const tabs = [
   { label: 'colabX', path: '/colabx' },
   { label: 'software', path: '/software' },
   { label: 'wayo.ai', path: '/wayo-ai' },
-  { label: 'talKs', path: '/talks' },
 ]
 
 const footerContacts = [
@@ -154,12 +158,13 @@ const publications = [
     key: 'decoder-dependence-2026',
     year: 2026,
     title:
-      'Decoder Dependence in Surface-Code Threshold Estimation with Native Gottesman-Kitaev-Preskill Digitization and Parallelized Sampling',
-    citation: 'Wayo, D.D.K., Onah, C., Goliatt, L., & Groppe, S. (2026). arXiv:2603.25757.',
-    paperUrl: 'https://arxiv.org/abs/2603.25757',
-    paperLabel: 'Open arXiv',
+      'Decoder Dependence in Surface-Code Threshold Estimation Under Digitized Hybrid Continuous-Variable and Discrete Noise',
+    citation:
+      'Wayo, D.D.K., Onah, C., Goliatt, L., & Groppe, S. (2026). Fortschritte der Physik. Accepted 4 June 2026.',
+    paperUrl: 'https://onlinelibrary.wiley.com/doi/10.1002/prop.70124',
+    paperLabel: 'Open Journal',
     abstract:
-      'Analyzes how decoder choice changes threshold claims under native GKP digitization, using parallelized sampling pipelines to isolate algorithmic effects from simulation artifacts.',
+      'Shows how decoder and estimator choices shift surface-code threshold conclusions under digitized hybrid continuous-variable and discrete noise, using LiDMaS+ workflows with crossing diagnostics and runtime-fidelity checks.',
   },
   {
     key: 'decoder-performance-2026',
@@ -277,6 +282,14 @@ const softwareShowcase = [
   },
 ]
 
+const publicationSpotlight = {
+  key: 'decoder-dependence-2026',
+  label: 'Publication Spotlight',
+  image: '/publication-spotlight-decoder-dependence.png',
+  imageAlt:
+    'First page preview of the Fortschritte der Physik paper on decoder dependence in surface-code threshold estimation.',
+}
+
 const openSourceContributions = [
   {
     project: 'Qibolab',
@@ -285,9 +298,12 @@ const openSourceContributions = [
     iconTone: 'qibo',
     scope: 'Dynamiqs simulation engine',
     summary:
-      'Added a Dynamiqs simulation engine for emulator and hardware-control development workflows, including dependency integration and focused emulator tests.',
-    status: 'Merged',
-    links: [{ label: 'PR #1479', href: 'https://github.com/qiboteam/qibolab/pull/1479' }],
+      'Added a Dynamiqs simulation engine for emulator and hardware-control development workflows, including dependency integration and focused emulator tests. Completed as a UnitaryHack 2026 Qibo/Qibolab bounty.',
+    status: 'Merged / Bounty completed',
+    links: [
+      { label: 'Issue #1411', href: 'https://github.com/qiboteam/qibolab/issues/1411' },
+      { label: 'PR #1479', href: 'https://github.com/qiboteam/qibolab/pull/1479' },
+    ],
   },
   {
     project: 'Qibolab',
@@ -456,13 +472,6 @@ const talks = [
   },
 ]
 
-const blogTopics = [
-  'Building robust replay streams for decoder evaluation.',
-  'Design patterns for scientific software in Python, Rust, Julia, and Swift.',
-  'Practical lessons from photonic simulator implementation.',
-  'From numerical modeling to publishable reproducible artifacts.',
-]
-
 const linkedInEmbedUrl =
   'https://www.linkedin.com/embed/feed/update/urn:li:share:7452702797759901697?collapsed=1'
 const linkedInFeedUrl = 'https://www.linkedin.com/feed/'
@@ -475,9 +484,9 @@ const unitaryHackProfileUrl = 'https://unitaryhack.dev/hackers/denniswayo/'
 
 const newsFeedPapers = [
   {
-    title: 'Dennis Wayo UnitaryHack 2026 Hacker Profile',
+    title: 'Dennis Wayo UnitaryHack 2026 Hacker Profile: 3 Bounties Completed',
     authors: 'Unitary Foundation',
-    source: 'UnitaryHack 2026',
+    source: '$175 claimed across PennyLane, Qibo, and Qiskit',
     year: '2026',
     href: unitaryHackProfileUrl,
   },
@@ -501,12 +510,11 @@ const newsFeedPapers = [
   },
   {
     title:
-      'Decoder Dependence in Surface-Code Threshold Estimation with Native Gottesman-Kitaev-Preskill Digitization and Parallelized Sampling',
+      'Decoder Dependence in Surface-Code Threshold Estimation Under Digitized Hybrid Continuous-Variable and Discrete Noise',
     authors: 'DDK Wayo, C Onah, L Goliatt, S Groppe',
-    source: 'arXiv preprint arXiv:2603.25757',
+    source: 'Fortschritte der Physik, accepted 4 June 2026',
     year: '2026',
-    scholarUrl:
-      'https://scholar.google.com/scholar?q=Decoder+Dependence+in+Surface-Code+Threshold+Estimation+with+Native+Gottesman-Kitaev-Preskill+Digitization+and+Parallelized+Sampling',
+    href: 'https://onlinelibrary.wiley.com/doi/10.1002/prop.70124',
   },
   {
     title:
@@ -685,6 +693,92 @@ const colabStoryFrames = [
   },
 ]
 
+const collaborators = [
+  {
+    name: 'Sven Groppe',
+    initials: 'SG',
+    role: 'Professor of Artificial Intelligence',
+    institution: 'TU Bergakademie Freiberg',
+    summary:
+      'Collaborator on quantum data systems, decoder workflows, AI, knowledge graphs, data management, and reproducible research software.',
+    tags: ['Artificial Intelligence', 'Quantum Computing', 'Data Science'],
+    links: [{ label: 'Profile', href: 'https://svengroppe.github.io/' }],
+  },
+  {
+    name: 'Leonardo Goliatt',
+    initials: 'LG',
+    role: 'Professor, PhD in Computational Modeling',
+    institution: 'Universidade Federal de Juiz de Fora',
+    summary:
+      'Collaborator across computational modeling, quantum photonic simulation, QEC benchmarking, AI, machine learning, and scientific computing workflows.',
+    tags: ['Computational Modeling', 'AI/ML', 'Quantum Photonics'],
+    links: [
+      {
+        label: 'Lattes',
+        href: 'https://buscatextual.cnpq.br/buscatextual/visualizacv.do;jsessionid=E4BF6911E987B94499CEAB78A1AC35CF.buscatextual_0',
+      },
+    ],
+  },
+  {
+    name: 'Mahmoud Leila',
+    initials: 'ML',
+    role: 'Assistant Professor, PhD',
+    institution:
+      'Nazarbayev University, School of Mining and Geosciences',
+    summary:
+      'Academic collaborator in geological sciences, hydrogen systems, sandstone reservoirs, and applied geoscience modeling.',
+    tags: ['Geological Sciences', 'Hydrogen', 'Reservoir Systems'],
+    links: [
+      {
+        label: 'NU Profile',
+        href: 'https://research.nu.edu.kz/en/persons/mahmoud-leila/',
+      },
+    ],
+  },
+  {
+    name: 'Masoud Darvish Ganji',
+    initials: 'MG',
+    role: 'Research Collaborator',
+    institution:
+      'Department of BioNano Technology, Gachon University, Republic of Korea',
+    summary:
+      'Collaborator across computational materials, quantum photonic simulation, hydrogen and energy modeling, and scientific machine-learning workflows.',
+    tags: ['Computational Materials', 'Hydrogen', 'Scientific ML'],
+    links: [
+      {
+        label: 'Scholar',
+        href: 'https://scholar.google.com/citations?user=56JK5-wAAAAJ&hl=en',
+      },
+    ],
+  },
+  {
+    name: 'Sonny Irawan',
+    initials: 'SI',
+    role: 'Associate Professor, PhD',
+    institution:
+      'Nazarbayev University, Department of Petroleum Engineering',
+    summary:
+      'Academic collaborator in petroleum engineering, drilling fluids, well repair, water shut-off, and reservoir-engineering workflows.',
+    tags: ['Petroleum Engineering', 'Drilling Fluids', 'Reservoir Engineering'],
+    links: [
+      {
+        label: 'NU Profile',
+        href: 'https://research.nu.edu.kz/en/persons/irawan-sonny/',
+      },
+    ],
+  },
+  {
+    name: 'Chinonso Onah',
+    initials: 'CO',
+    role: 'Research Fellow in Quantum Computing',
+    institution: 'Volkswagen Group, Wolfsburg, Germany',
+    summary:
+      'Collaborator on LiDMaS+, decoder evaluation, surface-code threshold studies, and reproducible QEC workflows.',
+    tags: ['Quantum Error Correction', 'LiDMaS+', 'Decoder Evaluation'],
+    links: [{ label: 'LinkedIn', href: 'https://de.linkedin.com/in/chinonso-onah' }],
+  },
+]
+
 const qecHeaderLatticeConfig = {
   x: 58,
   y: 72,
@@ -728,54 +822,63 @@ const wayoWorkflowSteps = [
     code: 'define_objective()',
     shortCode: 'define_objective()',
     detail: 'Define target application, success metrics, and acceptable logical error thresholds.',
+    tone: 'cyan',
   },
   {
     label: 'Encoding',
     code: 'choose_encoding_and_code_family()',
     shortCode: 'choose_encoding()',
     detail: 'Select photonic encoding and QEC code family based on hardware and noise assumptions.',
+    tone: 'blue',
   },
   {
     label: 'Backend',
     code: 'realize_physical_qubits_or_backend()',
     shortCode: 'realize_backend()',
     detail: 'Instantiate hardware backend constraints, connectivity, and measurement model.',
+    tone: 'violet',
   },
   {
     label: 'Noise',
     code: 'measure_noise()',
     shortCode: 'measure_noise()',
     detail: 'Characterize dominant physical error channels from device or simulator telemetry.',
+    tone: 'magenta',
   },
   {
     label: 'GKP Digitization',
     code: 'fit_noise_model_with_GKP_digitization()',
     shortCode: 'fit_GKP_noise()',
     detail: 'Fit calibrated noise parameters and integrate GKP/continuous-variable digitization behavior.',
+    tone: 'amber',
   },
   {
     label: 'Compile',
     code: 'compile_logical_circuit()',
     shortCode: 'compile_circuit()',
     detail: 'Compile the logical workload into backend-compatible operations and schedules.',
+    tone: 'emerald',
   },
   {
     label: 'Syndromes',
     code: 'generate_syndromes()',
     shortCode: 'generate_syndromes()',
     detail: 'Run fault-injected trials and collect syndrome streams under calibrated noise.',
+    tone: 'cyan',
   },
   {
     label: 'Decoders',
     code: 'run_decoders()',
     shortCode: 'run_decoders()',
     detail: 'Evaluate candidate decoders over identical syndrome sets using replayable interfaces.',
+    tone: 'blue',
   },
   {
     label: 'Threshold',
     code: 'estimate_LER_vs_PER_across_distances()',
     shortCode: 'estimate_LER_vs_PER()',
     detail: 'Estimate scaling of logical vs physical error rates across code distances and noise sweeps.',
+    tone: 'violet',
   },
   {
     label: 'Tune',
@@ -783,18 +886,65 @@ const wayoWorkflowSteps = [
     shortCode: 'tune_decoder()',
     detail: 'Adjust decoder policies, distances, and noise-mitigation settings when reliability targets are not met.',
     branch: true,
+    tone: 'magenta',
   },
   {
     label: 'Validate',
     code: 'validate_logical_stability()',
     shortCode: 'validate_stability()',
     detail: 'Confirm stable logical-qubit behavior under repeated trials and confidence bounds.',
+    tone: 'emerald',
   },
   {
     label: 'Applications',
     code: 'deploy_to_applications([hydrogen, hydraulic_fracturing, remote_sensing])',
     shortCode: 'deploy_applications()',
     detail: 'Apply validated logical workflows to domain pipelines and decision-oriented simulations.',
+    tone: 'amber',
+  },
+]
+
+const wayoFocusCards = [
+  {
+    title: 'Quantum Software and Compilation',
+    summary: 'Circuit workflows, differentiable methods, and hardware-aware compilation.',
+    tone: 'cyan',
+    items: [
+      'Photonic circuit simulation (Gaussian + non-Gaussian)',
+      'Differentiable programming and variational algorithms',
+      'Resource estimation and gate-depth prediction',
+      'Algorithm decomposition and hardware mapping',
+    ],
+  },
+  {
+    title: 'Quantum Architectures and Fault Tolerance',
+    summary: 'Code families, redundancy, error propagation, and decoder-aware evaluation.',
+    tone: 'violet',
+    items: [
+      'Cluster-state photonic computation (MBQC intuition)',
+      'Bosonic codes and coherent-state redundancy schemes',
+      'Error propagation modeling and QEC-inspired encodings',
+    ],
+  },
+  {
+    title: 'Computational Photonics and Materials Modeling',
+    summary: 'Numerical physics and first-principles descriptors for photonic systems.',
+    tone: 'blue',
+    items: [
+      'DFT/LR-TDDFT for quantum emitters and rare-earth ions',
+      'NLSE propagation, soliton/dispersion modeling, detector physics',
+      'MEEP-FDTD validation of chip-scale photonic components',
+    ],
+  },
+  {
+    title: 'Real World Applications',
+    summary: 'Application-facing pipelines where quantum simulation meets engineering context.',
+    tone: 'amber',
+    items: [
+      'Remote sensing (LiDAR and Sentinel)',
+      'Hydrogen production and carbon reduction',
+      'Hydraulic fracturing',
+    ],
   },
 ]
 
@@ -881,6 +1031,7 @@ const software = [
       {
         name: 'PennyLane',
         logo: '/pennylane-logo.png',
+        logoShape: 'wide',
         description: 'Differentiable quantum programming and hybrid quantum machine-learning workflows.',
         version: '0.45.1',
         href: 'https://pypi.org/project/pennylane/',
@@ -901,6 +1052,7 @@ const software = [
       },
       {
         name: 'QuTiP',
+        logo: '/qutip-logo.svg',
         description: 'Open quantum systems simulation for dynamics, Hamiltonians, and density-matrix workflows.',
         version: '5.3.0',
         href: 'https://pypi.org/project/qutip/',
@@ -935,6 +1087,7 @@ const software = [
       },
       {
         name: 'Dynamiqs',
+        logo: '/dynamiqs-logo.svg',
         description: 'JAX-based differentiable quantum dynamics package for Schrödinger and Lindblad simulations.',
         version: '0.3.4',
         href: 'https://pypi.org/project/dynamiqs/',
@@ -954,24 +1107,31 @@ const software = [
     items: [
       {
         name: 'GPAW (TDDFT)',
+        logo: '/gpaw-logo.png',
+        logoShape: 'wide',
         description: 'DFT and time-dependent DFT workflows for optical descriptors and excited-state response.',
         version: 'Workflow',
         href: 'https://gpaw.readthedocs.io/',
       },
       {
         name: 'MEEP (FDTD)',
+        logo: '/meep-logo.png',
+        logoShape: 'wide',
         description: 'Finite-difference time-domain electromagnetic simulation for photonic structures.',
         version: 'Workflow',
         href: 'https://meep.readthedocs.io/',
       },
       {
         name: 'NLSE/SSFM',
+        logo: '/nlse-ssfm-logo.png',
+        logoShape: 'wide',
         description: 'Split-step Fourier modeling for nonlinear optical propagation and pulse evolution.',
         version: 'Method',
         href: 'https://en.wikipedia.org/wiki/Split-step_method',
       },
       {
         name: 'ASE',
+        logo: '/ase-logo.png',
         description: 'Atomic Simulation Environment for structure handling and atomistic simulation pipelines.',
         version: 'Workflow',
         href: 'https://wiki.fysik.dtu.dk/ase/',
@@ -998,18 +1158,22 @@ const software = [
       },
       {
         name: 'JAX',
+        logo: '/jax-logo.png',
+        logoShape: 'wide',
         description: 'Composable autodiff and accelerator-backed numerical computing for differentiable simulation.',
         version: 'ML stack',
         href: 'https://jax.readthedocs.io/',
       },
       {
-        name: 'GNNs',
+        name: 'PyG (GNNs)',
+        logo: '/pyg-logo.png',
         description: 'Graph neural-network workflows for structured scientific data and relational modeling.',
         version: 'Model family',
         href: 'https://pytorch-geometric.readthedocs.io/',
       },
       {
         name: 'PINNs',
+        logo: '/pinn-logo.svg',
         description: 'Physics-informed neural-network methods for constraint-aware scientific learning.',
         version: 'Model family',
         href: 'https://www.nature.com/articles/s42254-021-00314-5',
@@ -1022,18 +1186,21 @@ const software = [
     items: [
       {
         name: 'Numerical Linear Algebra',
+        logo: '/linalg-logo.svg',
         description: 'Matrix, eigensolver, sparse, and decomposition workflows used throughout simulation code.',
         version: 'Method',
         href: 'https://netlib.org/lapack/',
       },
       {
         name: 'Automatic Differentiation',
+        logo: '/autodiff-logo.svg',
         description: 'Gradient-based modeling and differentiable programming for optimization and learning.',
         version: 'Method',
         href: 'https://jax.readthedocs.io/',
       },
       {
         name: 'Parallel Workflows',
+        logo: '/parallel-workflows-logo.svg',
         description: 'Batch, multiprocessing, GPU, and cluster execution patterns for large experiment sweeps.',
         version: 'HPC pattern',
         href: 'https://docs.python.org/3/library/concurrent.futures.html',
@@ -1052,8 +1219,15 @@ const software = [
 function Layout({ children }) {
   const location = useLocation()
   const tabsRef = useRef(null)
+  const scrollAnimationRef = useRef(null)
+  const springScrollRef = useRef({
+    current: 0,
+    target: 0,
+    velocity: 0,
+  })
   const [visitCount, setVisitCount] = useState(null)
   const [theme, setTheme] = useState(getInitialTheme)
+  const [scrollProgress, setScrollProgress] = useState(0)
 
   useEffect(() => {
     const tabsElement = tabsRef.current
@@ -1084,6 +1258,99 @@ function Layout({ children }) {
       // Ignore persistence errors in restricted browsers.
     }
   }, [theme])
+
+  useEffect(() => {
+    const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const springState = springScrollRef.current
+
+    function updateScrollProgress() {
+      const maxScrollY = getMaxScrollY()
+      setScrollProgress(maxScrollY > 0 ? window.scrollY / maxScrollY : 0)
+
+      if (!scrollAnimationRef.current) {
+        springState.current = window.scrollY
+        springState.target = window.scrollY
+        springState.velocity = 0
+      }
+    }
+
+    function animateSpringScroll() {
+      const maxScrollY = getMaxScrollY()
+      springState.target = Math.min(maxScrollY, Math.max(0, springState.target))
+
+      const distance = springState.target - springState.current
+      springState.velocity += distance * 0.055
+      springState.velocity *= 0.68
+      springState.current += springState.velocity
+
+      if (Math.abs(distance) < 0.4 && Math.abs(springState.velocity) < 0.4) {
+        window.scrollTo(0, springState.target)
+        scrollAnimationRef.current = null
+        return
+      }
+
+      window.scrollTo(0, springState.current)
+      scrollAnimationRef.current = window.requestAnimationFrame(animateSpringScroll)
+    }
+
+    function shouldUseNativeScroll(event) {
+      if (reducedMotionQuery.matches || event.ctrlKey || event.metaKey || event.shiftKey) {
+        return true
+      }
+
+      const target = event.target instanceof Element ? event.target : null
+
+      if (!target) {
+        return false
+      }
+
+      if (target.closest('input, textarea, select, [contenteditable="true"]')) {
+        return true
+      }
+
+      if (target.closest('.tabs, .software-stack-table-wrap, .wayo-diagram-wrap')) {
+        return true
+      }
+
+      return false
+    }
+
+    function handleWheel(event) {
+      if (shouldUseNativeScroll(event)) {
+        return
+      }
+
+      event.preventDefault()
+
+      const deltaScale = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? window.innerHeight : 1
+      const wheelDelta = event.deltaY * deltaScale
+      const cappedDelta = Math.max(-260, Math.min(260, wheelDelta))
+      const nextTarget = springState.target + cappedDelta
+
+      springState.current = window.scrollY
+      springState.target = Math.min(getMaxScrollY(), Math.max(0, nextTarget))
+
+      if (!scrollAnimationRef.current) {
+        scrollAnimationRef.current = window.requestAnimationFrame(animateSpringScroll)
+      }
+    }
+
+    updateScrollProgress()
+    window.addEventListener('scroll', updateScrollProgress, { passive: true })
+    window.addEventListener('resize', updateScrollProgress)
+    window.addEventListener('wheel', handleWheel, { passive: false })
+
+    return () => {
+      window.removeEventListener('scroll', updateScrollProgress)
+      window.removeEventListener('resize', updateScrollProgress)
+      window.removeEventListener('wheel', handleWheel)
+
+      if (scrollAnimationRef.current) {
+        window.cancelAnimationFrame(scrollAnimationRef.current)
+        scrollAnimationRef.current = null
+      }
+    }
+  }, [])
 
   useEffect(() => {
     let cancelled = false
@@ -1142,6 +1409,22 @@ function Layout({ children }) {
 
   const visitCountDisplay = typeof visitCount === 'number' ? visitCount.toLocaleString('en-US') : '--'
   const nextTheme = theme === 'dark' ? 'light' : 'dark'
+  const shouldScrollToTop = scrollProgress > 0.52
+  const scrollButtonLabel = shouldScrollToTop ? 'Scroll to top' : 'Scroll to bottom'
+
+  function handleScrollJump() {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const top = shouldScrollToTop ? 0 : getMaxScrollY()
+
+    springScrollRef.current.current = window.scrollY
+    springScrollRef.current.target = top
+    springScrollRef.current.velocity = 0
+
+    window.scrollTo({
+      top,
+      behavior: prefersReducedMotion ? 'auto' : 'smooth',
+    })
+  }
 
   return (
     <div className="page-grid">
@@ -1210,32 +1493,107 @@ function Layout({ children }) {
             </p>
           </div>
         </footer>
+        <button
+          className={`floating-scroll-button ${shouldScrollToTop ? 'is-up' : 'is-down'}`}
+          type="button"
+          aria-label={scrollButtonLabel}
+          title={scrollButtonLabel}
+          onClick={handleScrollJump}
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 4 5.5 10.5l1.4 1.4L11 7.8V20h2V7.8l4.1 4.1 1.4-1.4L12 4Z" />
+          </svg>
+        </button>
       </div>
     </div>
   )
 }
 
+function BadgeStrip() {
+  return (
+    <section className="credly-strip" aria-label="Credential badge highlights">
+      <h2>Credentials & Badges</h2>
+      <div className="badge-group-stack">
+        {badgeGroups.map((group) => {
+          const tickerItems = buildTickerItems(
+            group.items,
+            group.type === 'credly' ? 8 : 6,
+          )
+
+          return (
+            <article className="badge-group" key={group.key}>
+              <h3>{group.label}</h3>
+              <div className="credly-marquee">
+                <div className="credly-track">
+                  {[0, 1].map((duplicateIndex) =>
+                    group.type === 'credly' ? (
+                      <div
+                        className="credly-badge-row"
+                        key={`${group.key}-credly-row-${duplicateIndex}`}
+                      >
+                        {tickerItems.map((badgeId, itemIndex) => (
+                          <div
+                            key={`${badgeId}-${itemIndex}-${duplicateIndex}`}
+                            className="credly-badge-embed"
+                            data-iframe-width="150"
+                            data-iframe-height="270"
+                            data-share-badge-id={badgeId}
+                            data-share-badge-host="https://www.credly.com"
+                          ></div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div
+                        className="pennylane-badge-row"
+                        key={`${group.key}-link-row-${duplicateIndex}`}
+                      >
+                        {tickerItems.map((item, itemIndex) => (
+                          <a
+                            key={`${item.href}-${item.title}-${itemIndex}-${duplicateIndex}`}
+                            className="pennylane-badge-card"
+                            href={item.href}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            {item.image ? (
+                              <figure className="pennylane-badge-media">
+                                <img
+                                  src={item.image}
+                                  alt={item.imageAlt || item.title}
+                                  loading="lazy"
+                                />
+                              </figure>
+                            ) : null}
+                            <div className="pennylane-badge-copy">
+                              <span className="pennylane-badge-label">PennyLane</span>
+                              <span className="pennylane-badge-title">{item.title}</span>
+                              <span className="pennylane-badge-subtitle">
+                                {item.subtitle}
+                              </span>
+                            </div>
+                          </a>
+                        ))}
+                      </div>
+                    ),
+                  )}
+                </div>
+              </div>
+            </article>
+          )
+        })}
+      </div>
+    </section>
+  )
+}
+
 function AboutPage() {
-  useEffect(() => {
-    const script = document.createElement('script')
-    script.type = 'text/javascript'
-    script.async = true
-    script.src = 'https://cdn.credly.com/assets/utilities/embed.js'
-    document.body.appendChild(script)
-
-    return () => {
-      if (script.parentNode) {
-        script.parentNode.removeChild(script)
-      }
-    }
-  }, [])
-
   return (
     <Layout>
       <section className="page about-page">
         <div className="hero-grid">
-          <article>
+          <article className="about-story">
             <h1>Dennis Wayo, PhD</h1>
+            <span className="about-title-rule" aria-hidden="true"></span>
             <p className="lead">
               I build scientific software where quantum theory, numerical modeling, and
               systems engineering meet. My work centers on creating simulation and
@@ -1286,7 +1644,7 @@ function AboutPage() {
               outputs.
             </p>
             <div className="cta-row">
-              <a className="btn btn-primary" href="/MyCV.pdf" download>
+              <a className="btn btn-primary" href="/MyCV.pdf" download="dennis-wayo-cv.pdf">
                 Download CV
               </a>
               <NavLink className="btn btn-secondary" to="/projects">
@@ -1378,117 +1736,6 @@ function AboutPage() {
             </p>
           </article>
         </div>
-
-        <section className="focus-zone">
-          <h2>Laser Focus</h2>
-          <div className="grid two about-focus-grid">
-            <article className="panel">
-              <h3>Quantum Software and Compilation</h3>
-              <ul className="focus-list">
-                <li>Photonic circuit simulation (Gaussian + non-Gaussian)</li>
-                <li>Differentiable programming and variational algorithms</li>
-                <li>Resource estimation and gate-depth prediction</li>
-                <li>Algorithm decomposition and hardware mapping</li>
-              </ul>
-            </article>
-            <article className="panel">
-              <h3>Quantum Architectures and Fault Tolerance</h3>
-              <ul className="focus-list">
-                <li>Cluster-state photonic computation (MBQC intuition)</li>
-                <li>Bosonic codes and coherent-state redundancy schemes</li>
-                <li>Error propagation modeling and QEC-inspired encodings</li>
-              </ul>
-            </article>
-            <article className="panel">
-              <h3>Computational Photonics and Materials Modeling</h3>
-              <ul className="focus-list">
-                <li>DFT/LR-TDDFT for quantum emitters and rare-earth ions</li>
-                <li>NLSE propagation, soliton/dispersion modeling, detector physics</li>
-                <li>MEEP-FDTD validation of chip-scale photonic components</li>
-              </ul>
-            </article>
-            <article className="panel">
-              <h3>Real World Applications</h3>
-              <ul className="focus-list">
-                <li>Remote sensing (LiDAR and Sentinel)</li>
-                <li>Hydrogen production and carbon reduction</li>
-                <li>Hydraulic fracturing</li>
-              </ul>
-            </article>
-          </div>
-        </section>
-        <section className="credly-strip" aria-label="Credly badge highlights">
-          <h2>Badges</h2>
-          <div className="badge-group-stack">
-            {badgeGroups.map((group) => {
-              const tickerItems = buildTickerItems(
-                group.items,
-                group.type === 'credly' ? 8 : 6,
-              )
-
-              return (
-                <article className="badge-group" key={group.key}>
-                  <h3>{group.label}</h3>
-                  <div className="credly-marquee">
-                    <div className="credly-track">
-                      {[0, 1].map((duplicateIndex) =>
-                        group.type === 'credly' ? (
-                          <div
-                            className="credly-badge-row"
-                            key={`${group.key}-credly-row-${duplicateIndex}`}
-                          >
-                            {tickerItems.map((badgeId, itemIndex) => (
-                              <div
-                                key={`${badgeId}-${itemIndex}-${duplicateIndex}`}
-                                className="credly-badge-embed"
-                                data-iframe-width="150"
-                                data-iframe-height="270"
-                                data-share-badge-id={badgeId}
-                                data-share-badge-host="https://www.credly.com"
-                              ></div>
-                            ))}
-                          </div>
-                        ) : (
-                          <div
-                            className="pennylane-badge-row"
-                            key={`${group.key}-link-row-${duplicateIndex}`}
-                          >
-                            {tickerItems.map((item, itemIndex) => (
-                              <a
-                                key={`${item.href}-${item.title}-${itemIndex}-${duplicateIndex}`}
-                                className="pennylane-badge-card"
-                                href={item.href}
-                                target="_blank"
-                                rel="noreferrer"
-                              >
-                                {item.image ? (
-                                  <figure className="pennylane-badge-media">
-                                    <img
-                                      src={item.image}
-                                      alt={item.imageAlt || item.title}
-                                      loading="lazy"
-                                    />
-                                  </figure>
-                                ) : null}
-                                <div className="pennylane-badge-copy">
-                                  <span className="pennylane-badge-label">PennyLane</span>
-                                  <span className="pennylane-badge-title">{item.title}</span>
-                                  <span className="pennylane-badge-subtitle">
-                                    {item.subtitle}
-                                  </span>
-                                </div>
-                              </a>
-                            ))}
-                          </div>
-                        ),
-                      )}
-                    </div>
-                  </div>
-                </article>
-              )
-            })}
-          </div>
-        </section>
       </section>
     </Layout>
   )
@@ -1497,6 +1744,20 @@ function AboutPage() {
 function BlogPage() {
   const [mediumPosts, setMediumPosts] = useState([])
   const [mediumStatus, setMediumStatus] = useState('loading')
+
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.type = 'text/javascript'
+    script.async = true
+    script.src = 'https://cdn.credly.com/assets/utilities/embed.js'
+    document.body.appendChild(script)
+
+    return () => {
+      if (script.parentNode) {
+        script.parentNode.removeChild(script)
+      }
+    }
+  }, [])
 
   useEffect(() => {
     let cancelled = false
@@ -1561,22 +1822,27 @@ function BlogPage() {
       <section className="page blog-page">
         <h1>Blog</h1>
         <p className="lead">
-          Live feed from LinkedIn and Medium, plus technical writing tracks that document
-          simulation systems, benchmarking methodology, and reproducibility practices.
+          Live feed from LinkedIn and Medium, plus technical writing, talks, credentials,
+          and updates that document simulation systems, benchmarking methodology, and
+          reproducibility practices.
         </p>
         <article className="panel blog-feature-card">
           <div className="blog-feature-copy">
             <p className="eyebrow">Featured OSS update</p>
             <h2>UnitaryHack 2026 open-source contributions</h2>
             <p>
-              My UnitaryHack profile records two completed bounty contributions across
-              PennyLane and Qiskit, with $125 claimed through the Unitary Foundation
+              My UnitaryHack profile records three completed bounty contributions across
+              PennyLane, Qibo, and Qiskit, with $175 claimed through the Unitary Foundation
               open-source hackathon.
             </p>
             <ul className="blog-feature-list">
               <li>
                 <span>PennyLane</span>
                 Documentation tests for the shadows module.
+              </li>
+              <li>
+                <span>Qibo/Qibolab</span>
+                Dynamiqs integration as a simulation engine.
               </li>
               <li>
                 <span>Qiskit</span>
@@ -1615,6 +1881,23 @@ function BlogPage() {
             />
           </a>
         </article>
+        <BadgeStrip />
+        <section className="blog-talks-section" aria-label="Talks and media">
+          <div className="section-heading-row">
+            <div>
+              <p className="eyebrow">Talks & Media</p>
+              <h2>Research Narratives</h2>
+            </div>
+          </div>
+          <div className="grid three blog-talks-grid">
+            {talks.map((talk) => (
+              <article className="panel blog-talk-card" key={talk.title}>
+                <h3>{talk.title}</h3>
+                <p>{talk.summary}</p>
+              </article>
+            ))}
+          </div>
+        </section>
         <div className="grid two blog-live-grid">
           <article className="panel blog-feed-panel">
             <h2>LinkedIn Live Feed</h2>
@@ -1674,13 +1957,6 @@ function BlogPage() {
             </div>
           </article>
         </div>
-        <div className="grid two blog-topic-grid">
-          {blogTopics.map((topic) => (
-            <article className="panel" key={topic}>
-              <h2>{topic}</h2>
-            </article>
-          ))}
-        </div>
       </section>
     </Layout>
   )
@@ -1699,6 +1975,7 @@ function PublicationsPage() {
   const publicationYears = Object.keys(publicationsByYear)
     .map((year) => Number(year))
     .sort((a, b) => b - a)
+  const spotlightPublication = publications.find((item) => item.key === publicationSpotlight.key)
 
   return (
     <Layout>
@@ -1723,6 +2000,22 @@ function PublicationsPage() {
             <span>Google Scholar</span>
           </a>
         </div>
+        {spotlightPublication ? (
+          <article className="publication-spotlight">
+            <a
+              className="publication-spotlight-link"
+              href={spotlightPublication.paperUrl}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Open spotlight paper: ${spotlightPublication.title}`}
+            >
+              <span className="publication-spotlight-label">{publicationSpotlight.label}</span>
+              <figure className="publication-spotlight-media">
+                <img src={publicationSpotlight.image} alt={publicationSpotlight.imageAlt} />
+              </figure>
+            </a>
+          </article>
+        ) : null}
         {publicationYears.map((year) => (
           <section className="publication-year-group" key={year}>
             <h2 className="publication-year-title">{year}</h2>
@@ -2002,14 +2295,55 @@ function ColabXPage() {
             and reproducible computational practice.
           </p>
           <div className="story-grid">
-            {colabStoryFrames.map((item) => (
-              <article className="story-card" key={item.title}>
+            {colabStoryFrames.map((item, index) => (
+              <article
+                className="story-card"
+                key={item.title}
+                style={{ '--story-index': index }}
+              >
                 <figure className="story-media">
                   <img src={item.image} alt={item.alt} loading="lazy" />
                 </figure>
                 <div className="story-copy">
                   <h3>{item.title}</h3>
                   <p>{item.summary}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+        <section className="collaborators-section" aria-label="Collaborators and research network">
+          <div className="section-heading-row">
+            <div>
+              <p className="eyebrow">Collaborators</p>
+              <h2>Research Network</h2>
+            </div>
+          </div>
+          <div className="collaborator-grid">
+            {collaborators.map((person) => (
+              <article className="collaborator-card" key={person.name}>
+                <div className="collaborator-card-head">
+                  <span className="collaborator-avatar" aria-hidden="true">
+                    {person.initials}
+                  </span>
+                  <div>
+                    <h3>{person.name}</h3>
+                    <p>{person.role}</p>
+                  </div>
+                </div>
+                <p className="collaborator-institution">{person.institution}</p>
+                <p>{person.summary}</p>
+                <div className="collaborator-tags" aria-label={`${person.name} collaboration areas`}>
+                  {person.tags.map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
+                <div className="collaborator-links">
+                  {person.links.map((link) => (
+                    <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
+                      {link.label}
+                    </a>
+                  ))}
                 </div>
               </article>
             ))}
@@ -2048,9 +2382,7 @@ function SoftwarePage() {
         <div className="software-stack-grid">
           {software.map((item) => (
             <article
-              className={`panel software-stack-panel ${
-                item.key === 'Quantum Stack' ? 'is-quantum-stack' : ''
-              }`}
+              className="panel software-stack-panel"
               key={item.key}
             >
               <div className="software-stack-head">
@@ -2073,7 +2405,14 @@ function SoftwarePage() {
                         <th scope="row">
                           <span className="software-tool">
                             {tool.logo ? (
-                              <img src={tool.logo} alt="" aria-hidden="true" />
+                              <span
+                                className={`software-icon-tile ${
+                                  tool.logoShape === 'wide' ? 'is-wide' : ''
+                                }`}
+                                aria-hidden="true"
+                              >
+                                <img src={tool.logo} alt="" />
+                              </span>
                             ) : (
                               <span className="tool-fallback" aria-hidden="true">
                                 {tool.name.slice(0, 2).toUpperCase()}
@@ -2381,6 +2720,13 @@ function WayoFlowDiagram() {
           validation, and application deployment.
         </desc>
         <defs>
+          <linearGradient id="wayo-flow-gradient" x1="80" y1="80" x2="1040" y2="650">
+            <stop offset="0%" stopColor="#22d3ee" />
+            <stop offset="24%" stopColor="#60a5fa" />
+            <stop offset="48%" stopColor="#a78bfa" />
+            <stop offset="72%" stopColor="#f472b6" />
+            <stop offset="100%" stopColor="#f59e0b" />
+          </linearGradient>
           <marker
             id="wayo-flow-arrow"
             viewBox="0 0 10 10"
@@ -2404,7 +2750,9 @@ function WayoFlowDiagram() {
         />
         {wayoWorkflowSteps.map((step, index) => {
           const position = wayoDiagramPositions[index]
-          const nodeClassName = `wayo-svg-node ${step.branch ? 'is-branch' : ''}`
+          const nodeClassName = `wayo-svg-node is-${step.tone} ${
+            step.branch ? 'is-branch' : ''
+          }`
 
           return (
             <g
@@ -2420,6 +2768,8 @@ function WayoFlowDiagram() {
                 height={wayoNodeSize.height}
                 rx="14"
               />
+              <rect className="wayo-svg-node-accent" x="0" y="0" width="250" height="7" rx="4" />
+              <circle className="wayo-svg-node-dot" cx="222" cy="24" r="6" />
               <text className="wayo-svg-node-count" x="18" y="26">
                 {String(index + 1).padStart(2, '0')}
               </text>
@@ -2452,6 +2802,42 @@ function WayoAiPage() {
           <h2>Personal Workflow Map</h2>
           <WayoFlowDiagram />
         </section>
+        <section className="wayo-focus-section" aria-label="wayo.ai laser focus domains">
+          <div className="section-heading-row">
+            <div>
+              <p className="eyebrow">Laser Focus</p>
+              <h2>Domains Behind the Workflow</h2>
+            </div>
+          </div>
+          <div className="wayo-focus-grid">
+            {wayoFocusCards.map((card, index) => (
+              <article
+                className={`wayo-focus-card is-${card.tone}`}
+                key={card.title}
+                style={{ '--card-index': index }}
+                tabIndex={0}
+              >
+                <div className="wayo-focus-card-inner">
+                  <div className="wayo-focus-face wayo-focus-front">
+                    <span className="wayo-focus-index">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <h3>{card.title}</h3>
+                    <p>{card.summary}</p>
+                  </div>
+                  <div className="wayo-focus-face wayo-focus-back">
+                    <h3>{card.title}</h3>
+                    <ul>
+                      {card.items.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
         <div className="grid two wayo-support-grid">
           <article className="panel">
             <h2>How I Use It</h2>
@@ -2476,24 +2862,6 @@ function WayoAiPage() {
   )
 }
 
-function TalksPage() {
-  return (
-    <Layout>
-      <section className="page">
-        <h1>talKs</h1>
-        <div className="grid three">
-          {talks.map((talk) => (
-            <article className="panel" key={talk.title}>
-              <h2>{talk.title}</h2>
-              <p>{talk.summary}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-    </Layout>
-  )
-}
-
 function App() {
   return (
     <Routes>
@@ -2507,7 +2875,7 @@ function App() {
       <Route path="/colabx" element={<ColabXPage />} />
       <Route path="/software" element={<SoftwarePage />} />
       <Route path="/wayo-ai" element={<WayoAiPage />} />
-      <Route path="/talks" element={<TalksPage />} />
+      <Route path="/talks" element={<Navigate replace to="/blog" />} />
       <Route path="*" element={<Navigate replace to="/about" />} />
     </Routes>
   )

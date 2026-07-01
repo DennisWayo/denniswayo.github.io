@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Dynamiqs">
+  <rect width="96" height="96" rx="22" fill="#0f172a"/>
+  <path d="M16 54c10-26 22-26 32 0s22 26 32 0" fill="none" stroke="#22d3ee" stroke-width="7" stroke-linecap="round"/>
+  <path d="M16 42c10 26 22 26 32 0s22-26 32 0" fill="none" stroke="#a78bfa" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="48" cy="48" r="9" fill="#f472b6"/>
+</svg>

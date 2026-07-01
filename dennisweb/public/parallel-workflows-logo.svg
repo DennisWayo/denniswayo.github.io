@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Parallel workflows">
+  <rect width="96" height="96" rx="22" fill="#1e3a8a"/>
+  <g fill="none" stroke="#bfdbfe" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 28h24c14 0 24 8 24 20s-10 20-24 20H24"/>
+    <path d="M24 48h48"/>
+    <path d="M24 68h24"/>
+  </g>
+  <g fill="#f97316">
+    <circle cx="24" cy="28" r="6"/>
+    <circle cx="24" cy="48" r="6"/>
+    <circle cx="24" cy="68" r="6"/>
+    <circle cx="72" cy="48" r="6"/>
+  </g>
+</svg>

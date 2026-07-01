@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
   <title id="title">UnitaryHack 2026 profile summary for DennisWayo</title>
-  <desc id="desc">A screenshot-style card showing DennisWayo, two completed bounties, 125 dollars claimed, and completed PennyLane and Qiskit issues.</desc>
+  <desc id="desc">A screenshot-style card showing DennisWayo, three completed bounties, 175 dollars claimed, and completed PennyLane, Qibo, and Qiskit issues.</desc>
   <defs>
     <linearGradient id="pageBg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#f7f7f2"/>
@@ -56,13 +56,13 @@
       }
 
       .issue-title {
-        font-size: 28px;
+        font-size: 24px;
         font-weight: 800;
         fill: #18181b;
       }
 
       .issue-body {
-        font-size: 23px;
+        font-size: 19px;
         fill: #52525b;
       }
     </style>
@@ -98,28 +98,32 @@
 
     <g transform="translate(574 130)">
       <rect x="0" y="0" width="192" height="150" rx="24" fill="#f4f4f5" stroke="#dedee3"/>
-      <text x="34" y="67" class="metric sans">2</text>
+      <text x="34" y="67" class="metric sans">3</text>
       <text x="34" y="104" class="metric-caption sans">
         <tspan x="34" dy="0">issues</tspan>
         <tspan x="34" dy="26">closed</tspan>
       </text>
 
       <rect x="222" y="0" width="192" height="150" rx="24" fill="#f4f4f5" stroke="#dedee3"/>
-      <text x="254" y="67" class="metric sans">$125</text>
+      <text x="254" y="67" class="metric sans">$175</text>
       <text x="254" y="106" class="metric-caption sans">claimed</text>
 
-      <rect x="0" y="192" width="414" height="96" rx="24" fill="#ecfdf5" stroke="#b7efd8"/>
-      <text x="32" y="242" class="issue-title sans">PennyLane</text>
-      <text x="32" y="270" class="issue-body sans">Docs tests for shadows module</text>
+      <rect x="0" y="174" width="414" height="66" rx="20" fill="#ecfdf5" stroke="#b7efd8"/>
+      <text x="32" y="201" class="issue-title sans">PennyLane</text>
+      <text x="32" y="225" class="issue-body sans">Docs tests for shadows module</text>
 
-      <rect x="0" y="312" width="414" height="96" rx="24" fill="#f5f3ff" stroke="#ddd6fe"/>
-      <text x="32" y="362" class="issue-title sans">Qiskit</text>
-      <text x="32" y="390" class="issue-body sans">Label support for gate helpers</text>
+      <rect x="0" y="258" width="414" height="66" rx="20" fill="#eef6ff" stroke="#cfe4ff"/>
+      <text x="32" y="285" class="issue-title sans">Qibo/Qibolab</text>
+      <text x="32" y="309" class="issue-body sans">Dynamiqs simulation engine</text>
+
+      <rect x="0" y="342" width="414" height="66" rx="20" fill="#f5f3ff" stroke="#ddd6fe"/>
+      <text x="32" y="369" class="issue-title sans">Qiskit</text>
+      <text x="32" y="393" class="issue-body sans">Label support for gate helpers</text>
     </g>
 
     <g transform="translate(54 548)">
       <rect x="0" y="0" width="944" height="2" fill="#e4e4e7"/>
-      <text x="0" y="43" class="small sans">Bounties completed across PennyLane and Qiskit.</text>
+      <text x="0" y="43" class="small sans">Bounties completed across PennyLane, Qibo, and Qiskit.</text>
     </g>
   </g>
 </svg>
