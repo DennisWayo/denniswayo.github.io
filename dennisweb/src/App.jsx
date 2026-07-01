@@ -472,9 +472,10 @@ const talks = [
   },
 ]
 
-const linkedInEmbedUrl =
-  'https://www.linkedin.com/embed/feed/update/urn:li:share:7452702797759901697?collapsed=1'
-const linkedInPostUrl = 'https://www.linkedin.com/feed/update/urn:li:share:7452702797759901697/'
+const linkedInEmbedUrls = [
+  'https://www.linkedin.com/embed/feed/update/urn:li:share:7452702797759901697?collapsed=1',
+  'https://www.linkedin.com/embed/feed/update/urn:li:activity:7478156099452407809?collapsed=1',
+]
 const linkedInFeedUrl = 'https://www.linkedin.com/feed/'
 const googleScholarProfileUrl =
   'https://scholar.google.com/citations?hl=en&user=YCXIi1wAAAAJ&view_op=list_works&sortby=pubdate'
@@ -1588,13 +1589,12 @@ function BadgeStrip() {
 }
 
 function LinkedInEmbedCard({ className, title }) {
-  const [shouldLoadEmbed, setShouldLoadEmbed] = useState(false)
-
   return (
     <div className={className}>
-      {shouldLoadEmbed ? (
+      {linkedInEmbedUrls.map((embedUrl, index) => (
         <iframe
-          src={linkedInEmbedUrl}
+          key={embedUrl}
+          src={embedUrl}
           width="504"
           height="584"
           frameBorder="0"
@@ -1602,35 +1602,9 @@ function LinkedInEmbedCard({ className, title }) {
           loading="lazy"
           referrerPolicy="strict-origin-when-cross-origin"
           sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
-          title={title}
+          title={`${title} ${index + 1}`}
         ></iframe>
-      ) : (
-        <div className="linkedin-embed-placeholder">
-          <div className="linkedin-embed-mark" aria-hidden="true">
-            in
-          </div>
-          <div className="linkedin-embed-copy">
-            <p className="eyebrow">LinkedIn Post</p>
-            <h3>Research update from Dennis Wayo</h3>
-            <p>
-              A live LinkedIn card is available on demand, with the direct post kept one
-              click away when third-party embeds are blocked.
-            </p>
-          </div>
-          <div className="linkedin-embed-actions">
-            <button
-              className="btn btn-primary"
-              type="button"
-              onClick={() => setShouldLoadEmbed(true)}
-            >
-              Load post
-            </button>
-            <a className="btn btn-secondary" href={linkedInPostUrl} target="_blank" rel="noreferrer">
-              Open on LinkedIn
-            </a>
-          </div>
-        </div>
-      )}
+      ))}
     </div>
   )
 }
@@ -1710,7 +1684,7 @@ function AboutPage() {
                 <p>53 Kabanbay Batyr Ave Astana, Kazakhstan, 010000</p>
               </figcaption>
             </figure>
-            <article className="panel news-feed-panel">
+            <article className="panel news-feed-panel about-news-feed">
               <h2>News Feed</h2>
               <LinkedInEmbedCard className="linkedin-feed" title="Embedded LinkedIn post" />
               <div className="news-publications">
@@ -2831,6 +2805,25 @@ function WayoAiPage() {
         </p>
         <section className="panel wayo-flow" aria-label="Animated personal workflow map">
           <h2>Personal Workflow Map</h2>
+          <div className="wayo-flow-context">
+            <article>
+              <h3>How I Use It</h3>
+              <p>
+                The workflow keeps research decisions explicit: define the objective,
+                choose the encoding, realize the backend, model noise, compile the circuit,
+                generate syndromes, evaluate decoders, tune when thresholds miss the target,
+                and validate the result before moving to applications.
+              </p>
+            </article>
+            <article>
+              <h3>Where It Lands</h3>
+              <ul>
+                <li>Fault-tolerant quantum simulation and decoder benchmarking.</li>
+                <li>Photonic, GKP, and hybrid continuous-variable/discrete workflows.</li>
+                <li>Application studies in hydrogen, hydraulic fracturing, and remote sensing.</li>
+              </ul>
+            </article>
+          </div>
           <WayoFlowDiagram />
         </section>
         <section className="wayo-focus-section" aria-label="wayo.ai laser focus domains">
@@ -2869,25 +2862,6 @@ function WayoAiPage() {
             ))}
           </div>
         </section>
-        <div className="grid two wayo-support-grid">
-          <article className="panel">
-            <h2>How I Use It</h2>
-            <p>
-              The workflow keeps research decisions explicit: define the objective, choose
-              the encoding, realize the backend, model noise, compile the circuit, generate
-              syndromes, evaluate decoders, tune when thresholds miss the target, and
-              validate the result before moving to applications.
-            </p>
-          </article>
-          <article className="panel">
-            <h2>Where It Lands</h2>
-            <ul className="clean-list">
-              <li>Fault-tolerant quantum simulation and decoder benchmarking.</li>
-              <li>Photonic, GKP, and hybrid continuous-variable/discrete workflows.</li>
-              <li>Application studies in hydrogen, hydraulic fracturing, and remote sensing.</li>
-            </ul>
-          </article>
-        </div>
       </section>
     </Layout>
   )
