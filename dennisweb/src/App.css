@@ -531,18 +531,103 @@ body {
 .linkedin-feed {
   border: 1px solid #d2d2d2;
   border-radius: 12px;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   background: #ffffff;
   margin-bottom: 8px;
 }
 
 .linkedin-feed iframe {
   display: block;
-  width: 100%;
-  max-width: 100%;
-  height: 310px;
-  min-height: 310px;
+  width: 504px;
+  max-width: none;
+  height: 584px;
+  min-height: 584px;
   border: 0;
+}
+
+.linkedin-embed-placeholder {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  width: 504px;
+  min-height: 584px;
+  padding: 32px;
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.18), transparent 34%),
+    radial-gradient(circle at 92% 8%, rgba(10, 102, 194, 0.48), transparent 36%),
+    linear-gradient(145deg, #0a66c2 0%, #111827 55%, #050608 100%);
+}
+
+.linkedin-embed-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  font-size: 1.42rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+
+.linkedin-embed-copy {
+  display: grid;
+  gap: 12px;
+}
+
+.linkedin-embed-copy .eyebrow {
+  width: fit-content;
+  margin: 0;
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.linkedin-embed-copy h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(1.7rem, 3vw, 2.35rem);
+  line-height: 1.08;
+}
+
+.linkedin-embed-copy p:not(.eyebrow) {
+  margin: 0;
+  max-width: 36ch;
+  color: rgba(255, 255, 255, 0.76);
+  line-height: 1.55;
+}
+
+.linkedin-embed-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.linkedin-embed-actions .btn {
+  cursor: pointer;
+}
+
+.linkedin-embed-actions button {
+  font: inherit;
+}
+
+.linkedin-embed-actions .btn-primary {
+  color: #0a66c2;
+  background: #ffffff;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+}
+
+.linkedin-embed-actions .btn-secondary {
+  border-color: rgba(255, 255, 255, 0.26);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
 }
 
 .news-publications {
@@ -1907,14 +1992,17 @@ body {
 .blog-linkedin-frame {
   border: 1px solid #d3d3d3;
   border-radius: 12px;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   background: #f8f8f8;
 }
 
 .blog-linkedin-frame iframe {
   display: block;
-  width: 100%;
-  min-height: 430px;
+  width: 504px;
+  max-width: none;
+  height: 584px;
+  min-height: 584px;
   border: 0;
 }
 
@@ -3182,6 +3270,11 @@ body {
     margin-top: 0;
   }
 
+  .about-page .about-story > h1,
+  .about-page .about-title-rule {
+    display: none;
+  }
+
   .blog-feature-card {
     gap: 16px;
   }
@@ -3205,11 +3298,6 @@ body {
   .about-page .news-feed-panel {
     order: 3;
     margin-top: 14px;
-  }
-
-  .linkedin-feed iframe {
-    height: 270px;
-    min-height: 270px;
   }
 
   .news-paper-marquee {

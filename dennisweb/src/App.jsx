@@ -474,6 +474,7 @@ const talks = [
 
 const linkedInEmbedUrl =
   'https://www.linkedin.com/embed/feed/update/urn:li:share:7452702797759901697?collapsed=1'
+const linkedInPostUrl = 'https://www.linkedin.com/feed/update/urn:li:share:7452702797759901697/'
 const linkedInFeedUrl = 'https://www.linkedin.com/feed/'
 const googleScholarProfileUrl =
   'https://scholar.google.com/citations?hl=en&user=YCXIi1wAAAAJ&view_op=list_works&sortby=pubdate'
@@ -1586,6 +1587,54 @@ function BadgeStrip() {
   )
 }
 
+function LinkedInEmbedCard({ className, title }) {
+  const [shouldLoadEmbed, setShouldLoadEmbed] = useState(false)
+
+  return (
+    <div className={className}>
+      {shouldLoadEmbed ? (
+        <iframe
+          src={linkedInEmbedUrl}
+          width="504"
+          height="584"
+          frameBorder="0"
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="strict-origin-when-cross-origin"
+          sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+          title={title}
+        ></iframe>
+      ) : (
+        <div className="linkedin-embed-placeholder">
+          <div className="linkedin-embed-mark" aria-hidden="true">
+            in
+          </div>
+          <div className="linkedin-embed-copy">
+            <p className="eyebrow">LinkedIn Post</p>
+            <h3>Research update from Dennis Wayo</h3>
+            <p>
+              A live LinkedIn card is available on demand, with the direct post kept one
+              click away when third-party embeds are blocked.
+            </p>
+          </div>
+          <div className="linkedin-embed-actions">
+            <button
+              className="btn btn-primary"
+              type="button"
+              onClick={() => setShouldLoadEmbed(true)}
+            >
+              Load post
+            </button>
+            <a className="btn btn-secondary" href={linkedInPostUrl} target="_blank" rel="noreferrer">
+              Open on LinkedIn
+            </a>
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
+
 function AboutPage() {
   return (
     <Layout>
@@ -1663,16 +1712,7 @@ function AboutPage() {
             </figure>
             <article className="panel news-feed-panel">
               <h2>News Feed</h2>
-              <div className="linkedin-feed">
-                <iframe
-                  src="https://www.linkedin.com/embed/feed/update/urn:li:share:7452702797759901697?collapsed=1"
-                  width="100%"
-                  height="300"
-                  frameBorder="0"
-                  allowFullScreen
-                  title="Embedded LinkedIn post"
-                ></iframe>
-              </div>
+              <LinkedInEmbedCard className="linkedin-feed" title="Embedded LinkedIn post" />
               <div className="news-publications">
                 <h3>Recent News & Publications</h3>
                 <div className="news-paper-marquee" aria-label="Continuous publication feed">
@@ -1901,16 +1941,7 @@ function BlogPage() {
         <div className="grid two blog-live-grid">
           <article className="panel blog-feed-panel">
             <h2>LinkedIn Live Feed</h2>
-            <div className="blog-linkedin-frame">
-              <iframe
-                src={linkedInEmbedUrl}
-                width="100%"
-                height="430"
-                frameBorder="0"
-                allowFullScreen
-                title="LinkedIn live feed"
-              ></iframe>
-            </div>
+            <LinkedInEmbedCard className="blog-linkedin-frame" title="LinkedIn live feed" />
             <div className="blog-feed-actions">
               <a
                 className="btn btn-secondary"
