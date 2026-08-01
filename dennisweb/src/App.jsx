@@ -98,7 +98,7 @@ const footerContacts = [
   },
   {
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/dennis-wayo-765a38b1/',
+    href: 'https://www.linkedin.com/in/dennis-w-765a38b1/',
     icon: '/icon-li.svg',
     square: true,
     external: true,
@@ -1615,7 +1615,7 @@ function AboutPage() {
       <section className="page about-page">
         <div className="hero-grid">
           <article className="about-story">
-            <h1>Dennis Wayo, PhD</h1>
+            <h1>Dennis Wayo</h1>
             <span className="about-title-rule" aria-hidden="true"></span>
             <p className="lead">
               I build scientific software where quantum theory, numerical modeling, and
@@ -1630,13 +1630,14 @@ function AboutPage() {
               software architectures for reproducibility, and then optimize for scale.
             </p>
             <p>
-              I hold a PhD in Chemical Engineering and am currently pursuing an extended PhD
-              in Computer Science at TU Bergakademie Freiberg (TUBAF), alongside an MS in
-              Computer Science (Computing Systems) at the Georgia Institute of Technology.
-              My specialization includes graduate algorithms, quantum computing and hardware,
-              machine learning, natural language processing, high-performance computing,
-              high-performance computing architecture, software architecture and design,
-              embedded-systems optimization, and advanced operating systems.
+              My PhD viva in Chemical Engineering at Universiti Malaysia Pahang Al-Sultan
+              Abdullah was successfully defended on 12 June 2026; the formal degree award is
+              pending Senate approval. I am based at Nazarbayev University in Kazakhstan and
+              continue advanced computer-science training through the Georgia Institute of
+              Technology. My specialization includes graduate algorithms, quantum computing
+              and hardware, machine learning, natural language processing, high-performance
+              computing, high-performance computing architecture, software architecture and
+              design, embedded-systems optimization, and advanced operating systems.
             </p>
             <p>
               I am the creator of <strong>LiDMaS+</strong> and <strong>SchroSIM</strong>,
@@ -1679,8 +1680,8 @@ function AboutPage() {
             <figure className="portrait-card">
               <img src="/dennis_image.jpeg" alt="Dennis Wayo" />
               <figcaption className="portrait-meta">
-                <p className="portrait-name">Dennis Wayo, PhD</p>
-                <p className="portrait-title">Quantum Systems Architect</p>
+                <p className="portrait-name">Dennis Wayo</p>
+                <p className="portrait-title">Quantum Software Researcher</p>
                 <p>53 Kabanbay Batyr Ave Astana, Kazakhstan, 010000</p>
               </figcaption>
             </figure>
