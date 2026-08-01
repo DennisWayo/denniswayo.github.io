@@ -1630,11 +1630,9 @@ function AboutPage() {
               software architectures for reproducibility, and then optimize for scale.
             </p>
             <p>
-              My PhD viva in Chemical Engineering at Universiti Malaysia Pahang Al-Sultan
-              Abdullah was successfully defended on 12 June 2026; the formal degree award is
-              pending Senate approval. I am based at Nazarbayev University in Kazakhstan and
-              continue advanced computer-science training through the Georgia Institute of
-              Technology. My specialization includes graduate algorithms, quantum computing
+              My current work sits at the intersection of quantum software, quantum
+              error-correction validation, photonic simulation, and reproducible scientific
+              computing. My specialization includes graduate algorithms, quantum computing
               and hardware, machine learning, natural language processing, high-performance
               computing, high-performance computing architecture, software architecture and
               design, embedded-systems optimization, and advanced operating systems.
