@@ -1692,7 +1692,10 @@ function AboutPage() {
               </div>
 
               <div className="modern-hero-meta" aria-label="Professional links">
-                <a href="https://github.com/DennisWayo" target="_blank" rel="noreferrer">GitHub</a>
+                <a className="modern-github-link" href="https://github.com/DennisWayo" target="_blank" rel="noreferrer">
+                  <img src="https://cdn.simpleicons.org/github/0a63ff" alt="" aria-hidden="true" />
+                  GitHub
+                </a>
                 <a href="https://orcid.org/0000-0001-9980-6247" target="_blank" rel="noreferrer">ORCID</a>
                 <a href="https://www.linkedin.com/in/dennis-w-765a38b1/" target="_blank" rel="noreferrer">LinkedIn</a>
                 <span>Astana, Kazakhstan</span>
@@ -1747,14 +1750,6 @@ function AboutPage() {
               <p>Each platform is organized around explicit interfaces, repeatable experiments, inspectable outputs, and a clear path from research claim to computational artifact.</p>
             </div>
 
-            <div className="modern-current-systems" aria-label="Current systems">
-              <span>Current systems</span>
-              <strong>LiDMaS+</strong>
-              <strong>SchroSIM</strong>
-              <strong>Photon-QDrivers</strong>
-              <em>C++ · Rust · Python · Swift</em>
-            </div>
-
             <div className="modern-software-grid">
               <article className="modern-software-card">
                 <div className="modern-software-card-top">
@@ -1769,7 +1764,10 @@ function AboutPage() {
                 </ul>
                 <div className="modern-software-footer">
                   <div className="modern-stack"><span>C++</span><span>Rust</span><span>Python</span></div>
-                  <a className="modern-text-link" href="https://github.com/Gottesman-Software" target="_blank" rel="noreferrer">View repository →</a>
+                  <a className="modern-text-link modern-github-link" href="https://github.com/Gottesman-Software" target="_blank" rel="noreferrer">
+                    <img src="https://cdn.simpleicons.org/github/0a63ff" alt="" aria-hidden="true" />
+                    Repository →
+                  </a>
                 </div>
               </article>
 
@@ -1786,7 +1784,13 @@ function AboutPage() {
                 </ul>
                 <div className="modern-software-footer">
                   <div className="modern-stack"><span>Swift</span><span>Rust</span><span>Python</span></div>
-                  <span className="modern-link-pair"><NavLink className="modern-text-link" to="/software">Project page →</NavLink><a className="modern-text-link" href="https://github.com/Gottesman-Software" target="_blank" rel="noreferrer">GitHub →</a></span>
+                  <span className="modern-link-pair">
+                    <NavLink className="modern-text-link" to="/software">Project page →</NavLink>
+                    <a className="modern-text-link modern-github-link" href="https://github.com/Gottesman-Software" target="_blank" rel="noreferrer">
+                      <img src="https://cdn.simpleicons.org/github/0a63ff" alt="" aria-hidden="true" />
+                      GitHub →
+                    </a>
+                  </span>
                 </div>
               </article>
 
@@ -1803,7 +1807,10 @@ function AboutPage() {
                 </ul>
                 <div className="modern-software-footer">
                   <div className="modern-stack"><span>Python</span><span>Rust</span><span>Control</span></div>
-                  <a className="modern-text-link" href="https://github.com/Gottesman-Software/photon-qdrivers" target="_blank" rel="noreferrer">GitHub →</a>
+                  <a className="modern-text-link modern-github-link" href="https://github.com/Gottesman-Software/photon-qdrivers" target="_blank" rel="noreferrer">
+                    <img src="https://cdn.simpleicons.org/github/0a63ff" alt="" aria-hidden="true" />
+                    GitHub →
+                  </a>
                 </div>
               </article>
             </div>
@@ -1813,7 +1820,13 @@ function AboutPage() {
                 <p className="modern-card-label">Gottesman Software</p>
                 <h3>University research group for quantum software.</h3>
                 <p>Gottesman Software is my university research-software initiative for open-source quantum systems, developed in an academic environment with scientific mentorship from Prof. Dr. habil. Sven Groppe. It connects SchroSIM, LiDMaS+, and Photon-QDrivers around hardware-aware quantum evaluation and reproducible experiment pipelines.</p>
-                <a className="modern-button modern-button-primary" href="https://github.com/Gottesman-Software" target="_blank" rel="noreferrer">Visit Gottesman Software</a>
+                <div className="modern-action-row">
+                  <a className="modern-button modern-button-primary" href="https://gottesman-software.github.io/" target="_blank" rel="noreferrer">Visit Gottesman Software</a>
+                  <a className="modern-text-link modern-github-link" href="https://github.com/Gottesman-Software" target="_blank" rel="noreferrer">
+                    <img src="https://cdn.simpleicons.org/github/0a63ff" alt="" aria-hidden="true" />
+                    GitHub
+                  </a>
+                </div>
               </div>
               <div className="modern-ecosystem-visual">
                 <img src="/quantum-design-platform.png" alt="Architecture connecting photonic circuit design, decoding, and quantum control through SchroSIM, LiDMaS+, and Photon-QDrivers" />

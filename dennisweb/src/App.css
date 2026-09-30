@@ -4496,39 +4496,6 @@ body {
 
 .modern-section-muted { background: var(--modern-soft); }
 
-.modern-current-systems {
-  display: grid;
-  grid-template-columns: auto repeat(3, minmax(0, 1fr)) auto;
-  gap: 10px;
-  align-items: center;
-  margin: -10px 0 18px;
-  padding: 12px 14px;
-  border: 1px solid var(--modern-line);
-  border-radius: 12px;
-  background: color-mix(in srgb, var(--modern-surface) 82%, var(--modern-soft));
-}
-
-.modern-current-systems span,
-.modern-current-systems em {
-  color: var(--modern-muted);
-  font-size: 0.58rem;
-  font-style: normal;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.modern-current-systems strong {
-  min-width: 0;
-  padding: 7px 9px;
-  border: 1px solid var(--modern-line);
-  border-radius: 999px;
-  background: var(--modern-surface);
-  color: var(--modern-ink);
-  font-size: 0.7rem;
-  text-align: center;
-}
-
 .modern-software-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -4604,7 +4571,27 @@ body {
   text-decoration: none;
 }
 
+.modern-github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.modern-github-link img {
+  width: 13px;
+  height: 13px;
+  display: block;
+  flex: 0 0 auto;
+}
+
 .modern-link-pair { display: flex; gap: 12px; }
+
+.modern-action-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
 
 .modern-ecosystem-card {
   display: grid;
@@ -4841,13 +4828,6 @@ body {
   .modern-about-callout { grid-template-columns: 1fr; }
   .modern-hero-grid { gap: 44px; }
   .modern-hero-portrait { max-width: 360px; }
-  .modern-current-systems {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .modern-current-systems span,
-  .modern-current-systems em {
-    grid-column: 1 / -1;
-  }
   .modern-pillar-grid,
   .modern-software-grid { grid-template-columns: 1fr; }
   .modern-pillar-card { min-height: 240px; }
@@ -4879,11 +4859,6 @@ body {
   .modern-section-heading h2,
   .modern-about-callout h2 { font-size: clamp(2.5rem, 12vw, 3.4rem); }
   .modern-hero-portrait { max-width: 280px; }
-  .modern-current-systems { grid-template-columns: 1fr; }
-  .modern-current-systems span,
-  .modern-current-systems em {
-    grid-column: auto;
-  }
   .modern-software-footer { align-items: flex-start; flex-direction: column; }
   .modern-publication-item { grid-template-columns: 42px 1fr 18px; gap: 9px; }
   .modern-footer-grid { grid-template-columns: 1fr; gap: 18px; }
