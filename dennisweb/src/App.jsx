@@ -235,7 +235,7 @@ const softwareShowcase = [
   {
     name: 'SchroSIM',
     timeline: 'Open-source photonic simulator',
-    creator: 'Created by Dennis Wayo',
+    creator: 'Created by Dennis Wayo, PhD',
     repo: 'https://github.com/DennisWayo/SchroSIM',
     image: '/schrosim.png',
     imageAlt: 'SchroSIM project screenshot',
@@ -259,7 +259,7 @@ const softwareShowcase = [
   {
     name: 'LiDMaS+ (lidmas_cpp)',
     timeline: 'Open-source QEC benchmarking engine',
-    creator: 'Created by Dennis Wayo',
+    creator: 'Created by Dennis Wayo, PhD',
     repo: 'https://github.com/DennisWayo/lidmas_cpp',
     image: '/lidmas.png',
     imageAlt: 'LiDMaS+ project screenshot',
@@ -483,50 +483,6 @@ const mediumProfileUrl = 'https://medium.com/@iwayoden'
 const mediumFeedApiUrl =
   'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40iwayoden'
 const unitaryHackProfileUrl = 'https://unitaryhack.dev/hackers/denniswayo/'
-
-const newsFeedPapers = [
-  {
-    title: 'Dennis Wayo UnitaryHack 2026 Hacker Profile: 3 Bounties Completed',
-    authors: 'Unitary Foundation',
-    source: '$175 claimed across PennyLane, Qibo, and Qiskit',
-    year: '2026',
-    href: unitaryHackProfileUrl,
-  },
-  {
-    title:
-      'A Unified Hardware-to-Decoder Architecture for Hybrid Continuous-Variable and Discrete-Variable Quantum Error Correction in LiDMaS+',
-    authors: 'DDK Wayo, C Onah, L Goliatt, S Groppe',
-    source: 'arXiv preprint arXiv:2604.15389',
-    year: '2026',
-    scholarUrl:
-      'https://scholar.google.com/scholar?q=A+Unified+Hardware-to-Decoder+Architecture+for+Hybrid+Continuous-Variable+and+Discrete-Variable+Quantum+Error+Correction+in+LiDMaS%2B',
-  },
-  {
-    title:
-      'RaCS: Near-Zero-Error Classical Data Encoding on Photonic Quantum Processors via Redundancy-Assisted Coherent-State Codes',
-    authors: 'DDK Wayo, S Groppe',
-    source: 'Fortschritte der Physik 74 (4), e70095',
-    year: '2026',
-    scholarUrl:
-      'https://scholar.google.com/scholar?q=RaCS%3A+Near-Zero-Error+Classical+Data+Encoding+on+Photonic+Quantum+Processors+via+Redundancy-Assisted+Coherent-State+Codes',
-  },
-  {
-    title:
-      'Decoder Dependence in Surface-Code Threshold Estimation Under Digitized Hybrid Continuous-Variable and Discrete Noise',
-    authors: 'DDK Wayo, C Onah, L Goliatt, S Groppe',
-    source: 'Fortschritte der Physik, accepted 4 June 2026',
-    year: '2026',
-    href: 'https://onlinelibrary.wiley.com/doi/10.1002/prop.70124',
-  },
-  {
-    title:
-      'Decoder Performance in Hybrid CV-Discrete Surface-Code Threshold Estimation Using LiDMaS+',
-    authors: 'DDK Wayo, C Onah, L Goliatt, S Groppe',
-    source: 'arXiv preprint arXiv:2603.06730',
-    scholarUrl:
-      'https://scholar.google.com/scholar?q=Decoder+Performance+in+Hybrid+CV-Discrete+Surface-Code+Threshold+Estimation+Using+LiDMaS%2B',
-  },
-]
 
 const badgeGroups = [
   {
@@ -1483,7 +1439,7 @@ function Layout({ children }) {
           </p>
           <div className="footer-bar">
             <p>
-              (c) Copyright {new Date().getFullYear()} Dennis Wayo. Last updated:{' '}
+              (c) Copyright {new Date().getFullYear()} Dennis Wayo, PhD. Last updated:{' '}
               {lastUpdatedDateLabel}.{' '}
               <span className="footer-visit-counter" aria-label={`Visit count ${visitCountDisplay}`}>
                 <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -1610,145 +1566,238 @@ function LinkedInEmbedCard({ className, title }) {
 }
 
 function AboutPage() {
+  const selectedUpdates = publications.slice(0, 3)
+
   return (
     <Layout>
-      <section className="page about-page">
-        <div className="hero-grid">
-          <article className="about-story">
-            <h1>Dennis Wayo</h1>
-            <span className="about-title-rule" aria-hidden="true"></span>
-            <p className="lead">
-              I build scientific software where quantum theory, numerical modeling, and
-              systems engineering meet. My work centers on creating simulation and
-              benchmarking infrastructure that is rigorous enough for publication and stable
-              enough for repeatable experimentation.
+      <section className="page about-page about-page-refresh">
+        <section className="about-landing" aria-labelledby="about-heading">
+          <div className="about-landing-copy">
+            <p className="about-kicker">Quantum Systems Architect · Scientific Software Engineer</p>
+            <h1 id="about-heading">Dennis Wayo, PhD</h1>
+            <p className="about-hero-statement">
+              Building computational systems for quantum architectures.
             </p>
-            <p>
-              My technical trajectory spans mechanical, petroleum, and chemical engineering,
-              and now extends into advanced computer science and quantum simulation. That
-              path shaped my engineering style: begin from physical constraints, design
-              software architectures for reproducibility, and then optimize for scale.
+            <p className="about-hero-summary">
+              I design and build research software for fault-tolerant quantum computing,
+              photonic and continuous-variable systems, and reproducible scientific simulation.
+              My work connects physical models to software architecture, validated numerical
+              workflows, and inspectable computational evidence.
             </p>
-            <p>
-              My current work sits at the intersection of quantum software, quantum
-              error-correction validation, photonic simulation, and reproducible scientific
-              computing. My specialization includes graduate algorithms, quantum computing
-              and hardware, machine learning, natural language processing, high-performance
-              computing, high-performance computing architecture, software architecture and
-              design, embedded-systems optimization, and advanced operating systems.
-            </p>
-            <p>
-              I am the creator of <strong>LiDMaS+</strong> and <strong>SchroSIM</strong>,
-              and I build both systems as production-grade research software, not just demo
-              prototypes.
-            </p>
-            <p>
-              At the center of my current work is <strong>LiDMaS+</strong>, a logical
-              decoder benchmarking engine built for replay-driven evaluation under unified
-              decoder I/O contracts. LiDMaS+ was designed so decoder comparisons stop being
-              ad-hoc and become deterministic, inspectable, and portable across workflows.
-              The platform tracks syndrome satisfaction, residual nonzero rate, average flip
-              count, and consistency diagnostics so claims can be validated instead of
-              guessed.
-            </p>
-            <p>
-              In parallel, I am developing <strong>SchroSIM</strong>, a scalable
-              hardware-agnostic quantum photonic simulator. SchroSIM integrates nonlinear
-              propagation, Gaussian and non-Gaussian operations, and detector-level behavior
-              while staying modular enough for hybrid classical-quantum execution paths.
-              It is structured to support both fast exploratory modeling and deeper
-              compiler-level reasoning about continuous-variable circuits and noise channels.
-            </p>
-            <p>
-              My longer-term objective is to establish a reliable software layer for
-              hardware-aware quantum evaluation, where theoretical work can move quickly
-              into tested computational pipelines and then into reproducible scientific
-              outputs.
-            </p>
-            <div className="cta-row">
-              <a className="btn btn-primary" href="/MyCV.pdf" download="dennis-wayo-cv.pdf">
+
+            <div className="about-focus-strip" aria-label="Research focus">
+              <span>Quantum error correction</span>
+              <span>Photonic / CV computing</span>
+              <span>Quantum architecture</span>
+              <span>Scientific computing</span>
+            </div>
+
+            <div className="cta-row about-hero-actions">
+              <NavLink className="btn btn-primary" to="/software">
+                Explore Software
+              </NavLink>
+              <NavLink className="btn btn-secondary" to="/publications">
+                Publications
+              </NavLink>
+              <a className="btn btn-secondary" href="/MyCV.pdf" download="dennis-wayo-cv.pdf">
                 Download CV
               </a>
-              <NavLink className="btn btn-secondary" to="/projects">
-                Explore Projects
-              </NavLink>
             </div>
-          </article>
-          <div className="about-rail">
-            <figure className="portrait-card">
-              <img src="/dennis_image.jpeg" alt="Dennis Wayo" />
-              <figcaption className="portrait-meta">
-                <p className="portrait-name">Dennis Wayo</p>
-                <p className="portrait-title">Quantum Software Researcher</p>
-                <p>53 Kabanbay Batyr Ave Astana, Kazakhstan, 010000</p>
-              </figcaption>
+          </div>
+
+          <aside className="about-identity-card" aria-label="Professional profile">
+            <figure className="about-portrait">
+              <img src="/dennis-portrait-bw.jpg" alt="Dennis Wayo, PhD" />
             </figure>
-            <article className="panel news-feed-panel about-news-feed">
-              <h2>News Feed</h2>
-              <LinkedInEmbedCard className="linkedin-feed" title="Embedded LinkedIn post" />
-              <div className="news-publications">
-                <h3>Recent News & Publications</h3>
-                <div className="news-paper-marquee" aria-label="Continuous publication feed">
-                  <div className="news-paper-track">
-                    <ul className="news-paper-list">
-                      {newsFeedPapers.map((item) => (
-                        <li className="news-paper-item" key={item.title}>
-                          <a href={item.href || item.scholarUrl} target="_blank" rel="noreferrer">
-                            {item.title}
-                          </a>
-                          <p>{item.authors}</p>
-                          <p>
-                            {item.source}
-                            {item.year ? <span>{` | ${item.year}`}</span> : null}
-                          </p>
-                        </li>
-                      ))}
-                    </ul>
-                    <ul className="news-paper-list" aria-hidden="true">
-                      {newsFeedPapers.map((item) => (
-                        <li className="news-paper-item" key={`${item.title}-dup`}>
-                          <a
-                            href={item.href || item.scholarUrl}
-                            target="_blank"
-                            rel="noreferrer"
-                            tabIndex={-1}
-                          >
-                            {item.title}
-                          </a>
-                          <p>{item.authors}</p>
-                          <p>
-                            {item.source}
-                            {item.year ? <span>{` | ${item.year}`}</span> : null}
-                          </p>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+            <div className="about-identity-copy">
+              <p className="about-identity-name">Dennis Wayo, PhD</p>
+              <p className="about-identity-role">Quantum Systems Architect & Scientific Software Engineer</p>
+              <p className="about-identity-location">Astana, Kazakhstan</p>
+            </div>
+          </aside>
+        </section>
+
+        <section className="about-section" aria-labelledby="research-pillars-heading">
+          <div className="about-section-heading">
+            <div>
+              <p className="about-kicker">Current research</p>
+              <h2 id="research-pillars-heading">Three connected research pillars.</h2>
+            </div>
+            <p>
+              The common thread is systems architecture: move from physical assumptions to
+              software contracts, then to validated and reproducible computational evidence.
+            </p>
+          </div>
+
+          <div className="about-pillar-grid">
+            <article className="about-pillar-card">
+              <span className="about-card-index">01</span>
+              <h3>Fault-tolerant quantum computing</h3>
+              <p>
+                Decoder benchmarking, syndrome replay, surface and bosonic-code workflows,
+                and hardware-to-decoder validation under matched evidence streams.
+              </p>
+              <div className="about-tag-row">
+                <span>QEC</span><span>GKP</span><span>Surface codes</span><span>LDPC</span>
+              </div>
+            </article>
+            <article className="about-pillar-card">
+              <span className="about-card-index">02</span>
+              <h3>Photonic & CV quantum systems</h3>
+              <p>
+                Layered photonic simulation spanning circuit construction, Gaussian and
+                selected non-Gaussian execution, noise, measurement, and hardware mapping.
+              </p>
+              <div className="about-tag-row">
+                <span>Photonics</span><span>Continuous variables</span><span>Noise</span><span>GKP</span>
+              </div>
+            </article>
+            <article className="about-pillar-card">
+              <span className="about-card-index">03</span>
+              <h3>Quantum software architecture</h3>
+              <p>
+                Portable interfaces, compiler-aware execution, research-grade testing,
+                reproducibility, and performance-oriented scientific software.
+              </p>
+              <div className="about-tag-row">
+                <span>C++</span><span>Rust</span><span>Python</span><span>HPC</span>
               </div>
             </article>
           </div>
-        </div>
+        </section>
 
-        <div className="feature-grid">
-          <article className="feature">
-            <p className="feature-tag">Core System</p>
-            <h2>LiDMaS+</h2>
+        <section className="about-section about-systems-section" aria-labelledby="systems-heading">
+          <div className="about-section-heading">
+            <div>
+              <p className="about-kicker">Flagship research software</p>
+              <h2 id="systems-heading">Systems, not demos.</h2>
+            </div>
             <p>
-              Replay-first decoder benchmarking with deterministic regeneration checks,
-              unified request contracts, and decoder-swap architecture.
+              I build research software around explicit interfaces, repeatable experiments,
+              strong diagnostics, and a clear path from research claim to computational artifact.
             </p>
+          </div>
+
+          <div className="about-system-grid">
+            <article className="about-system-card">
+              <div className="about-system-card-top">
+                <div>
+                  <p className="about-system-label">QEC · Active</p>
+                  <h3>LiDMaS+</h3>
+                </div>
+                <span>C++ · Rust · Python</span>
+              </div>
+              <p>
+                A high-performance decoder and hardware-validation platform for deterministic
+                replay, decoder comparability, syndrome diagnostics, and threshold-style studies.
+              </p>
+              <ul>
+                <li>Unified decoder request / response contracts</li>
+                <li>Replay-first workflows and regeneration checks</li>
+                <li>BP, MWPM, UF and neural-style decoder interfaces</li>
+                <li>Residual, consistency and stability diagnostics</li>
+              </ul>
+              <NavLink className="about-text-link" to="/software">Explore LiDMaS+ →</NavLink>
+            </article>
+
+            <article className="about-system-card">
+              <div className="about-system-card-top">
+                <div>
+                  <p className="about-system-label">Photonics / CV · Active</p>
+                  <h3>SchroSIM</h3>
+                </div>
+                <span>Swift · Rust · Python</span>
+              </div>
+              <p>
+                A hardware-agnostic photonic simulation stack separating circuit authoring,
+                compilation, numerical execution, noise modeling, and hardware mapping.
+              </p>
+              <ul>
+                <li>Gaussian and selected non-Gaussian workflows</li>
+                <li>Loss, dephasing and detector-aware simulation</li>
+                <li>Layered architecture for compiler-level reasoning</li>
+                <li>Photonic/CV and GKP-oriented studies</li>
+              </ul>
+              <NavLink className="about-text-link" to="/software">Explore SchroSIM →</NavLink>
+            </article>
+          </div>
+
+          <article className="about-ecosystem-card">
+            <div className="about-ecosystem-copy">
+              <p className="about-system-label">System relationship</p>
+              <h3>From circuit model to decoder to hardware-facing control.</h3>
+              <p>
+                SchroSIM, LiDMaS+, and Photon-QDrivers form a broader research-software
+                direction around hardware-aware quantum evaluation and reproducible experiment pipelines.
+              </p>
+              <a className="about-text-link" href="https://github.com/Gottesman-Software" target="_blank" rel="noreferrer">
+                Explore Gottesman Software →
+              </a>
+            </div>
+            <img
+              src="/quantum-design-platform.png"
+              alt="Architecture showing SchroSIM, LiDMaS+, and Photon-QDrivers across circuit design, decoding, and quantum control"
+            />
           </article>
-          <article className="feature">
-            <p className="feature-tag">Core System</p>
-            <h2>SchroSIM</h2>
+        </section>
+
+        <section className="about-section" aria-labelledby="trajectory-heading">
+          <div className="about-section-heading">
+            <div>
+              <p className="about-kicker">Trajectory</p>
+              <h2 id="trajectory-heading">How I got here.</h2>
+            </div>
             <p>
-              Layered photonic-circuit simulation platform that separates circuit authoring,
-              compilation, numerical execution, and hardware mapping for modular and
-              scalable workflows.
+              The disciplines changed, but the engineering question stayed consistent: how do
+              we turn difficult physical systems into models, software, and evidence that can be trusted?
             </p>
-          </article>
-        </div>
+          </div>
+
+          <div className="about-timeline">
+            <article><span>01</span><div><h3>Mechanical engineering</h3><p>Physical systems, machines, mechanics, and engineering design.</p></div></article>
+            <article><span>02</span><div><h3>Petroleum engineering</h3><p>Subsurface systems, multiphase flow, and numerical modeling under field-scale constraints.</p></div></article>
+            <article><span>03</span><div><h3>Chemical engineering & materials</h3><p>Transport, electrochemical and photonic materials, atomistic simulation, and multiscale modeling.</p></div></article>
+            <article><span>04</span><div><h3>Computer science & scientific software</h3><p>Architectures, interfaces, validation pipelines, performance layers, and reproducible computation.</p></div></article>
+            <article><span>05</span><div><h3>Quantum systems</h3><p>Fault-tolerant quantum computing, photonic/CV architectures, decoder infrastructure, and hardware-aware software.</p></div></article>
+          </div>
+        </section>
+
+        <section className="about-section about-method-section" aria-labelledby="method-heading">
+          <div className="about-method-heading">
+            <p className="about-kicker">Engineering method</p>
+            <h2 id="method-heading">How I work.</h2>
+            <p>I prefer explicit assumptions and inspectable evidence over black-box demonstrations.</p>
+          </div>
+          <ol className="about-method-list">
+            <li><span>01</span><div><strong>Start from physics.</strong><p>Define the model, constraints, noise assumptions, observables, and what the computation is allowed to claim.</p></div></li>
+            <li><span>02</span><div><strong>Design the architecture.</strong><p>Separate responsibilities into clear software layers, contracts, and data flows before optimizing implementation details.</p></div></li>
+            <li><span>03</span><div><strong>Implement for inspection.</strong><p>Prefer deterministic paths, strong diagnostics, testable components, and explainable failures.</p></div></li>
+            <li><span>04</span><div><strong>Validate before scaling.</strong><p>Benchmark correctness and comparability first; performance work follows after the baseline is trusted.</p></div></li>
+            <li><span>05</span><div><strong>Make evidence reproducible.</strong><p>Tests, CI, artifacts, documentation, and repeatable experiment workflows are part of the research result.</p></div></li>
+          </ol>
+        </section>
+
+        <section className="about-section about-updates-section" aria-labelledby="updates-heading">
+          <div className="about-section-heading">
+            <div>
+              <p className="about-kicker">Recent work</p>
+              <h2 id="updates-heading">Selected research updates.</h2>
+            </div>
+            <NavLink className="about-text-link" to="/publications">Full publication record →</NavLink>
+          </div>
+          <div className="about-update-list">
+            {selectedUpdates.map((item) => (
+              <article key={item.key}>
+                <span>{item.year}</span>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.citation}</p>
+                </div>
+                <a href={item.paperUrl} target="_blank" rel="noreferrer">{item.paperLabel} →</a>
+              </article>
+            ))}
+          </div>
+        </section>
       </section>
     </Layout>
   )
@@ -2866,9 +2915,47 @@ function WayoAiPage() {
   )
 }
 
+
+const routeTitles = {
+  '/about': 'Dennis Wayo, PhD — Quantum Systems Architect & Scientific Software Engineer',
+  '/projects': 'Projects — Dennis Wayo, PhD',
+  '/blog': 'Blog — Dennis Wayo, PhD',
+  '/publications': 'Publications — Dennis Wayo, PhD',
+  '/mentoring': 'Mentoring — Dennis Wayo, PhD',
+  '/colabx': 'ColabX — Dennis Wayo, PhD',
+  '/software': 'Software — Dennis Wayo, PhD',
+  '/wayo-ai': 'Wayo.ai — Dennis Wayo, PhD',
+}
+
+function RouteTelemetry() {
+  const location = useLocation()
+
+  useEffect(() => {
+    if (location.pathname === '/') {
+      return
+    }
+
+    const pageTitle = routeTitles[location.pathname] || 'Dennis Wayo, PhD'
+    const pagePath = `${location.pathname}${location.search}`
+    document.title = pageTitle
+
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'page_view', {
+        page_title: pageTitle,
+        page_location: window.location.href,
+        page_path: pagePath,
+      })
+    }
+  }, [location.pathname, location.search])
+
+  return null
+}
+
 function App() {
   return (
-    <Routes>
+    <>
+      <RouteTelemetry />
+      <Routes>
       <Route path="/" element={<Navigate replace to="/about" />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/blog" element={<BlogPage />} />
@@ -2880,8 +2967,9 @@ function App() {
       <Route path="/software" element={<SoftwarePage />} />
       <Route path="/wayo-ai" element={<WayoAiPage />} />
       <Route path="/talks" element={<Navigate replace to="/blog" />} />
-      <Route path="*" element={<Navigate replace to="/about" />} />
-    </Routes>
+        <Route path="*" element={<Navigate replace to="/about" />} />
+      </Routes>
+    </>
   )
 }
 
