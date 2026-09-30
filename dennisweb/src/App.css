@@ -4923,10 +4923,11 @@ body {
   .modern-theme-toggle { width: 25px; height: 25px; flex: 0 0 auto; }
   .modern-section { padding: 58px 0; }
   .modern-hero { padding: 72px 0 64px; }
-  .modern-hero h1 { font-size: clamp(3.1rem, 15vw, 4.5rem); }
+  .modern-eyebrow { font-size: 0.61rem; letter-spacing: 0.1em; }
+  .modern-hero h1 { font-size: clamp(2.78rem, 12.3vw, 3.5rem); }
   .modern-hero-lede { font-size: 0.98rem; }
   .modern-section-heading h2,
-  .modern-about-callout h2 { font-size: clamp(2.5rem, 12vw, 3.4rem); }
+  .modern-about-callout h2 { font-size: clamp(2.35rem, 10.8vw, 3.2rem); }
   .modern-hero-portrait { max-width: 280px; }
   .modern-software-footer { align-items: flex-start; flex-direction: column; }
   .modern-publication-item { grid-template-columns: 42px 1fr 18px; gap: 9px; }
