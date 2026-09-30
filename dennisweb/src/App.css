@@ -4271,8 +4271,7 @@ body {
 }
 
 .modern-eyebrow,
-.modern-card-label,
-.modern-panel-kicker {
+.modern-card-label {
   margin: 0;
   color: var(--modern-accent);
   font-size: 0.66rem;
@@ -4372,7 +4371,7 @@ body {
 .modern-hero-meta a { text-decoration: none; }
 .modern-hero-meta a:hover { color: var(--modern-accent); }
 
-.modern-hero-panel {
+.modern-hero-portrait {
   overflow: hidden;
   border: 1px solid var(--modern-line);
   border-radius: 16px;
@@ -4380,56 +4379,74 @@ body {
   box-shadow: 0 18px 44px rgba(18, 21, 26, 0.07);
 }
 
-.modern-panel-kicker {
-  padding: 20px 20px 14px;
-  color: var(--modern-muted);
-  border-bottom: 1px solid var(--modern-line);
+.modern-hero-portrait img {
+  width: 100%;
+  aspect-ratio: 4 / 4.7;
+  display: block;
+  object-fit: cover;
+  object-position: center 16%;
+  filter: grayscale(100%);
 }
 
-.modern-system-mini {
+.modern-hero-portrait-copy {
   display: grid;
-  grid-template-columns: 26px 1fr;
-  gap: 10px;
-  padding: 16px 20px;
-  border-bottom: 1px solid var(--modern-line);
+  gap: 6px;
+  padding: 18px 20px 20px;
 }
 
-.modern-system-mini > span {
-  color: var(--modern-accent);
-  font-size: 0.62rem;
-  font-weight: 800;
-}
-
-.modern-system-mini strong {
+.modern-hero-portrait-copy p {
+  margin: 0;
   color: var(--modern-ink);
-  font-size: 0.86rem;
-}
-
-.modern-system-mini p {
-  margin: 6px 0 0;
-  color: var(--modern-muted);
-  font-size: 0.72rem;
-  line-height: 1.48;
-}
-
-.modern-hero-panel-footer {
-  display: grid;
-  gap: 5px;
-  padding: 16px 20px;
-  background: color-mix(in srgb, var(--modern-soft) 70%, var(--modern-surface));
-}
-
-.modern-hero-panel-footer span {
-  color: var(--modern-muted);
-  font-size: 0.58rem;
+  font-size: 0.94rem;
   font-weight: 800;
-  letter-spacing: 0.12em;
+  line-height: 1.2;
+}
+
+.modern-hero-portrait-copy strong {
+  color: var(--modern-accent);
+  font-size: 0.66rem;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
 }
 
-.modern-hero-panel-footer strong {
-  color: var(--modern-ink);
-  font-size: 0.7rem;
+.modern-hero-portrait-copy span {
+  color: var(--modern-muted);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.modern-portrait-socials {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.modern-portrait-socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--modern-line);
+  border-radius: 999px;
+  background: var(--modern-bg);
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.modern-portrait-socials img {
+  width: 13px;
+  height: 13px;
+  display: block;
+  filter: brightness(0) saturate(100%) invert(36%) sepia(93%) saturate(3392%) hue-rotate(209deg) brightness(101%) contrast(104%);
+}
+
+.modern-portrait-socials a:hover,
+.modern-portrait-socials a:focus-visible {
+  border-color: var(--modern-accent);
+  transform: translateY(-1px);
 }
 
 .modern-section-heading { margin-bottom: 36px; }
@@ -4515,11 +4532,11 @@ body {
 
 .modern-software-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
 }
 
-.modern-software-card { padding: 24px; }
+.modern-software-card { padding: 20px; }
 
 .modern-software-card-top {
   display: flex;
@@ -4530,25 +4547,25 @@ body {
 
 .modern-software-card h3 {
   margin: 7px 0 0;
-  font-size: 2rem;
+  font-size: clamp(1.35rem, 2.1vw, 1.75rem);
   line-height: 1;
 }
 
 .modern-status-dot {
-  padding: 6px 9px;
+  padding: 5px 8px;
   border-radius: 999px;
   background: #e5f7eb;
   color: #15803d;
-  font-size: 0.58rem;
+  font-size: 0.54rem;
   font-weight: 800;
 }
 
 .modern-software-summary {
-  min-height: 86px;
-  margin: 20px 0 14px;
+  min-height: 116px;
+  margin: 16px 0 14px;
   color: var(--modern-muted);
-  font-size: 0.8rem;
-  line-height: 1.6;
+  font-size: 0.72rem;
+  line-height: 1.55;
 }
 
 .modern-feature-list {
@@ -4560,10 +4577,10 @@ body {
 
 .modern-feature-list li {
   position: relative;
-  padding: 11px 0 11px 18px;
+  padding: 9px 0 9px 16px;
   border-bottom: 1px solid var(--modern-line);
   color: var(--modern-muted);
-  font-size: 0.72rem;
+  font-size: 0.66rem;
 }
 
 .modern-feature-list li::before {
@@ -4576,9 +4593,9 @@ body {
 .modern-software-footer {
   display: flex;
   justify-content: space-between;
-  gap: 18px;
+  gap: 12px;
   align-items: center;
-  margin-top: 18px;
+  margin-top: 16px;
 }
 
 .modern-text-link {
@@ -4588,7 +4605,42 @@ body {
   text-decoration: none;
 }
 
-.modern-link-pair { display: flex; gap: 12px; }
+.modern-github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.modern-github-link img {
+  width: 13px;
+  height: 13px;
+  display: block;
+  flex: 0 0 auto;
+}
+
+.modern-icon-link {
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+}
+
+.modern-icon-link img {
+  width: 18px;
+  height: 18px;
+}
+
+.modern-link-pair {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modern-action-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
 
 .modern-ecosystem-card {
   display: grid;
@@ -4646,7 +4698,27 @@ body {
 .modern-publication-heading { margin: 0; }
 .modern-publication-heading .modern-button { margin-top: 18px; }
 
-.modern-publication-list { border-top: 1px solid var(--modern-line); }
+.modern-publication-list {
+  max-height: 368px;
+  overflow-y: auto;
+  padding-right: 12px;
+  border-top: 1px solid var(--modern-line);
+  scrollbar-gutter: stable;
+}
+
+.modern-publication-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modern-publication-list::-webkit-scrollbar-track {
+  background: color-mix(in srgb, var(--modern-soft) 72%, transparent);
+  border-radius: 999px;
+}
+
+.modern-publication-list::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--modern-accent) 42%, var(--modern-line));
+  border-radius: 999px;
+}
 
 .modern-publication-item {
   display: grid;
@@ -4824,7 +4896,7 @@ body {
   .modern-publication-layout,
   .modern-about-callout { grid-template-columns: 1fr; }
   .modern-hero-grid { gap: 44px; }
-  .modern-hero-panel { max-width: 520px; }
+  .modern-hero-portrait { max-width: 360px; }
   .modern-pillar-grid,
   .modern-software-grid { grid-template-columns: 1fr; }
   .modern-pillar-card { min-height: 240px; }
@@ -4851,12 +4923,15 @@ body {
   .modern-theme-toggle { width: 25px; height: 25px; flex: 0 0 auto; }
   .modern-section { padding: 58px 0; }
   .modern-hero { padding: 72px 0 64px; }
-  .modern-hero h1 { font-size: clamp(3.1rem, 15vw, 4.5rem); }
+  .modern-eyebrow { font-size: 0.61rem; letter-spacing: 0.1em; }
+  .modern-hero h1 { font-size: clamp(2.78rem, 12.3vw, 3.5rem); }
   .modern-hero-lede { font-size: 0.98rem; }
   .modern-section-heading h2,
-  .modern-about-callout h2 { font-size: clamp(2.5rem, 12vw, 3.4rem); }
+  .modern-about-callout h2 { font-size: clamp(2.35rem, 10.8vw, 3.2rem); }
+  .modern-hero-portrait { max-width: 280px; }
   .modern-software-footer { align-items: flex-start; flex-direction: column; }
   .modern-publication-item { grid-template-columns: 42px 1fr 18px; gap: 9px; }
+  .modern-publication-list { max-height: 430px; }
   .modern-footer-grid { grid-template-columns: 1fr; gap: 18px; }
   .modern-footer-identity { display: none; }
   .modern-footer-socials { grid-template-columns: repeat(5, 34px); }

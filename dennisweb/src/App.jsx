@@ -1663,6 +1663,54 @@ function AboutPage() {
       citation: 'DDK Wayo, S. Groppe · Fortschritte der Physik 74(4), e70095',
       url: 'https://scholar.google.com/scholar?q=RaCS%3A+Near-Zero-Error+Classical+Data+Encoding+on+Photonic+Quantum+Processors',
     },
+    {
+      year: '2026',
+      title: 'Traversing Gaussian and non-Gaussian regimes in photonic quantum simulators: a review',
+      citation: 'D. Delali Kwesi Wayo, R. A. Dias, M. D. Ganji, C. M. Saporetti, L. Goliatt · EPJ Quantum Technology 13(1), 85',
+      url: 'https://scholar.google.com/scholar?q=Traversing+Gaussian+and+non-Gaussian+regimes+in+photonic+quantum+simulators%3A+a+review',
+    },
+    {
+      year: '2026',
+      title: 'DifGa: differentiable error mitigation for multi-mode Gaussian and non-Gaussian noise in quantum photonic circuits',
+      citation: 'DDK Wayo, R. A. Dias, L. Goliatt, S. Groppe · Journal of Physics: Photonics 8(3), 035004',
+      url: 'https://scholar.google.com/scholar?q=DifGa%3A+differentiable+error+mitigation+for+multi-mode+Gaussian+and+non-Gaussian+noise+in+quantum+photonic+circuits',
+    },
+    {
+      year: '2026',
+      title: 'Decoder Dependence in Surface-Code Threshold Estimation under Digitized Hybrid Continuous-Variable and Discrete Noise',
+      citation: 'DDK Wayo, C. Onah, L. Goliatt, S. Groppe · Fortschritte der Physik 74(6), e70124',
+      url: 'https://scholar.google.com/scholar?q=Decoder+Dependence+in+Surface-Code+Threshold+Estimation+under+Digitized+Hybrid+Continuous-Variable+and+Discrete+Noise',
+    },
+    {
+      year: '2026',
+      title: 'Decoder Dependence in Surface-Code Threshold Estimation with Native Gottesman-Kitaev-Preskill Digitization and Parallelized Sampling',
+      citation: 'DDK Wayo, C. Onah, L. Goliatt, S. Groppe · arXiv:2603.25757',
+      url: 'https://arxiv.org/abs/2603.25757',
+    },
+    {
+      year: '2026',
+      title: 'Simulation of ultrafast photonic circuits via nonlinear Schrodinger dynamics and quantum detector modeling',
+      citation: 'DDK Wayo · Optical and Quantum Electronics 58(3), 125',
+      url: 'https://scholar.google.com/scholar?q=Simulation+of+ultrafast+photonic+circuits+via+nonlinear+Schrodinger+dynamics+and+quantum+detector+modeling',
+    },
+    {
+      year: '2026',
+      title: 'LiDMaS: Architecture-Level Modeling of Fault-Tolerant Magic-State Injection in GKP Photonic Qubits',
+      citation: 'DDK Wayo · arXiv:2601.16244',
+      url: 'https://arxiv.org/abs/2601.16244',
+    },
+    {
+      year: '2025',
+      title: 'Atomistic Modeling of Rare Earth Ions in Photonic Materials',
+      citation: 'DDK Wayo, M. Z. B. M. Noor, M. D. Ganji, L. Goliatt · Luminescence 40(9), e70297',
+      url: 'https://scholar.google.com/scholar?q=Atomistic+Modeling+of+Rare+Earth+Ions+in+Photonic+Materials',
+    },
+    {
+      year: '2025',
+      title: 'Q-DFTNet: A Chemistry-Informed Neural Network Framework for Predicting Molecular Dipole Moments via DFT-Driven QM9 Data',
+      citation: 'DDK Wayo, M. Z. B. M. Noor, M. D. Ganji, C. M. Saporetti, L. Goliatt · Journal of Computational Chemistry 46(22), e70206',
+      url: 'https://scholar.google.com/scholar?q=Q-DFTNet%3A+A+Chemistry-Informed+Neural+Network+Framework+for+Predicting+Molecular+Dipole+Moments+via+DFT-Driven+QM9+Data',
+    },
   ]
 
   return (
@@ -1692,30 +1740,32 @@ function AboutPage() {
               </div>
 
               <div className="modern-hero-meta" aria-label="Professional links">
-                <a href="https://github.com/DennisWayo" target="_blank" rel="noreferrer">GitHub</a>
+                <a className="modern-github-link" href="https://github.com/DennisWayo" target="_blank" rel="noreferrer">
+                  <img src="https://cdn.simpleicons.org/github/0a63ff" alt="" aria-hidden="true" />
+                  GitHub
+                </a>
                 <a href="https://orcid.org/0000-0001-9980-6247" target="_blank" rel="noreferrer">ORCID</a>
                 <a href="https://www.linkedin.com/in/dennis-w-765a38b1/" target="_blank" rel="noreferrer">LinkedIn</a>
                 <span>Astana, Kazakhstan</span>
               </div>
             </div>
 
-            <aside className="modern-hero-panel" aria-label="Current systems">
-              <div className="modern-panel-kicker">Current systems</div>
-              <div className="modern-system-mini">
-                <span>01</span>
-                <div><strong>LiDMaS+</strong><p>Decoder benchmarking and hardware-to-decoder validation.</p></div>
-              </div>
-              <div className="modern-system-mini">
-                <span>02</span>
-                <div><strong>SchroSIM</strong><p>Photonic and continuous-variable quantum simulation.</p></div>
-              </div>
-              <div className="modern-system-mini">
-                <span>03</span>
-                <div><strong>Photon-QDrivers</strong><p>Hardware-facing driver architecture for photonic workloads.</p></div>
-              </div>
-              <div className="modern-hero-panel-footer">
-                <span>Primary languages</span>
-                <strong>C++ · Rust · Python · Swift</strong>
+            <aside className="modern-hero-portrait" aria-label="Dennis Wayo profile">
+              <img src="/dennis-portrait-bw.jpg" alt="Dennis Wayo, PhD" />
+              <div className="modern-hero-portrait-copy">
+                <p>Dennis Wayo, PhD</p>
+                <strong>Quantum Systems Architect</strong>
+                <div className="modern-portrait-socials" aria-label="Profile links">
+                  <a href="https://scholar.google.com/citations?hl=en&user=YCXIi1wAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noreferrer" aria-label="Google Scholar">
+                    <img src="https://cdn.simpleicons.org/googlescholar/0a63ff" alt="" aria-hidden="true" />
+                  </a>
+                  <a href="https://github.com/DennisWayo" target="_blank" rel="noreferrer" aria-label="GitHub">
+                    <img src="https://cdn.simpleicons.org/github/0a63ff" alt="" aria-hidden="true" />
+                  </a>
+                  <a href="https://www.linkedin.com/in/dennis-w-765a38b1/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                    <img src="/icon-linkedin.svg" alt="" aria-hidden="true" />
+                  </a>
+                </div>
               </div>
             </aside>
           </div>
@@ -1739,7 +1789,7 @@ function AboutPage() {
                 <span className="modern-card-number">02</span>
                 <h3>Photonic & CV quantum systems</h3>
                 <p>Layered photonic simulation spanning circuit construction, Gaussian and selected non-Gaussian paths, noise, measurement, and hardware mapping.</p>
-                <div className="modern-tag-row"><span>Photonics</span><span>Continuous variables</span><span>Noise</span><span>GKP</span></div>
+                <div className="modern-tag-row"><span>Photonics</span><span>CV</span><span>Noise</span><span>GKP</span></div>
               </article>
               <article className="modern-pillar-card">
                 <span className="modern-card-number">03</span>
@@ -1768,12 +1818,13 @@ function AboutPage() {
                 <ul className="modern-feature-list">
                   <li>Unified decoder request / response contracts</li>
                   <li>Replay-first workflows and regeneration checks</li>
-                  <li>BP, MWPM, UF and neural-style decoder interfaces</li>
                   <li>Residual, consistency and stability diagnostics</li>
                 </ul>
                 <div className="modern-software-footer">
                   <div className="modern-stack"><span>C++</span><span>Rust</span><span>Python</span></div>
-                  <a className="modern-text-link" href="https://github.com/Gottesman-Software" target="_blank" rel="noreferrer">View repository →</a>
+                  <a className="modern-text-link modern-github-link modern-icon-link" href="https://github.com/Gottesman-Software" target="_blank" rel="noreferrer" aria-label="Open LiDMaS GitHub">
+                    <img src="https://cdn.simpleicons.org/github/0a63ff" alt="" aria-hidden="true" />
+                  </a>
                 </div>
               </article>
 
@@ -1786,12 +1837,35 @@ function AboutPage() {
                 <ul className="modern-feature-list">
                   <li>Gaussian and selected non-Gaussian workflows</li>
                   <li>Loss, dephasing and detector-aware simulation</li>
-                  <li>Layered architecture for compiler-level reasoning</li>
                   <li>Photonic/CV and GKP-oriented studies</li>
                 </ul>
                 <div className="modern-software-footer">
                   <div className="modern-stack"><span>Swift</span><span>Rust</span><span>Python</span></div>
-                  <span className="modern-link-pair"><NavLink className="modern-text-link" to="/software">Project page →</NavLink><a className="modern-text-link" href="https://github.com/Gottesman-Software" target="_blank" rel="noreferrer">GitHub →</a></span>
+                  <span className="modern-link-pair">
+                    <NavLink className="modern-text-link" to="/software">Project page →</NavLink>
+                    <a className="modern-text-link modern-github-link modern-icon-link" href="https://github.com/Gottesman-Software" target="_blank" rel="noreferrer" aria-label="Open SchroSIM GitHub">
+                      <img src="https://cdn.simpleicons.org/github/0a63ff" alt="" aria-hidden="true" />
+                    </a>
+                  </span>
+                </div>
+              </article>
+
+              <article className="modern-software-card">
+                <div className="modern-software-card-top">
+                  <div><p className="modern-card-label">Driver layer · Hardware</p><h3>Photon-QDrivers</h3></div>
+                  <span className="modern-status-dot">Active</span>
+                </div>
+                <p className="modern-software-summary">A hardware-facing driver architecture for photonic workloads, control-system boundaries, experiment replay, and lab-aware quantum software integration.</p>
+                <ul className="modern-feature-list">
+                  <li>Device-facing control and status interfaces</li>
+                  <li>Photonic workload execution boundaries</li>
+                  <li>Replayable hardware/software experiment traces</li>
+                </ul>
+                <div className="modern-software-footer">
+                  <div className="modern-stack"><span>Python</span><span>Rust</span><span>Control</span></div>
+                  <a className="modern-text-link modern-github-link modern-icon-link" href="https://github.com/Gottesman-Software/photon-qdrivers" target="_blank" rel="noreferrer" aria-label="Open Photon-QDrivers GitHub">
+                    <img src="https://cdn.simpleicons.org/github/0a63ff" alt="" aria-hidden="true" />
+                  </a>
                 </div>
               </article>
             </div>
@@ -1801,7 +1875,12 @@ function AboutPage() {
                 <p className="modern-card-label">Gottesman Software</p>
                 <h3>University research group for quantum software.</h3>
                 <p>Gottesman Software is my university research-software initiative for open-source quantum systems, developed in an academic environment with scientific mentorship from Prof. Dr. habil. Sven Groppe. It connects SchroSIM, LiDMaS+, and Photon-QDrivers around hardware-aware quantum evaluation and reproducible experiment pipelines.</p>
-                <a className="modern-button modern-button-primary" href="https://github.com/Gottesman-Software" target="_blank" rel="noreferrer">Visit Gottesman Software</a>
+                <div className="modern-action-row">
+                  <a className="modern-button modern-button-primary" href="https://gottesman-software.github.io/" target="_blank" rel="noreferrer">Visit Gottesman Software</a>
+                  <a className="modern-text-link modern-github-link modern-icon-link" href="https://github.com/Gottesman-Software" target="_blank" rel="noreferrer" aria-label="Open Gottesman Software GitHub">
+                    <img src="https://cdn.simpleicons.org/github/0a63ff" alt="" aria-hidden="true" />
+                  </a>
+                </div>
               </div>
               <div className="modern-ecosystem-visual">
                 <img src="/quantum-design-platform.png" alt="Architecture connecting photonic circuit design, decoding, and quantum control through SchroSIM, LiDMaS+, and Photon-QDrivers" />
