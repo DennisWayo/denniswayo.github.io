@@ -1699,23 +1699,12 @@ function AboutPage() {
               </div>
             </div>
 
-            <aside className="modern-hero-panel" aria-label="Current systems">
-              <div className="modern-panel-kicker">Current systems</div>
-              <div className="modern-system-mini">
-                <span>01</span>
-                <div><strong>LiDMaS+</strong><p>Decoder benchmarking and hardware-to-decoder validation.</p></div>
-              </div>
-              <div className="modern-system-mini">
-                <span>02</span>
-                <div><strong>SchroSIM</strong><p>Photonic and continuous-variable quantum simulation.</p></div>
-              </div>
-              <div className="modern-system-mini">
-                <span>03</span>
-                <div><strong>Photon-QDrivers</strong><p>Hardware-facing driver architecture for photonic workloads.</p></div>
-              </div>
-              <div className="modern-hero-panel-footer">
-                <span>Primary languages</span>
-                <strong>C++ · Rust · Python · Swift</strong>
+            <aside className="modern-hero-portrait" aria-label="Dennis Wayo profile">
+              <img src="/dennis-portrait-bw.jpg" alt="Dennis Wayo, PhD" />
+              <div className="modern-hero-portrait-copy">
+                <p>Dennis Wayo, PhD</p>
+                <strong>Quantum Systems Architect</strong>
+                <span>Research software · photonic/CV systems · QEC evidence</span>
               </div>
             </aside>
           </div>
@@ -1758,6 +1747,14 @@ function AboutPage() {
               <p>Each platform is organized around explicit interfaces, repeatable experiments, inspectable outputs, and a clear path from research claim to computational artifact.</p>
             </div>
 
+            <div className="modern-current-systems" aria-label="Current systems">
+              <span>Current systems</span>
+              <strong>LiDMaS+</strong>
+              <strong>SchroSIM</strong>
+              <strong>Photon-QDrivers</strong>
+              <em>C++ · Rust · Python · Swift</em>
+            </div>
+
             <div className="modern-software-grid">
               <article className="modern-software-card">
                 <div className="modern-software-card-top">
@@ -1768,7 +1765,6 @@ function AboutPage() {
                 <ul className="modern-feature-list">
                   <li>Unified decoder request / response contracts</li>
                   <li>Replay-first workflows and regeneration checks</li>
-                  <li>BP, MWPM, UF and neural-style decoder interfaces</li>
                   <li>Residual, consistency and stability diagnostics</li>
                 </ul>
                 <div className="modern-software-footer">
@@ -1786,12 +1782,28 @@ function AboutPage() {
                 <ul className="modern-feature-list">
                   <li>Gaussian and selected non-Gaussian workflows</li>
                   <li>Loss, dephasing and detector-aware simulation</li>
-                  <li>Layered architecture for compiler-level reasoning</li>
                   <li>Photonic/CV and GKP-oriented studies</li>
                 </ul>
                 <div className="modern-software-footer">
                   <div className="modern-stack"><span>Swift</span><span>Rust</span><span>Python</span></div>
                   <span className="modern-link-pair"><NavLink className="modern-text-link" to="/software">Project page →</NavLink><a className="modern-text-link" href="https://github.com/Gottesman-Software" target="_blank" rel="noreferrer">GitHub →</a></span>
+                </div>
+              </article>
+
+              <article className="modern-software-card">
+                <div className="modern-software-card-top">
+                  <div><p className="modern-card-label">Driver layer · Hardware</p><h3>Photon-QDrivers</h3></div>
+                  <span className="modern-status-dot">Active</span>
+                </div>
+                <p className="modern-software-summary">A hardware-facing driver architecture for photonic workloads, control-system boundaries, experiment replay, and lab-aware quantum software integration.</p>
+                <ul className="modern-feature-list">
+                  <li>Device-facing control and status interfaces</li>
+                  <li>Photonic workload execution boundaries</li>
+                  <li>Replayable hardware/software experiment traces</li>
+                </ul>
+                <div className="modern-software-footer">
+                  <div className="modern-stack"><span>Python</span><span>Rust</span><span>Control</span></div>
+                  <a className="modern-text-link" href="https://github.com/Gottesman-Software/photon-qdrivers" target="_blank" rel="noreferrer">GitHub →</a>
                 </div>
               </article>
             </div>

@@ -4271,8 +4271,7 @@ body {
 }
 
 .modern-eyebrow,
-.modern-card-label,
-.modern-panel-kicker {
+.modern-card-label {
   margin: 0;
   color: var(--modern-accent);
   font-size: 0.66rem;
@@ -4372,7 +4371,7 @@ body {
 .modern-hero-meta a { text-decoration: none; }
 .modern-hero-meta a:hover { color: var(--modern-accent); }
 
-.modern-hero-panel {
+.modern-hero-portrait {
   overflow: hidden;
   border: 1px solid var(--modern-line);
   border-radius: 16px;
@@ -4380,56 +4379,40 @@ body {
   box-shadow: 0 18px 44px rgba(18, 21, 26, 0.07);
 }
 
-.modern-panel-kicker {
-  padding: 20px 20px 14px;
-  color: var(--modern-muted);
-  border-bottom: 1px solid var(--modern-line);
+.modern-hero-portrait img {
+  width: 100%;
+  aspect-ratio: 4 / 4.7;
+  display: block;
+  object-fit: cover;
+  object-position: center 16%;
+  filter: grayscale(100%);
 }
 
-.modern-system-mini {
+.modern-hero-portrait-copy {
   display: grid;
-  grid-template-columns: 26px 1fr;
-  gap: 10px;
-  padding: 16px 20px;
-  border-bottom: 1px solid var(--modern-line);
+  gap: 6px;
+  padding: 18px 20px 20px;
 }
 
-.modern-system-mini > span {
-  color: var(--modern-accent);
-  font-size: 0.62rem;
-  font-weight: 800;
-}
-
-.modern-system-mini strong {
+.modern-hero-portrait-copy p {
+  margin: 0;
   color: var(--modern-ink);
-  font-size: 0.86rem;
-}
-
-.modern-system-mini p {
-  margin: 6px 0 0;
-  color: var(--modern-muted);
-  font-size: 0.72rem;
-  line-height: 1.48;
-}
-
-.modern-hero-panel-footer {
-  display: grid;
-  gap: 5px;
-  padding: 16px 20px;
-  background: color-mix(in srgb, var(--modern-soft) 70%, var(--modern-surface));
-}
-
-.modern-hero-panel-footer span {
-  color: var(--modern-muted);
-  font-size: 0.58rem;
+  font-size: 0.94rem;
   font-weight: 800;
-  letter-spacing: 0.12em;
+  line-height: 1.2;
+}
+
+.modern-hero-portrait-copy strong {
+  color: var(--modern-accent);
+  font-size: 0.66rem;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
 }
 
-.modern-hero-panel-footer strong {
-  color: var(--modern-ink);
-  font-size: 0.7rem;
+.modern-hero-portrait-copy span {
+  color: var(--modern-muted);
+  font-size: 0.72rem;
+  line-height: 1.5;
 }
 
 .modern-section-heading { margin-bottom: 36px; }
@@ -4513,13 +4496,46 @@ body {
 
 .modern-section-muted { background: var(--modern-soft); }
 
-.modern-software-grid {
+.modern-current-systems {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  grid-template-columns: auto repeat(3, minmax(0, 1fr)) auto;
+  gap: 10px;
+  align-items: center;
+  margin: -10px 0 18px;
+  padding: 12px 14px;
+  border: 1px solid var(--modern-line);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--modern-surface) 82%, var(--modern-soft));
 }
 
-.modern-software-card { padding: 24px; }
+.modern-current-systems span,
+.modern-current-systems em {
+  color: var(--modern-muted);
+  font-size: 0.58rem;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.modern-current-systems strong {
+  min-width: 0;
+  padding: 7px 9px;
+  border: 1px solid var(--modern-line);
+  border-radius: 999px;
+  background: var(--modern-surface);
+  color: var(--modern-ink);
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.modern-software-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.modern-software-card { padding: 20px; }
 
 .modern-software-card-top {
   display: flex;
@@ -4530,25 +4546,25 @@ body {
 
 .modern-software-card h3 {
   margin: 7px 0 0;
-  font-size: 2rem;
+  font-size: clamp(1.35rem, 2.1vw, 1.75rem);
   line-height: 1;
 }
 
 .modern-status-dot {
-  padding: 6px 9px;
+  padding: 5px 8px;
   border-radius: 999px;
   background: #e5f7eb;
   color: #15803d;
-  font-size: 0.58rem;
+  font-size: 0.54rem;
   font-weight: 800;
 }
 
 .modern-software-summary {
-  min-height: 86px;
-  margin: 20px 0 14px;
+  min-height: 116px;
+  margin: 16px 0 14px;
   color: var(--modern-muted);
-  font-size: 0.8rem;
-  line-height: 1.6;
+  font-size: 0.72rem;
+  line-height: 1.55;
 }
 
 .modern-feature-list {
@@ -4560,10 +4576,10 @@ body {
 
 .modern-feature-list li {
   position: relative;
-  padding: 11px 0 11px 18px;
+  padding: 9px 0 9px 16px;
   border-bottom: 1px solid var(--modern-line);
   color: var(--modern-muted);
-  font-size: 0.72rem;
+  font-size: 0.66rem;
 }
 
 .modern-feature-list li::before {
@@ -4576,9 +4592,9 @@ body {
 .modern-software-footer {
   display: flex;
   justify-content: space-between;
-  gap: 18px;
+  gap: 12px;
   align-items: center;
-  margin-top: 18px;
+  margin-top: 16px;
 }
 
 .modern-text-link {
@@ -4824,7 +4840,14 @@ body {
   .modern-publication-layout,
   .modern-about-callout { grid-template-columns: 1fr; }
   .modern-hero-grid { gap: 44px; }
-  .modern-hero-panel { max-width: 520px; }
+  .modern-hero-portrait { max-width: 360px; }
+  .modern-current-systems {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .modern-current-systems span,
+  .modern-current-systems em {
+    grid-column: 1 / -1;
+  }
   .modern-pillar-grid,
   .modern-software-grid { grid-template-columns: 1fr; }
   .modern-pillar-card { min-height: 240px; }
@@ -4855,6 +4878,12 @@ body {
   .modern-hero-lede { font-size: 0.98rem; }
   .modern-section-heading h2,
   .modern-about-callout h2 { font-size: clamp(2.5rem, 12vw, 3.4rem); }
+  .modern-hero-portrait { max-width: 280px; }
+  .modern-current-systems { grid-template-columns: 1fr; }
+  .modern-current-systems span,
+  .modern-current-systems em {
+    grid-column: auto;
+  }
   .modern-software-footer { align-items: flex-start; flex-direction: column; }
   .modern-publication-item { grid-template-columns: 42px 1fr 18px; gap: 9px; }
   .modern-footer-grid { grid-template-columns: 1fr; gap: 18px; }
