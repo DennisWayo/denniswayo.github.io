@@ -4649,7 +4649,27 @@ body {
 .modern-publication-heading { margin: 0; }
 .modern-publication-heading .modern-button { margin-top: 18px; }
 
-.modern-publication-list { border-top: 1px solid var(--modern-line); }
+.modern-publication-list {
+  max-height: 368px;
+  overflow-y: auto;
+  padding-right: 12px;
+  border-top: 1px solid var(--modern-line);
+  scrollbar-gutter: stable;
+}
+
+.modern-publication-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modern-publication-list::-webkit-scrollbar-track {
+  background: color-mix(in srgb, var(--modern-soft) 72%, transparent);
+  border-radius: 999px;
+}
+
+.modern-publication-list::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--modern-accent) 42%, var(--modern-line));
+  border-radius: 999px;
+}
 
 .modern-publication-item {
   display: grid;
@@ -4861,6 +4881,7 @@ body {
   .modern-hero-portrait { max-width: 280px; }
   .modern-software-footer { align-items: flex-start; flex-direction: column; }
   .modern-publication-item { grid-template-columns: 42px 1fr 18px; gap: 9px; }
+  .modern-publication-list { max-height: 430px; }
   .modern-footer-grid { grid-template-columns: 1fr; gap: 18px; }
   .modern-footer-identity { display: none; }
   .modern-footer-socials { grid-template-columns: repeat(5, 34px); }

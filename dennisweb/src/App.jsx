@@ -1663,6 +1663,54 @@ function AboutPage() {
       citation: 'DDK Wayo, S. Groppe · Fortschritte der Physik 74(4), e70095',
       url: 'https://scholar.google.com/scholar?q=RaCS%3A+Near-Zero-Error+Classical+Data+Encoding+on+Photonic+Quantum+Processors',
     },
+    {
+      year: '2026',
+      title: 'Traversing Gaussian and non-Gaussian regimes in photonic quantum simulators: a review',
+      citation: 'D. Delali Kwesi Wayo, R. A. Dias, M. D. Ganji, C. M. Saporetti, L. Goliatt · EPJ Quantum Technology 13(1), 85',
+      url: 'https://scholar.google.com/scholar?q=Traversing+Gaussian+and+non-Gaussian+regimes+in+photonic+quantum+simulators%3A+a+review',
+    },
+    {
+      year: '2026',
+      title: 'DifGa: differentiable error mitigation for multi-mode Gaussian and non-Gaussian noise in quantum photonic circuits',
+      citation: 'DDK Wayo, R. A. Dias, L. Goliatt, S. Groppe · Journal of Physics: Photonics 8(3), 035004',
+      url: 'https://scholar.google.com/scholar?q=DifGa%3A+differentiable+error+mitigation+for+multi-mode+Gaussian+and+non-Gaussian+noise+in+quantum+photonic+circuits',
+    },
+    {
+      year: '2026',
+      title: 'Decoder Dependence in Surface-Code Threshold Estimation under Digitized Hybrid Continuous-Variable and Discrete Noise',
+      citation: 'DDK Wayo, C. Onah, L. Goliatt, S. Groppe · Fortschritte der Physik 74(6), e70124',
+      url: 'https://scholar.google.com/scholar?q=Decoder+Dependence+in+Surface-Code+Threshold+Estimation+under+Digitized+Hybrid+Continuous-Variable+and+Discrete+Noise',
+    },
+    {
+      year: '2026',
+      title: 'Decoder Dependence in Surface-Code Threshold Estimation with Native Gottesman-Kitaev-Preskill Digitization and Parallelized Sampling',
+      citation: 'DDK Wayo, C. Onah, L. Goliatt, S. Groppe · arXiv:2603.25757',
+      url: 'https://arxiv.org/abs/2603.25757',
+    },
+    {
+      year: '2026',
+      title: 'Simulation of ultrafast photonic circuits via nonlinear Schrodinger dynamics and quantum detector modeling',
+      citation: 'DDK Wayo · Optical and Quantum Electronics 58(3), 125',
+      url: 'https://scholar.google.com/scholar?q=Simulation+of+ultrafast+photonic+circuits+via+nonlinear+Schrodinger+dynamics+and+quantum+detector+modeling',
+    },
+    {
+      year: '2026',
+      title: 'LiDMaS: Architecture-Level Modeling of Fault-Tolerant Magic-State Injection in GKP Photonic Qubits',
+      citation: 'DDK Wayo · arXiv:2601.16244',
+      url: 'https://arxiv.org/abs/2601.16244',
+    },
+    {
+      year: '2025',
+      title: 'Atomistic Modeling of Rare Earth Ions in Photonic Materials',
+      citation: 'DDK Wayo, M. Z. B. M. Noor, M. D. Ganji, L. Goliatt · Luminescence 40(9), e70297',
+      url: 'https://scholar.google.com/scholar?q=Atomistic+Modeling+of+Rare+Earth+Ions+in+Photonic+Materials',
+    },
+    {
+      year: '2025',
+      title: 'Q-DFTNet: A Chemistry-Informed Neural Network Framework for Predicting Molecular Dipole Moments via DFT-Driven QM9 Data',
+      citation: 'DDK Wayo, M. Z. B. M. Noor, M. D. Ganji, C. M. Saporetti, L. Goliatt · Journal of Computational Chemistry 46(22), e70206',
+      url: 'https://scholar.google.com/scholar?q=Q-DFTNet%3A+A+Chemistry-Informed+Neural+Network+Framework+for+Predicting+Molecular+Dipole+Moments+via+DFT-Driven+QM9+Data',
+    },
   ]
 
   return (
