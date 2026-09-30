@@ -4415,6 +4415,40 @@ body {
   line-height: 1.5;
 }
 
+.modern-portrait-socials {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.modern-portrait-socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--modern-line);
+  border-radius: 999px;
+  background: var(--modern-bg);
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.modern-portrait-socials img {
+  width: 13px;
+  height: 13px;
+  display: block;
+  filter: brightness(0) saturate(100%) invert(36%) sepia(93%) saturate(3392%) hue-rotate(209deg) brightness(101%) contrast(104%);
+}
+
+.modern-portrait-socials a:hover,
+.modern-portrait-socials a:focus-visible {
+  border-color: var(--modern-accent);
+  transform: translateY(-1px);
+}
+
 .modern-section-heading { margin-bottom: 36px; }
 
 .modern-split-heading {
@@ -4584,7 +4618,22 @@ body {
   flex: 0 0 auto;
 }
 
-.modern-link-pair { display: flex; gap: 12px; }
+.modern-icon-link {
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+}
+
+.modern-icon-link img {
+  width: 18px;
+  height: 18px;
+}
+
+.modern-link-pair {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
 .modern-action-row {
   display: flex;

@@ -1755,7 +1755,17 @@ function AboutPage() {
               <div className="modern-hero-portrait-copy">
                 <p>Dennis Wayo, PhD</p>
                 <strong>Quantum Systems Architect</strong>
-                <span>Research software · photonic/CV systems · QEC evidence</span>
+                <div className="modern-portrait-socials" aria-label="Profile links">
+                  <a href="https://scholar.google.com/citations?hl=en&user=YCXIi1wAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noreferrer" aria-label="Google Scholar">
+                    <img src="https://cdn.simpleicons.org/googlescholar/0a63ff" alt="" aria-hidden="true" />
+                  </a>
+                  <a href="https://github.com/DennisWayo" target="_blank" rel="noreferrer" aria-label="GitHub">
+                    <img src="https://cdn.simpleicons.org/github/0a63ff" alt="" aria-hidden="true" />
+                  </a>
+                  <a href="https://www.linkedin.com/in/dennis-w-765a38b1/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                    <img src="/icon-linkedin.svg" alt="" aria-hidden="true" />
+                  </a>
+                </div>
               </div>
             </aside>
           </div>
@@ -1779,7 +1789,7 @@ function AboutPage() {
                 <span className="modern-card-number">02</span>
                 <h3>Photonic & CV quantum systems</h3>
                 <p>Layered photonic simulation spanning circuit construction, Gaussian and selected non-Gaussian paths, noise, measurement, and hardware mapping.</p>
-                <div className="modern-tag-row"><span>Photonics</span><span>Continuous variables</span><span>Noise</span><span>GKP</span></div>
+                <div className="modern-tag-row"><span>Photonics</span><span>CV</span><span>Noise</span><span>GKP</span></div>
               </article>
               <article className="modern-pillar-card">
                 <span className="modern-card-number">03</span>
@@ -1812,9 +1822,8 @@ function AboutPage() {
                 </ul>
                 <div className="modern-software-footer">
                   <div className="modern-stack"><span>C++</span><span>Rust</span><span>Python</span></div>
-                  <a className="modern-text-link modern-github-link" href="https://github.com/Gottesman-Software" target="_blank" rel="noreferrer">
+                  <a className="modern-text-link modern-github-link modern-icon-link" href="https://github.com/Gottesman-Software" target="_blank" rel="noreferrer" aria-label="Open LiDMaS GitHub">
                     <img src="https://cdn.simpleicons.org/github/0a63ff" alt="" aria-hidden="true" />
-                    Repository →
                   </a>
                 </div>
               </article>
@@ -1834,9 +1843,8 @@ function AboutPage() {
                   <div className="modern-stack"><span>Swift</span><span>Rust</span><span>Python</span></div>
                   <span className="modern-link-pair">
                     <NavLink className="modern-text-link" to="/software">Project page →</NavLink>
-                    <a className="modern-text-link modern-github-link" href="https://github.com/Gottesman-Software" target="_blank" rel="noreferrer">
+                    <a className="modern-text-link modern-github-link modern-icon-link" href="https://github.com/Gottesman-Software" target="_blank" rel="noreferrer" aria-label="Open SchroSIM GitHub">
                       <img src="https://cdn.simpleicons.org/github/0a63ff" alt="" aria-hidden="true" />
-                      GitHub →
                     </a>
                   </span>
                 </div>
@@ -1855,9 +1863,8 @@ function AboutPage() {
                 </ul>
                 <div className="modern-software-footer">
                   <div className="modern-stack"><span>Python</span><span>Rust</span><span>Control</span></div>
-                  <a className="modern-text-link modern-github-link" href="https://github.com/Gottesman-Software/photon-qdrivers" target="_blank" rel="noreferrer">
+                  <a className="modern-text-link modern-github-link modern-icon-link" href="https://github.com/Gottesman-Software/photon-qdrivers" target="_blank" rel="noreferrer" aria-label="Open Photon-QDrivers GitHub">
                     <img src="https://cdn.simpleicons.org/github/0a63ff" alt="" aria-hidden="true" />
-                    GitHub →
                   </a>
                 </div>
               </article>
@@ -1870,9 +1877,8 @@ function AboutPage() {
                 <p>Gottesman Software is my university research-software initiative for open-source quantum systems, developed in an academic environment with scientific mentorship from Prof. Dr. habil. Sven Groppe. It connects SchroSIM, LiDMaS+, and Photon-QDrivers around hardware-aware quantum evaluation and reproducible experiment pipelines.</p>
                 <div className="modern-action-row">
                   <a className="modern-button modern-button-primary" href="https://gottesman-software.github.io/" target="_blank" rel="noreferrer">Visit Gottesman Software</a>
-                  <a className="modern-text-link modern-github-link" href="https://github.com/Gottesman-Software" target="_blank" rel="noreferrer">
+                  <a className="modern-text-link modern-github-link modern-icon-link" href="https://github.com/Gottesman-Software" target="_blank" rel="noreferrer" aria-label="Open Gottesman Software GitHub">
                     <img src="https://cdn.simpleicons.org/github/0a63ff" alt="" aria-hidden="true" />
-                    GitHub
                   </a>
                 </div>
               </div>
