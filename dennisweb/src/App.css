@@ -4191,15 +4191,25 @@ body {
 .modern-brand-mark {
   display: inline-grid;
   place-items: center;
-  width: 31px;
-  height: 31px;
+  width: 34px;
+  height: 34px;
   flex: 0 0 auto;
   border: 1px solid var(--modern-line);
   border-radius: 9px;
   background: var(--modern-surface);
-  font-size: 0.58rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  overflow: hidden;
+}
+
+.modern-brand-mark img {
+  display: block;
+  width: 40px;
+  height: 40px;
+  max-width: none;
+  object-fit: contain;
+}
+
+:root[data-theme='dark'] .modern-brand-mark img {
+  filter: invert(1);
 }
 
 .modern-brand-copy {
@@ -4699,11 +4709,13 @@ body {
 .modern-publication-heading .modern-button { margin-top: 18px; }
 
 .modern-publication-list {
-  max-height: 368px;
+  max-height: 520px;
   overflow-y: auto;
   padding-right: 12px;
   border-top: 1px solid var(--modern-line);
   scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: var(--modern-accent) var(--modern-soft);
 }
 
 .modern-publication-list::-webkit-scrollbar {
@@ -4744,14 +4756,111 @@ body {
 .modern-publication-item p {
   margin: 6px 0 0;
   color: var(--modern-muted);
-  font-size: 0.62rem;
-  line-height: 1.4;
+  font-size: 0.72rem;
+  line-height: 1.45;
+}
+
+.modern-publication-item .modern-publication-source {
+  margin-top: 3px;
+  font-size: 0.65rem;
 }
 
 .modern-publication-item > a {
   color: var(--modern-accent);
   text-decoration: none;
   font-size: 0.9rem;
+}
+
+.modern-contribution-layout {
+  display: grid;
+  grid-template-columns: 1.38fr 0.62fr;
+  gap: 72px;
+  align-items: start;
+}
+
+.modern-contribution-heading { margin: 0; }
+
+.modern-contribution-list {
+  max-height: 470px;
+  overflow-y: auto;
+  padding-left: 12px;
+  border-top: 1px solid var(--modern-line);
+  direction: rtl;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: var(--modern-accent) var(--modern-soft);
+}
+
+.modern-contribution-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modern-contribution-list::-webkit-scrollbar-track {
+  background: color-mix(in srgb, var(--modern-soft) 72%, transparent);
+  border-radius: 999px;
+}
+
+.modern-contribution-list::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--modern-accent) 42%, var(--modern-line));
+  border-radius: 999px;
+}
+
+.modern-contribution-item {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 14px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--modern-line);
+  direction: ltr;
+}
+
+.modern-contribution-project {
+  margin: 0 0 4px;
+  color: var(--modern-accent);
+  font-size: 0.58rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.modern-contribution-item h3 {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.28;
+}
+
+.modern-contribution-summary {
+  margin: 6px 0 0;
+  color: var(--modern-muted);
+  font-size: 0.72rem;
+  line-height: 1.45;
+}
+
+.modern-contribution-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.modern-contribution-links a {
+  color: var(--modern-accent);
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.modern-contribution-links a:hover,
+.modern-contribution-links a:focus-visible,
+.modern-publication-item > a:hover,
+.modern-publication-item > a:focus-visible {
+  text-decoration: underline;
+}
+
+.modern-site .floating-scroll-button {
+  border-color: var(--modern-ink);
+  background: var(--modern-ink);
+  color: var(--modern-bg);
+  box-shadow: 0 8px 20px rgba(8, 11, 16, 0.18);
 }
 
 .modern-section-dark {
@@ -4894,7 +5003,11 @@ body {
   .modern-split-heading,
   .modern-ecosystem-card,
   .modern-publication-layout,
+  .modern-contribution-layout,
   .modern-about-callout { grid-template-columns: 1fr; }
+  .modern-contribution-heading { grid-row: 1; }
+  .modern-publication-layout,
+  .modern-contribution-layout { gap: 28px; }
   .modern-hero-grid { gap: 44px; }
   .modern-hero-portrait { max-width: 360px; }
   .modern-pillar-grid,
@@ -4932,6 +5045,12 @@ body {
   .modern-software-footer { align-items: flex-start; flex-direction: column; }
   .modern-publication-item { grid-template-columns: 42px 1fr 18px; gap: 9px; }
   .modern-publication-list { max-height: 430px; }
+  .modern-publication-item p,
+  .modern-contribution-summary { font-size: 0.75rem; }
+  .modern-publication-item .modern-publication-source,
+  .modern-contribution-links a { font-size: 0.69rem; }
+  .modern-contribution-item { grid-template-columns: 42px 1fr; gap: 9px; }
+  .modern-contribution-list { max-height: 430px; }
   .modern-footer-grid { grid-template-columns: 1fr; gap: 18px; }
   .modern-footer-identity { display: none; }
   .modern-footer-socials { grid-template-columns: repeat(5, 34px); }
