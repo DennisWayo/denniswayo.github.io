@@ -1400,7 +1400,9 @@ function Layout({ children }) {
         <header className="modern-site-header">
           <div className="modern-shell modern-nav-wrap">
             <NavLink className="modern-brand" to="/about" aria-label="Dennis Wayo home">
-              <span className="modern-brand-mark" aria-hidden="true">DW</span>
+              <span className="modern-brand-mark" aria-hidden="true">
+                <img src="/adinkra-mark.png" alt="" />
+              </span>
               <span className="modern-brand-copy">
                 <strong>Dennis Wayo, PhD</strong>
                 <small>Quantum systems · scientific software</small>

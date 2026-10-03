@@ -4191,15 +4191,25 @@ body {
 .modern-brand-mark {
   display: inline-grid;
   place-items: center;
-  width: 31px;
-  height: 31px;
+  width: 34px;
+  height: 34px;
   flex: 0 0 auto;
   border: 1px solid var(--modern-line);
   border-radius: 9px;
   background: var(--modern-surface);
-  font-size: 0.58rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  overflow: hidden;
+}
+
+.modern-brand-mark img {
+  display: block;
+  width: 40px;
+  height: 40px;
+  max-width: none;
+  object-fit: contain;
+}
+
+:root[data-theme='dark'] .modern-brand-mark img {
+  filter: invert(1);
 }
 
 .modern-brand-copy {
