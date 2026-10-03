@@ -1925,6 +1925,7 @@ function AboutPage() {
   )
 }
 
+/* eslint-disable no-unused-vars -- Legacy page components are retained as source archive while public routes redirect to the modern about page. */
 function BlogPage() {
   const [mediumPosts, setMediumPosts] = useState([])
   const [mediumStatus, setMediumStatus] = useState('loading')
@@ -3036,18 +3037,24 @@ function WayoAiPage() {
     </Layout>
   )
 }
+/* eslint-enable no-unused-vars */
 
 
 const routeTitles = {
   '/about': 'Dennis Wayo, PhD — Quantum Systems Architect & Scientific Software Engineer',
-  '/projects': 'Projects — Dennis Wayo, PhD',
-  '/blog': 'Blog — Dennis Wayo, PhD',
-  '/publications': 'Publications — Dennis Wayo, PhD',
-  '/mentoring': 'Mentoring — Dennis Wayo, PhD',
-  '/colabx': 'ColabX — Dennis Wayo, PhD',
-  '/software': 'Software — Dennis Wayo, PhD',
-  '/wayo-ai': 'Wayo.ai — Dennis Wayo, PhD',
 }
+
+const legacyRedirects = [
+  { path: '/projects', to: '/about#software' },
+  { path: '/software', to: '/about#software' },
+  { path: '/colabx', to: '/about#software' },
+  { path: '/wayo-ai', to: '/about#software' },
+  { path: '/publications', to: '/about#publications' },
+  { path: '/blog', to: '/about#story' },
+  { path: '/talks', to: '/about#story' },
+  { path: '/mentoring', to: '/about#story' },
+  { path: '/teaching', to: '/about#story' },
+]
 
 function RouteTelemetry() {
   const location = useLocation()
@@ -3068,7 +3075,14 @@ function RouteTelemetry() {
         page_path: pagePath,
       })
     }
-  }, [location.pathname, location.search])
+
+    if (location.pathname === '/about' && location.hash) {
+      window.setTimeout(() => {
+        const targetId = decodeURIComponent(location.hash.slice(1))
+        document.getElementById(targetId)?.scrollIntoView({ block: 'start' })
+      }, 0)
+    }
+  }, [location.pathname, location.search, location.hash])
 
   return null
 }
@@ -3080,15 +3094,13 @@ function App() {
       <Routes>
       <Route path="/" element={<Navigate replace to="/about" />} />
       <Route path="/about" element={<AboutPage />} />
-      <Route path="/blog" element={<BlogPage />} />
-      <Route path="/publications" element={<PublicationsPage />} />
-      <Route path="/projects" element={<ProjectsPage />} />
-      <Route path="/mentoring" element={<MentoringPage />} />
-      <Route path="/teaching" element={<Navigate replace to="/mentoring" />} />
-      <Route path="/colabx" element={<ColabXPage />} />
-      <Route path="/software" element={<SoftwarePage />} />
-      <Route path="/wayo-ai" element={<WayoAiPage />} />
-      <Route path="/talks" element={<Navigate replace to="/blog" />} />
+      {legacyRedirects.map((route) => (
+        <Route
+          key={route.path}
+          path={route.path}
+          element={<Navigate replace to={route.to} />}
+        />
+      ))}
         <Route path="*" element={<Navigate replace to="/about" />} />
       </Routes>
     </>

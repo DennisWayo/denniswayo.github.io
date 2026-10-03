@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dennis Wayo, PhD</title>
+    <script>
+      const redirects = {
+        '/projects': '/about#software',
+        '/software': '/about#software',
+        '/colabx': '/about#software',
+        '/wayo-ai': '/about#software',
+        '/publications': '/about#publications',
+        '/blog': '/about#story',
+        '/talks': '/about#story',
+        '/mentoring': '/about#story',
+        '/teaching': '/about#story',
+      }
+
+      const target = redirects[window.location.pathname] || '/about'
+      window.location.replace(target)
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to Dennis Wayo, PhD.</p>
+  </body>
+</html>
