@@ -4271,6 +4271,8 @@ body {
   border-bottom: 1px solid var(--modern-line);
 }
 
+.modern-home section[id] { scroll-margin-top: 74px; }
+
 .modern-hero {
   padding: 112px 0 92px;
 }
@@ -5023,24 +5025,43 @@ body {
 
 @media (max-width: 640px) {
   .modern-shell { width: min(100% - 28px, 1060px); }
-  .modern-site-header { position: static; }
-  .modern-nav-wrap { min-height: auto; padding: 12px 0; gap: 12px; align-items: center; }
+  .modern-nav-wrap {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    min-height: auto;
+    gap: 8px;
+    padding: 10px 0 8px;
+  }
+  .modern-brand { justify-self: start; }
   .modern-brand-copy strong { white-space: nowrap; }
   .modern-brand-copy small { display: none; }
   .modern-primary-nav {
-    min-width: 0;
-    flex: 1;
-    max-width: 58vw;
+    display: flex;
+    gap: 8px;
+    width: 100%;
     overflow-x: auto;
-    gap: 12px;
-    padding-bottom: 4px;
+    padding-top: 6px;
+    border-top: 1px solid var(--modern-line);
     scrollbar-width: none;
   }
   .modern-primary-nav::-webkit-scrollbar { display: none; }
-  .modern-primary-nav a { font-size: 0.62rem; }
-  .modern-theme-toggle { width: 25px; height: 25px; flex: 0 0 auto; }
+  .modern-primary-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    font-size: 0.62rem;
+  }
+  .modern-theme-toggle {
+    position: absolute;
+    top: 16px;
+    right: 0;
+    width: 32px;
+    height: 32px;
+  }
+  .modern-home section[id] { scroll-margin-top: 124px; }
   .modern-section { padding: 58px 0; }
-  .modern-hero { padding: 72px 0 64px; }
+  .modern-hero { padding: 36px 0 58px; }
   .modern-eyebrow { font-size: 0.61rem; letter-spacing: 0.1em; }
   .modern-hero h1 { font-size: clamp(2.78rem, 12.3vw, 3.5rem); }
   .modern-hero-lede { font-size: 0.98rem; }
