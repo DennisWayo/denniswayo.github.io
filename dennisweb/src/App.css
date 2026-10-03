@@ -4191,21 +4191,23 @@ body {
 .modern-brand-mark {
   display: inline-grid;
   place-items: center;
-  width: 34px;
-  height: 34px;
+  position: relative;
+  width: 44px;
+  height: 44px;
   flex: 0 0 auto;
-  border: 1px solid var(--modern-line);
-  border-radius: 9px;
-  background: var(--modern-surface);
   overflow: hidden;
 }
 
 .modern-brand-mark img {
   display: block;
-  width: 40px;
-  height: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
   max-width: none;
   object-fit: contain;
+  transform: translate(-50%, -50%);
 }
 
 :root[data-theme='dark'] .modern-brand-mark img {
@@ -5022,9 +5024,12 @@ body {
 @media (max-width: 640px) {
   .modern-shell { width: min(100% - 28px, 1060px); }
   .modern-site-header { position: static; }
-  .modern-nav-wrap { min-height: auto; padding: 12px 0; align-items: flex-start; }
+  .modern-nav-wrap { min-height: auto; padding: 12px 0; gap: 12px; align-items: center; }
+  .modern-brand-copy strong { white-space: nowrap; }
   .modern-brand-copy small { display: none; }
   .modern-primary-nav {
+    min-width: 0;
+    flex: 1;
     max-width: 58vw;
     overflow-x: auto;
     gap: 12px;
