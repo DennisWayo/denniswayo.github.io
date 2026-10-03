@@ -1178,6 +1178,7 @@ function Layout({ children }) {
   const location = useLocation()
   const tabsRef = useRef(null)
   const scrollAnimationRef = useRef(null)
+  const startSpringScrollRef = useRef(null)
   const springScrollRef = useRef({
     current: 0,
     target: 0,
@@ -1251,6 +1252,12 @@ function Layout({ children }) {
       scrollAnimationRef.current = window.requestAnimationFrame(animateSpringScroll)
     }
 
+    startSpringScrollRef.current = () => {
+      if (!scrollAnimationRef.current) {
+        scrollAnimationRef.current = window.requestAnimationFrame(animateSpringScroll)
+      }
+    }
+
     function shouldUseNativeScroll(event) {
       if (reducedMotionQuery.matches || event.ctrlKey || event.metaKey || event.shiftKey) {
         return true
@@ -1266,7 +1273,7 @@ function Layout({ children }) {
         return true
       }
 
-      if (target.closest('.tabs, .software-stack-table-wrap, .wayo-diagram-wrap')) {
+      if (target.closest('.tabs, .modern-primary-nav, .software-stack-table-wrap, .wayo-diagram-wrap, .modern-publication-list, .modern-contribution-list')) {
         return true
       }
 
@@ -1299,6 +1306,7 @@ function Layout({ children }) {
     window.addEventListener('wheel', handleWheel, { passive: false })
 
     return () => {
+      startSpringScrollRef.current = null
       window.removeEventListener('scroll', updateScrollProgress)
       window.removeEventListener('resize', updateScrollProgress)
       window.removeEventListener('wheel', handleWheel)
@@ -1378,10 +1386,12 @@ function Layout({ children }) {
     springScrollRef.current.target = top
     springScrollRef.current.velocity = 0
 
-    window.scrollTo({
-      top,
-      behavior: prefersReducedMotion ? 'auto' : 'smooth',
-    })
+    if (prefersReducedMotion) {
+      window.scrollTo(0, top)
+      return
+    }
+
+    startSpringScrollRef.current?.()
   }
 
   if (location.pathname === '/about') {
@@ -1400,6 +1410,7 @@ function Layout({ children }) {
               <a href="#story">About</a>
               <a href="#research">Research</a>
               <a href="#software">Software</a>
+              <a href="#contributions">Contributions</a>
               <a href="#publications">Publications</a>
               <a href="/MyCV.pdf">CV</a>
               <button
@@ -1452,6 +1463,17 @@ function Layout({ children }) {
             </div>
           </div>
         </footer>
+        <button
+          className={`floating-scroll-button ${shouldScrollToTop ? 'is-up' : 'is-down'}`}
+          type="button"
+          aria-label={scrollButtonLabel}
+          title={scrollButtonLabel}
+          onClick={handleScrollJump}
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 4 5.5 10.5l1.4 1.4L11 7.8V20h2V7.8l4.1 4.1 1.4-1.4L12 4Z" />
+          </svg>
+        </button>
       </div>
     )
   }
@@ -1641,75 +1663,148 @@ function AboutPage() {
   const selectedWork = [
     {
       year: '2026',
+      title: 'Quantum Machine Learning Codebook: Build Hybrid Models with PennyLane, Cirq, and Qiskit in Notebooks',
+      authors: 'Dennis Wayo, Sven Groppe',
+      source: 'SpringerBriefs in Computer Science · Forthcoming November 2026',
+      url: 'https://link.springer.com/book/9783032337849',
+    },
+    {
+      year: '2026',
       title: 'Hardware-in-the-loop syndrome-to-decoder validation for repetition, surface, CSS-LDPC, and digitized-GKP codes',
-      citation: 'DDK Wayo et al. · arXiv:2607.19447',
+      authors: 'Dennis Delali Kwesi Wayo, Chinonso Onah, Rodrigo Alves Dias, Leonardo Goliatt, Sven Groppe',
+      source: 'arXiv:2607.19447',
       url: 'https://arxiv.org/abs/2607.19447',
     },
     {
       year: '2026',
       title: 'Decoder comparability across quantum software stacks: repeated-round surface and digitized-GKP syndrome replay',
-      citation: 'DDK Wayo et al. · arXiv:2607.19446',
+      authors: 'Dennis Delali Kwesi Wayo, Chinonso Onah, Rodrigo Alves Dias, Leonardo Goliatt, Zaher Mundher Yaseen, Sven Groppe',
+      source: 'arXiv:2607.19446',
       url: 'https://arxiv.org/abs/2607.19446',
     },
     {
       year: '2026',
       title: 'A unified hardware-to-decoder architecture for hybrid continuous-variable and discrete-variable quantum error correction in LiDMaS+',
-      citation: 'DDK Wayo, C. Onah, L. Goliatt, S. Groppe · arXiv:2604.15389',
+      authors: 'Dennis Delali Kwesi Wayo, Chinonso Onah, Leonardo Goliatt, Sven Groppe',
+      source: 'arXiv:2604.15389',
       url: 'https://arxiv.org/abs/2604.15389',
     },
     {
       year: '2026',
       title: 'RaCS: Near-Zero-Error Classical Data Encoding on Photonic Quantum Processors via Redundancy-Assisted Coherent-State Codes',
-      citation: 'DDK Wayo, S. Groppe · Fortschritte der Physik 74(4), e70095',
-      url: 'https://scholar.google.com/scholar?q=RaCS%3A+Near-Zero-Error+Classical+Data+Encoding+on+Photonic+Quantum+Processors',
+      authors: 'Dennis Delali Kwesi Wayo, Sven Groppe',
+      source: 'Fortschritte der Physik 74(4), e70095',
+      url: 'https://onlinelibrary.wiley.com/doi/10.1002/prop.70095',
     },
     {
       year: '2026',
       title: 'Traversing Gaussian and non-Gaussian regimes in photonic quantum simulators: a review',
-      citation: 'D. Delali Kwesi Wayo, R. A. Dias, M. D. Ganji, C. M. Saporetti, L. Goliatt · EPJ Quantum Technology 13(1), 85',
-      url: 'https://scholar.google.com/scholar?q=Traversing+Gaussian+and+non-Gaussian+regimes+in+photonic+quantum+simulators%3A+a+review',
+      authors: 'Dennis Delali Kwesi Wayo, Rodrigo Alves Dias, Masoud Darvish Ganji, Camila Martins Saporetti, Leonardo Goliatt',
+      source: 'EPJ Quantum Technology 13, 85',
+      url: 'https://link.springer.com/article/10.1140/epjqt/s40507-026-00496-w',
     },
     {
       year: '2026',
       title: 'DifGa: differentiable error mitigation for multi-mode Gaussian and non-Gaussian noise in quantum photonic circuits',
-      citation: 'DDK Wayo, R. A. Dias, L. Goliatt, S. Groppe · Journal of Physics: Photonics 8(3), 035004',
-      url: 'https://scholar.google.com/scholar?q=DifGa%3A+differentiable+error+mitigation+for+multi-mode+Gaussian+and+non-Gaussian+noise+in+quantum+photonic+circuits',
+      authors: 'Dennis Delali Kwesi Wayo, Rodrigo Alves Dias, Leonardo Goliatt, Sven Groppe',
+      source: 'Journal of Physics: Photonics 8(3), 035004',
+      url: 'https://doi.org/10.1088/2515-7647/ae7864',
     },
     {
       year: '2026',
       title: 'Decoder Dependence in Surface-Code Threshold Estimation under Digitized Hybrid Continuous-Variable and Discrete Noise',
-      citation: 'DDK Wayo, C. Onah, L. Goliatt, S. Groppe · Fortschritte der Physik 74(6), e70124',
-      url: 'https://scholar.google.com/scholar?q=Decoder+Dependence+in+Surface-Code+Threshold+Estimation+under+Digitized+Hybrid+Continuous-Variable+and+Discrete+Noise',
+      authors: 'Dennis Delali Kwesi Wayo, Chinonso Onah, Leonardo Goliatt, Sven Groppe',
+      source: 'Fortschritte der Physik 74(6), e70124',
+      url: 'https://onlinelibrary.wiley.com/doi/10.1002/prop.70124',
     },
     {
       year: '2026',
       title: 'Decoder Dependence in Surface-Code Threshold Estimation with Native Gottesman-Kitaev-Preskill Digitization and Parallelized Sampling',
-      citation: 'DDK Wayo, C. Onah, L. Goliatt, S. Groppe · arXiv:2603.25757',
+      authors: 'Dennis Delali Kwesi Wayo, Chinonso Onah, Leonardo Goliatt, Sven Groppe',
+      source: 'arXiv:2603.25757',
       url: 'https://arxiv.org/abs/2603.25757',
     },
     {
       year: '2026',
       title: 'Simulation of ultrafast photonic circuits via nonlinear Schrodinger dynamics and quantum detector modeling',
-      citation: 'DDK Wayo · Optical and Quantum Electronics 58(3), 125',
-      url: 'https://scholar.google.com/scholar?q=Simulation+of+ultrafast+photonic+circuits+via+nonlinear+Schrodinger+dynamics+and+quantum+detector+modeling',
+      authors: 'Dennis Delali Kwesi Wayo',
+      source: 'Optical and Quantum Electronics 58(3), 125',
+      url: 'https://link.springer.com/article/10.1007/s11082-026-08700-y',
     },
     {
       year: '2026',
       title: 'LiDMaS: Architecture-Level Modeling of Fault-Tolerant Magic-State Injection in GKP Photonic Qubits',
-      citation: 'DDK Wayo · arXiv:2601.16244',
+      authors: 'Dennis Delali Kwesi Wayo',
+      source: 'arXiv:2601.16244',
       url: 'https://arxiv.org/abs/2601.16244',
     },
     {
       year: '2025',
       title: 'Atomistic Modeling of Rare Earth Ions in Photonic Materials',
-      citation: 'DDK Wayo, M. Z. B. M. Noor, M. D. Ganji, L. Goliatt · Luminescence 40(9), e70297',
-      url: 'https://scholar.google.com/scholar?q=Atomistic+Modeling+of+Rare+Earth+Ions+in+Photonic+Materials',
+      authors: 'Dennis Delali Kwesi Wayo, Mohd Zulkifli Bin Mohamad Noor, Masoud Darvish Ganji, Leonardo Goliatt',
+      source: 'Luminescence 40(9), e70297',
+      url: 'https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/10.1002/bio.70297',
     },
     {
       year: '2025',
       title: 'Q-DFTNet: A Chemistry-Informed Neural Network Framework for Predicting Molecular Dipole Moments via DFT-Driven QM9 Data',
-      citation: 'DDK Wayo, M. Z. B. M. Noor, M. D. Ganji, C. M. Saporetti, L. Goliatt · Journal of Computational Chemistry 46(22), e70206',
-      url: 'https://scholar.google.com/scholar?q=Q-DFTNet%3A+A+Chemistry-Informed+Neural+Network+Framework+for+Predicting+Molecular+Dipole+Moments+via+DFT-Driven+QM9+Data',
+      authors: 'Dennis Delali Kwesi Wayo, Mohd Zulkifli Bin Mohamad Noor, Masoud Darvish Ganji, Camila Martins Saporetti, Leonardo Goliatt',
+      source: 'Journal of Computational Chemistry 46(22), e70206',
+      url: 'https://onlinelibrary.wiley.com/doi/10.1002/jcc.70206',
+    },
+  ]
+
+  const contributionLog = [
+    {
+      year: '2026',
+      project: 'Qibolab',
+      title: 'Dynamiqs simulation engine',
+      summary: 'Integrated Dynamiqs into the emulator and added focused simulation tests.',
+      links: [{ label: 'PR #1479', url: 'https://github.com/qiboteam/qibolab/pull/1479' }],
+    },
+    {
+      year: '2026',
+      project: 'Qibolab',
+      title: 'Emulator evolution and results',
+      summary: 'Repaired evolution and result handling across QuTiP and Dynamiqs paths.',
+      links: [
+        { label: 'PR #1497', url: 'https://github.com/qiboteam/qibolab/pull/1497' },
+        { label: 'PR #1505', url: 'https://github.com/qiboteam/qibolab/pull/1505' },
+      ],
+    },
+    {
+      year: '2026',
+      project: 'Qibocal',
+      title: 'Example platform drive configuration',
+      summary: 'Updated emulator platform drives for the current Qibolab configuration schema.',
+      links: [{ label: 'PR #1551', url: 'https://github.com/qiboteam/qibocal/pull/1551' }],
+    },
+    {
+      year: '2026',
+      project: 'PennyLane',
+      title: 'Documentation tests and diagnostics',
+      summary: 'Added shadow documentation testing and improved measurement comparison diagnostics.',
+      links: [
+        { label: 'PR #9566', url: 'https://github.com/PennyLaneAI/pennylane/pull/9566' },
+        { label: 'PR #9605', url: 'https://github.com/PennyLaneAI/pennylane/pull/9605' },
+      ],
+    },
+    {
+      year: '2026',
+      project: 'Qiskit',
+      title: 'Circuit labels and QPY tests',
+      summary: 'Extended circuit gate-label support and refactored QPY round-trip load-test setup.',
+      links: [
+        { label: 'PR #16373', url: 'https://github.com/Qiskit/qiskit/pull/16373' },
+        { label: 'PR #16372', url: 'https://github.com/Qiskit/qiskit/pull/16372' },
+      ],
+    },
+    {
+      year: '2026',
+      project: 'Mitiq / Qibo',
+      title: 'QEC and error-mitigation tutorial',
+      summary: 'Contributed an example combining repeated syndrome checks with zero-noise extrapolation.',
+      links: [{ label: 'PR #3023', url: 'https://github.com/unitaryfoundation/mitiq/pull/3023' }],
     },
   ]
 
@@ -1893,19 +1988,52 @@ function AboutPage() {
           <div className="modern-shell modern-publication-layout">
             <div className="modern-section-heading modern-publication-heading">
               <p className="modern-eyebrow">Selected work</p>
-              <h2>Recent publications & preprints.</h2>
-              <p>Selected items that best represent the current quantum-systems direction. The full publication record remains available through ORCID and Google Scholar.</p>
+              <h2>Selected publications.</h2>
+              <p>Research papers, preprints, and a forthcoming book that represent the current quantum-systems direction. The full record is available through ORCID and Google Scholar.</p>
               <a className="modern-button modern-button-secondary" href="https://orcid.org/0000-0001-9980-6247" target="_blank" rel="noreferrer">View ORCID</a>
             </div>
 
-            <div className="modern-publication-list">
+            <div className="modern-publication-list" role="region" aria-label="Scrollable publication list" tabIndex={0}>
               {selectedWork.map((item) => (
                 <article className="modern-publication-item" key={item.title}>
                   <span className="modern-pub-year">{item.year}</span>
-                  <div><h3>{item.title}</h3><p>{item.citation}</p></div>
+                  <div>
+                    <h3>{item.title}</h3>
+                    <p className="modern-publication-authors">{item.authors}</p>
+                    <p className="modern-publication-source">{item.source}</p>
+                  </div>
                   <a href={item.url} target="_blank" rel="noreferrer" aria-label={`Open ${item.title}`}>↗</a>
                 </article>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="modern-section modern-section-muted" id="contributions">
+          <div className="modern-shell modern-contribution-layout">
+            <div className="modern-contribution-list" role="region" aria-label="Scrollable quantum software contribution log" tabIndex={0}>
+              {contributionLog.map((item) => (
+                <article className="modern-contribution-item" key={`${item.project}-${item.title}`}>
+                  <span className="modern-pub-year">{item.year}</span>
+                  <div>
+                    <p className="modern-contribution-project">{item.project}</p>
+                    <h3>{item.title}</h3>
+                    <p className="modern-contribution-summary">{item.summary}</p>
+                    <div className="modern-contribution-links">
+                      {item.links.map((link) => (
+                        <a key={link.url} href={link.url} target="_blank" rel="noreferrer">
+                          {link.label} <span aria-hidden="true">↗</span>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+            <div className="modern-section-heading modern-contribution-heading">
+              <p className="modern-eyebrow">Open source</p>
+              <h2>Contributions to quantum software stacks.</h2>
+              <p>Selected work across simulators, calibration tools, quantum programming frameworks, and error-mitigation examples. Each entry links to its public pull request.</p>
             </div>
           </div>
         </section>
