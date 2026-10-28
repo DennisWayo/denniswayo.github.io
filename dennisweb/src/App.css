@@ -4883,11 +4883,55 @@ body {
   align-items: center;
 }
 
-.modern-about-callout > p {
+.modern-about-reading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 30px;
+  gap: 12px;
+  align-items: start;
+  min-width: 0;
+}
+
+.modern-about-narrative {
+  display: grid;
+  gap: 14px;
+  max-height: 360px;
+  overflow-y: auto;
+  padding-right: 10px;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: #7aa8ff #171a20;
+  overscroll-behavior: contain;
+}
+
+.modern-about-narrative p {
   margin: 0;
   color: #c4c9d0;
-  font-size: 0.84rem;
+  font-size: 0.88rem;
   line-height: 1.7;
+}
+
+.modern-about-scroll-controls {
+  display: grid;
+  gap: 8px;
+}
+
+.modern-about-scroll-controls button {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #343b46;
+  border-radius: 6px;
+  background: #171a20;
+  color: #f5f7fa;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.modern-about-scroll-controls button:hover,
+.modern-about-scroll-controls button:focus-visible {
+  border-color: #7aa8ff;
+  color: #7aa8ff;
 }
 
 .modern-about-person {
@@ -5067,6 +5111,10 @@ body {
   .modern-hero-lede { font-size: 0.98rem; }
   .modern-section-heading h2,
   .modern-about-callout h2 { font-size: clamp(2.35rem, 10.8vw, 3.2rem); }
+  .modern-about-callout { gap: 24px; }
+  .modern-about-narrative p { font-size: 0.95rem; }
+  .modern-about-person { display: flex; align-items: center; }
+  .modern-about-person img { width: 84px; }
   .modern-hero-portrait { max-width: 280px; }
   .modern-software-footer { align-items: flex-start; flex-direction: column; }
   .modern-publication-item { grid-template-columns: 42px 1fr 18px; gap: 9px; }
