@@ -4819,6 +4819,10 @@ body {
 }
 
 .modern-contribution-project {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
   margin: 0 0 4px;
   color: var(--modern-accent);
   font-size: 0.58rem;
@@ -4842,8 +4846,15 @@ body {
 .modern-contribution-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 8px 12px;
   margin-top: 8px;
+}
+
+.modern-contribution-link-group {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 .modern-contribution-links a {
@@ -4851,6 +4862,21 @@ body {
   font-size: 0.66rem;
   font-weight: 700;
   text-decoration: none;
+}
+
+.modern-contribution-badge,
+.modern-contribution-links .modern-contribution-badge {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--modern-line);
+  border-radius: 999px;
+  padding: 2px 6px;
+  color: var(--modern-muted);
+  font-size: 0.56rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  text-transform: none;
 }
 
 .modern-contribution-links a:hover,

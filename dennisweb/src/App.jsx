@@ -1672,10 +1672,10 @@ function AboutPage() {
     },
     {
       year: '2026',
-      title: 'Hardware-in-the-loop syndrome-to-decoder validation for repetition, surface, CSS-LDPC, and digitized-GKP codes',
+      title: 'Auditing Syndrome-to-Decoder Mappings for Repetition, Surface, CSS, and Digitized-GKP Interfaces',
       authors: 'Dennis Delali Kwesi Wayo, Chinonso Onah, Rodrigo Alves Dias, Leonardo Goliatt, Sven Groppe',
-      source: 'arXiv:2607.19447',
-      url: 'https://arxiv.org/abs/2607.19447',
+      source: 'Frontiers of Computer Science · Published online 14 October 2026 · DOI: 10.1007/s11704-026-61541-6',
+      url: 'https://journal.hep.com.cn/fcs/EN/10.1007/s11704-026-61541-6',
     },
     {
       year: '2026',
@@ -1763,7 +1763,7 @@ function AboutPage() {
       title: 'QuantumCircuit gate labels',
       summary: 'Added label support across QuantumCircuit gate helpers, with regression tests.',
       links: [
-        { label: 'PR #16373', url: 'https://github.com/Qiskit/qiskit/pull/16373' },
+        { label: 'PR #16373', url: 'https://github.com/Qiskit/qiskit/pull/16373', hackathon: 'unitaryHACK 2026' },
       ],
     },
     {
@@ -1772,7 +1772,7 @@ function AboutPage() {
       title: 'Documentation tests and diagnostics',
       summary: 'Added shadow documentation testing and improved measurement comparison diagnostics.',
       links: [
-        { label: 'PR #9566', url: 'https://github.com/PennyLaneAI/pennylane/pull/9566' },
+        { label: 'PR #9566', url: 'https://github.com/PennyLaneAI/pennylane/pull/9566', hackathon: 'unitaryHACK 2026' },
         { label: 'PR #9605', url: 'https://github.com/PennyLaneAI/pennylane/pull/9605' },
       ],
     },
@@ -1781,7 +1781,15 @@ function AboutPage() {
       project: 'Qibolab',
       title: 'Dynamiqs simulation engine',
       summary: 'Integrated Dynamiqs into the emulator and added focused simulation tests.',
-      links: [{ label: 'PR #1479', url: 'https://github.com/qiboteam/qibolab/pull/1479' }],
+      links: [{ label: 'PR #1479', url: 'https://github.com/qiboteam/qibolab/pull/1479', hackathon: 'unitaryHACK 2026' }],
+    },
+    {
+      year: '2026',
+      project: 'IBM TechXchange',
+      title: 'BoundaryGuard: Bob-assisted Qiskit debugging',
+      summary: 'Top 50 hackathon entry investigating a Python–Rust boundary panic, with a candidate validation patch, focused tests, and review evidence.',
+      hackathon: true,
+      links: [{ label: 'Project', url: 'https://github.com/DennisWayo/ibm-bob-boundaryguard' }],
     },
     {
       year: '2026',
@@ -2017,14 +2025,24 @@ function AboutPage() {
                 <article className="modern-contribution-item" key={`${item.project}-${item.title}`}>
                   <span className="modern-pub-year">{item.year}</span>
                   <div>
-                    <p className="modern-contribution-project">{item.project}</p>
+                    <p className="modern-contribution-project">
+                      {item.project}
+                      {item.hackathon && <span className="modern-contribution-badge">Hackathon</span>}
+                    </p>
                     <h3>{item.title}</h3>
                     <p className="modern-contribution-summary">{item.summary}</p>
                     <div className="modern-contribution-links">
                       {item.links.map((link) => (
-                        <a key={link.url} href={link.url} target="_blank" rel="noreferrer">
-                          {link.label} <span aria-hidden="true">↗</span>
-                        </a>
+                        <span className="modern-contribution-link-group" key={link.url}>
+                          <a href={link.url} target="_blank" rel="noreferrer">
+                            {link.label} <span aria-hidden="true">↗</span>
+                          </a>
+                          {link.hackathon && (
+                            <a className="modern-contribution-badge" href="https://unitaryhack.dev/hackers/denniswayo/" target="_blank" rel="noreferrer">
+                              Hackathon · {link.hackathon}
+                            </a>
+                          )}
+                        </span>
                       ))}
                     </div>
                   </div>
@@ -2034,7 +2052,7 @@ function AboutPage() {
             <div className="modern-section-heading modern-contribution-heading">
               <p className="modern-eyebrow">Open source</p>
               <h2>Contributions to quantum software stacks.</h2>
-              <p>Selected work across simulators, calibration tools, quantum programming frameworks, and error-mitigation examples. Each entry links to its public pull request.</p>
+              <p>Selected work across simulators, calibration tools, quantum programming frameworks, error-mitigation examples, and hackathons. Entries link to the public pull request or project.</p>
             </div>
           </div>
         </section>
