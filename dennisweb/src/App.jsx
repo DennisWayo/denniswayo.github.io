@@ -345,13 +345,12 @@ const openSourceContributions = [
     project: 'Qiskit',
     icon: 'https://cdn.simpleicons.org/qiskit/6929C4',
     iconText: 'Qk',
-    scope: 'Circuit labels and QPY test structure',
+    scope: 'QuantumCircuit gate labels',
     summary:
-      'Extended QuantumCircuit standard and controlled-gate helpers to propagate gate labels, added regression tests, and refactored QPY roundtrip load-test setup.',
-    status: 'Submitted',
+      'Added label support across QuantumCircuit gate helpers, with regression tests for the affected methods.',
+    status: 'Merged',
     links: [
       { label: 'PR #16373', href: 'https://github.com/Qiskit/qiskit/pull/16373' },
-      { label: 'PR #16372', href: 'https://github.com/Qiskit/qiskit/pull/16372' },
     ],
   },
   {
@@ -987,19 +986,19 @@ const software = [
     description: 'Frameworks used for quantum simulation, hardware workflows, calibration, error mitigation, and decoder benchmarking.',
     items: [
       {
+        name: 'Qiskit',
+        logo: 'https://cdn.simpleicons.org/qiskit/6929C4',
+        description: 'Circuit construction, transpilation, IBM Quantum workflows, and QPY/circuit testing.',
+        version: '2.4.2',
+        href: 'https://pypi.org/project/qiskit/',
+      },
+      {
         name: 'PennyLane',
         logo: '/pennylane-logo.png',
         logoShape: 'wide',
         description: 'Differentiable quantum programming and hybrid quantum machine-learning workflows.',
         version: '0.45.1',
         href: 'https://pypi.org/project/pennylane/',
-      },
-      {
-        name: 'Qiskit',
-        logo: 'https://cdn.simpleicons.org/qiskit/6929C4',
-        description: 'Circuit construction, transpilation, IBM Quantum workflows, and QPY/circuit testing.',
-        version: '2.4.2',
-        href: 'https://pypi.org/project/qiskit/',
       },
       {
         name: 'Cirq',
@@ -1662,20 +1661,21 @@ function LinkedInEmbedCard({ className, title }) {
 }
 
 function AboutPage() {
+  const aboutNarrativeRef = useRef(null)
   const selectedWork = [
     {
-      year: '2026',
+      year: '2027',
       title: 'Quantum Machine Learning Codebook: Build Hybrid Models with PennyLane, Cirq, and Qiskit in Notebooks',
       authors: 'Dennis Wayo, Sven Groppe',
-      source: 'SpringerBriefs in Computer Science · Forthcoming November 2026',
+      source: 'SpringerBriefs in Computer Science · Forthcoming 2027',
       url: 'https://link.springer.com/book/9783032337849',
     },
     {
       year: '2026',
-      title: 'Hardware-in-the-loop syndrome-to-decoder validation for repetition, surface, CSS-LDPC, and digitized-GKP codes',
+      title: 'Auditing Syndrome-to-Decoder Mappings for Repetition, Surface, CSS, and Digitized-GKP Interfaces',
       authors: 'Dennis Delali Kwesi Wayo, Chinonso Onah, Rodrigo Alves Dias, Leonardo Goliatt, Sven Groppe',
-      source: 'arXiv:2607.19447',
-      url: 'https://arxiv.org/abs/2607.19447',
+      source: 'Frontiers of Computer Science · Published online 14 October 2026 · DOI: 10.1007/s11704-026-61541-6',
+      url: 'https://journal.hep.com.cn/fcs/EN/10.1007/s11704-026-61541-6',
     },
     {
       year: '2026',
@@ -1759,10 +1759,37 @@ function AboutPage() {
   const contributionLog = [
     {
       year: '2026',
+      project: 'Qiskit',
+      title: 'QuantumCircuit gate labels',
+      summary: 'Added label support across QuantumCircuit gate helpers, with regression tests.',
+      links: [
+        { label: 'PR #16373', url: 'https://github.com/Qiskit/qiskit/pull/16373', hackathon: 'unitaryHACK 2026' },
+      ],
+    },
+    {
+      year: '2026',
+      project: 'PennyLane',
+      title: 'Documentation tests and diagnostics',
+      summary: 'Added shadow documentation testing and improved measurement comparison diagnostics.',
+      links: [
+        { label: 'PR #9566', url: 'https://github.com/PennyLaneAI/pennylane/pull/9566', hackathon: 'unitaryHACK 2026' },
+        { label: 'PR #9605', url: 'https://github.com/PennyLaneAI/pennylane/pull/9605' },
+      ],
+    },
+    {
+      year: '2026',
       project: 'Qibolab',
       title: 'Dynamiqs simulation engine',
       summary: 'Integrated Dynamiqs into the emulator and added focused simulation tests.',
-      links: [{ label: 'PR #1479', url: 'https://github.com/qiboteam/qibolab/pull/1479' }],
+      links: [{ label: 'PR #1479', url: 'https://github.com/qiboteam/qibolab/pull/1479', hackathon: 'unitaryHACK 2026' }],
+    },
+    {
+      year: '2026',
+      project: 'IBM TechXchange',
+      title: 'BoundaryGuard: Bob-assisted Qiskit debugging',
+      summary: 'Top 50 hackathon entry investigating a Python–Rust boundary panic, with a candidate validation patch, focused tests, and review evidence.',
+      hackathon: true,
+      links: [{ label: 'Project', url: 'https://github.com/DennisWayo/ibm-bob-boundaryguard' }],
     },
     {
       year: '2026',
@@ -1783,26 +1810,6 @@ function AboutPage() {
     },
     {
       year: '2026',
-      project: 'PennyLane',
-      title: 'Documentation tests and diagnostics',
-      summary: 'Added shadow documentation testing and improved measurement comparison diagnostics.',
-      links: [
-        { label: 'PR #9566', url: 'https://github.com/PennyLaneAI/pennylane/pull/9566' },
-        { label: 'PR #9605', url: 'https://github.com/PennyLaneAI/pennylane/pull/9605' },
-      ],
-    },
-    {
-      year: '2026',
-      project: 'Qiskit',
-      title: 'Circuit labels and QPY tests',
-      summary: 'Extended circuit gate-label support and refactored QPY round-trip load-test setup.',
-      links: [
-        { label: 'PR #16373', url: 'https://github.com/Qiskit/qiskit/pull/16373' },
-        { label: 'PR #16372', url: 'https://github.com/Qiskit/qiskit/pull/16372' },
-      ],
-    },
-    {
-      year: '2026',
       project: 'Mitiq / Qibo',
       title: 'QEC and error-mitigation tutorial',
       summary: 'Contributed an example combining repeated syndrome checks with zero-noise extrapolation.',
@@ -1819,9 +1826,9 @@ function AboutPage() {
               <p className="modern-eyebrow">Quantum systems architect · scientific software engineer</p>
               <h1>Building computational systems for quantum architectures.</h1>
               <p className="modern-hero-lede">
-                I design and build reproducible research software for fault-tolerant quantum
-                computing, photonic and continuous-variable systems, and reviewer-inspectable
-                scientific simulation.
+                I design and build research software for fault-tolerant quantum computing,
+                spanning photonic and continuous-variable simulation, decoder benchmarking,
+                and hardware-facing control.
               </p>
 
               <div className="modern-focus-strip" aria-label="Research focus">
@@ -2018,14 +2025,24 @@ function AboutPage() {
                 <article className="modern-contribution-item" key={`${item.project}-${item.title}`}>
                   <span className="modern-pub-year">{item.year}</span>
                   <div>
-                    <p className="modern-contribution-project">{item.project}</p>
+                    <p className="modern-contribution-project">
+                      {item.project}
+                      {item.hackathon && <span className="modern-contribution-badge">Hackathon</span>}
+                    </p>
                     <h3>{item.title}</h3>
                     <p className="modern-contribution-summary">{item.summary}</p>
                     <div className="modern-contribution-links">
                       {item.links.map((link) => (
-                        <a key={link.url} href={link.url} target="_blank" rel="noreferrer">
-                          {link.label} <span aria-hidden="true">↗</span>
-                        </a>
+                        <span className="modern-contribution-link-group" key={link.url}>
+                          <a href={link.url} target="_blank" rel="noreferrer">
+                            {link.label} <span aria-hidden="true">↗</span>
+                          </a>
+                          {link.hackathon && (
+                            <a className="modern-contribution-badge" href="https://unitaryhack.dev/hackers/denniswayo/" target="_blank" rel="noreferrer">
+                              Hackathon · {link.hackathon}
+                            </a>
+                          )}
+                        </span>
                       ))}
                     </div>
                   </div>
@@ -2035,7 +2052,7 @@ function AboutPage() {
             <div className="modern-section-heading modern-contribution-heading">
               <p className="modern-eyebrow">Open source</p>
               <h2>Contributions to quantum software stacks.</h2>
-              <p>Selected work across simulators, calibration tools, quantum programming frameworks, and error-mitigation examples. Each entry links to its public pull request.</p>
+              <p>Selected work across simulators, calibration tools, quantum programming frameworks, error-mitigation examples, and hackathons. Entries link to the public pull request or project.</p>
             </div>
           </div>
         </section>
@@ -2043,7 +2060,17 @@ function AboutPage() {
         <section className="modern-section modern-section-dark" id="story">
           <div className="modern-shell modern-about-callout">
             <div><p className="modern-eyebrow">About</p><h2>An engineering path into quantum systems.</h2></div>
-            <p>My background moves through mechanical, petroleum, and chemical engineering into computer science and quantum systems. That breadth becomes useful through one engineering habit: begin with physical constraints, define the architecture, implement carefully, validate aggressively, and leave evidence that others can inspect and reproduce.</p>
+            <div className="modern-about-reading">
+              <div className="modern-about-narrative" ref={aboutNarrativeRef} role="region" aria-label="About Dennis Wayo" tabIndex={0}>
+                <p>Dr. Dennis Wayo is a computational scientist and quantum software engineer focused on fault-tolerant quantum architectures and continuous-variable photonic systems. He holds a PhD in Chemical Engineering and is pursuing computer science research at TU Bergakademie Freiberg and Georgia Tech. His work connects quantum error-correction theory with reproducible software, from hardware-facing interfaces to decoder benchmarking and architecture-level simulation.</p>
+                <p>As founder and principal investigator of Gottesman Software, he develops open research tools that make assumptions, experiments, and performance claims inspectable. LiDMaS+ supports replay-driven logical-decoder comparisons, syndrome diagnostics, and threshold-style studies. SchroSIM separates photonic circuit design, compilation, numerical execution, and hardware mapping for Gaussian and selected non-Gaussian workflows. Photon-QDrivers explores a common control and driver interface for photonic workloads across emulators, native runtimes, FPGA paths, and hardware adapters. Together, these projects trace a path from circuit and hardware models to repeatable computational evidence.</p>
+                <p>Wayo is also co-author, with Sven Groppe, of the forthcoming Quantum Machine Learning Codebook, a practical guide to hybrid models in PennyLane, Cirq, and Qiskit. Across his research and open-source contributions, he emphasizes clear software contracts, deterministic experiments, and honest performance measurement. His goal is to help quantum hardware and software teams turn promising architectures into systems that can be tested, compared, and improved.</p>
+              </div>
+              <div className="modern-about-scroll-controls">
+                <button type="button" aria-label="Scroll About text up" title="Scroll About text up" onClick={() => aboutNarrativeRef.current?.scrollBy({ top: -220, behavior: 'smooth' })}>↑</button>
+                <button type="button" aria-label="Scroll About text down" title="Scroll About text down" onClick={() => aboutNarrativeRef.current?.scrollBy({ top: 220, behavior: 'smooth' })}>↓</button>
+              </div>
+            </div>
             <div className="modern-about-person">
               <img src="/dennis-portrait-bw.jpg" alt="Dennis Wayo, PhD" />
               <div><strong>Dennis Wayo, PhD</strong><span>Quantum Systems Architect</span></div>
@@ -3171,7 +3198,7 @@ function WayoAiPage() {
 
 
 const routeTitles = {
-  '/about': 'Dennis Wayo, PhD — Quantum Systems Architect & Scientific Software Engineer',
+  '/about': 'Dennis Wayo, PhD',
 }
 
 const legacyRedirects = [
